@@ -68,6 +68,21 @@ const config = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            id: 'api-docs',
+            spec: './static/openapi.yaml', // Path to your OpenAPI spec file
+            route: '/api', // Route where the API docs will be served
+          },
+        ],
+        theme: {
+          primaryColor: '#1890ff',
+        },
+      },
+    ],    
   ],
 
   themeConfig:
@@ -93,7 +108,12 @@ const config = {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
             position: 'right',
-          },
+          },    
+          {
+            to: '/api',
+            label: 'API',
+            position: 'left',
+          }          
         ],
       },
       footer: {
