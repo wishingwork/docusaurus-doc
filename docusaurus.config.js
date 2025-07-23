@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'WeatherCalendar',
+  tagline: 'WeatherCalendar is cool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -103,9 +103,9 @@ const config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'WeatherCalendar',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'WeatherCalendar Logo',
         src: 'img/logo.svg',
       },
       // items: [
@@ -139,7 +139,7 @@ const config = {
       //     ],
       //   },
       // ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Site. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} WeatherCalendar. Built with Docusaurus.`,
     },
   },
 };
