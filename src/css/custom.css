@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
 /* Base styles for a modern, minimalistic design */
 body {
   font-family: 'Inter', sans-serif;
