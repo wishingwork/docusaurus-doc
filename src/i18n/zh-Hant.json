@@ -1,4 +1,77 @@
 {
   "welcome": "歡迎來到首頁！",
-  "description": "這是繁體中文版本。"
+  "description": "這是繁體中文版本。",
+  "calendarView": {
+    "title": "行事曆檢視",
+    "sunnyEvent": "團隊會議 - 晴天",
+    "rainyEvent": "戶外活動 - 雨天"
+  },
+  "timelineView": {
+    "title": "時間軸檢視",
+    "event1": {
+      "title": "團隊會議",
+      "time": "上午10:00 - 上午11:30",
+      "location": "會議室A",
+      "weather": "晴天，24°C"
+    },
+    "event2": {
+      "title": "產品發表",
+      "time": "下午2:00 - 下午5:00",
+      "location": "中央公園",
+      "weather": "雨天，18°C"
+    },
+    "event3": {
+      "title": "客戶晚餐",
+      "time": "晚上7:00 - 晚上9:00",
+      "location": "市中心餐廳",
+      "weather": "多雲，20°C"
+    }
+  },
+  "contact": {
+    "title": "準備好開始了嗎？",
+    "subtitle": "聯絡我們的開發團隊以申請內部測試權限",
+    "nameLabel": "姓名 *",
+    "namePlaceholder": "您的全名",
+    "emailLabel": "電子郵件 *",
+    "emailPlaceholder": "your@company.com",
+    "messageLabel": "訊息",
+    "messagePlaceholder": "請告訴我們您的測試需求與時程...",
+    "button": "申請內部測試權限"
+  },
+  "intro": {
+    "title": "規劃活動，結合",
+    "subtitle": "天氣洞察",
+    "description": "再也不用擔心天氣影響您的活動。我們的智慧行事曆整合即時天氣資料，協助您規劃、排程並管理活動，全面掌握天氣狀況。",
+    "button": "申請內部測試"
+  },
+  "screenshots": {
+    "title": "兩種強大檢視",
+    "subtitle": "選擇最適合您規劃需求的檢視方式",
+    "calendarView": "行事曆檢視",
+    "calendarDesc": "以天氣色碼一覽所有活動。每個活動都以直覺色彩顯示天氣狀況，讓您一眼掌握潛在天氣問題。",
+    "timelineView": "時間軸檢視",
+    "timelineDesc": "以時間順序列表顯示活動內容、地點、時間及天氣狀況。適合詳細規劃與活動管理，資訊完整。",
+    "sunny": "晴天",
+    "cloudy": "多雲",
+    "rainy": "雨天",
+    "weatherIndicators": "天氣指示",
+    "location": "地點",
+    "weather": "天氣"
+  },
+  "usage": {
+    "title": "運作方式",
+    "subtitle": "簡單步驟建立天氣感知活動",
+    "step1": {
+      "title": "1. 建立活動",
+      "desc": "新增活動細節，包括標題、日期、時間與地點。系統自動偵測地點以追蹤天氣。"
+    },
+    "step2": {
+      "title": "2. 天氣整合",
+      "desc": "系統自動取得活動地點與時間的天氣預報，並即時更新。"
+    },
+    "step3": {
+      "title": "3. 檢視與管理",
+      "desc": "以行事曆或時間軸檢視活動並以天氣色碼標示，協助您做出最佳決策。"
+    }
+  }
 }

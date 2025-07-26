@@ -1,26 +1,27 @@
 import React from 'react';
 import { Calendar, Sun, Cloud, CloudRain, Users } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const IntroductionSection = () => {
+    const { t } = useTranslation();
     return (
         <section className="py-16 bg-gradient-to-r from-blue-50 via-white to-purple-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="w-full">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Plan Events with
-                  <span className="text-blue-600 block">Weather Insights</span>
+                  {t('intro.title')}
+                  <span className="text-blue-600 block">{t('intro.subtitle')}</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Never let weather surprise your events again. Our intelligent calendar integrates real-time weather data 
-                  to help you plan, schedule, and manage events with complete weather awareness.
+                  {t('intro.description')}
                 </p>
                 <a 
                   href="mailto:info@meteosyn.com"
                   className="w-full sm:w-1/2 bg-blue-600 hover:bg-blue-100 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all transform hover:scale-105 flex items-center"
                 >
                   <Users className="mr-2" size={20} />
-                  Request Internal Testing
+                  {t('intro.button')}
                 </a>
               </div>
               

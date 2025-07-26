@@ -1,4 +1,77 @@
 {
   "welcome": "Welcome to the homepage!",
-  "description": "This is the English version."
+  "description": "This is the English version.",
+  "calendarView": {
+    "title": "Calendar View",
+    "sunnyEvent": "Team Meeting - Sunny",
+    "rainyEvent": "Outdoor Event - Rainy"
+  },
+  "timelineView": {
+    "title": "Timeline View",
+    "event1": {
+      "title": "Team Meeting",
+      "time": "10:00 AM - 11:30 AM",
+      "location": "Conference Room A",
+      "weather": "Sunny, 24°C"
+    },
+    "event2": {
+      "title": "Product Launch",
+      "time": "2:00 PM - 5:00 PM",
+      "location": "Central Park",
+      "weather": "Rainy, 18°C"
+    },
+    "event3": {
+      "title": "Client Dinner",
+      "time": "7:00 PM - 9:00 PM",
+      "location": "Downtown Restaurant",
+      "weather": "Cloudy, 20°C"
+    }
+  },
+  "contact": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Contact our development team to request internal testing access",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "your@company.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your testing requirements and timeline...",
+    "button": "Request Internal Testing Access"
+  },
+  "intro": {
+    "title": "Plan Events with",
+    "subtitle": "Weather Insights",
+    "description": "Never let weather surprise your events again. Our intelligent calendar integrates real-time weather data to help you plan, schedule, and manage events with complete weather awareness.",
+    "button": "Request Internal Testing"
+  },
+  "screenshots": {
+    "title": "Two Powerful Views",
+    "subtitle": "Choose the perfect view for your planning needs",
+    "calendarView": "Calendar View",
+    "calendarDesc": "Get an overall view of all your events with weather-coded colors. Each event displays its weather condition through intuitive color coding, making it easy to spot potential weather concerns at a glance.",
+    "timelineView": "Timeline View",
+    "timelineDesc": "View events in a chronological list format showing what, where, when, and weather conditions. Perfect for detailed planning and sequential event management with comprehensive weather information.",
+    "sunny": "Sunny",
+    "cloudy": "Cloudy",
+    "rainy": "Rainy",
+    "weatherIndicators": "Weather indicators",
+    "location": "Location",
+    "weather": "Weather"
+  },
+  "usage": {
+    "title": "How It Works",
+    "subtitle": "Simple steps to create weather-aware events",
+    "step1": {
+      "title": "1. Create Event",
+      "desc": "Add your event details including title, date, time, and location. Our system automatically detects the location for weather tracking."
+    },
+    "step2": {
+      "title": "2. Weather Integration",
+      "desc": "The system automatically fetches weather forecast for your event location and time, providing real-time updates."
+    },
+    "step3": {
+      "title": "3. View & Manage",
+      "desc": "See your events in calendar or timeline view with weather-coded colors. Make informed decisions about your activities."
+    }
+  }
 }
