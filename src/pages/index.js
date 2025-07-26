@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Calendar, Clock, Mail, Sun, Cloud, CloudRain, Users, MapPin, Plus, Eye, Check } from 'lucide-react';
 import '../css/custom.css'; // Ensure Tailwind CSS is imported
 import logoImg from '../assets/images/logo.png';
+import Layout from '@theme/Layout';
+import { useTranslation } from 'react-i18next';
 
 // Import refactored section components
 import CalendarViewScreenshot from '../components/WeatherCalendar/CalendarViewScreenshot';
@@ -18,6 +20,7 @@ const EventCalendarWebsite = () => {
     email: '',
     message: ''
   });
+  const { t, i18n } = useTranslation();
 
   const handleInputChange = (e) => {
     setContactForm({
@@ -49,6 +52,9 @@ const EventCalendarWebsite = () => {
               <h1 className="text-2xl font-bold text-gray-900">WeatherCalendar</h1>
             </div>
           </div>
+            <p>{t('description')}</p>
+            <button onClick={() => i18n.changeLanguage('zh-Hant')}>繁體中文</button>
+            <button onClick={() => i18n.changeLanguage('en')}>English</button>          
         </div>
       </header>
       {/* Introduction Section */}
