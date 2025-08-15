@@ -73,5 +73,6 @@
       "title": "3. 檢視與管理",
       "desc": "以行事曆或時間軸檢視活動並以天氣色碼標示，協助您做出最佳決策。"
     }
-  }
+  },
+  "deleteAccount": "申請刪除我的WeatherCalendar帳號"
 }

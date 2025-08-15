@@ -73,5 +73,6 @@
       "title": "3. View & Manage",
       "desc": "See your events in calendar or timeline view with weather-coded colors. Make informed decisions about your activities."
     }
-  }
+  },
+  "deleteAccount": "Request for Deleting My WeatherCalendar Account"
 }

@@ -102,6 +102,11 @@ return (
                                 info@meteosync.com
                             </a>
                         </p>
+                        <p className="text-gray-400">
+                            <a href="/delete-account" className="text-blue-400 hover:text-blue-300">
+                                {t('deleteAccount')}
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
