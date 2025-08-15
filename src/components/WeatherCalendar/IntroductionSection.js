@@ -17,7 +17,7 @@ const IntroductionSection = () => {
                   {t('intro.description')}
                 </p>
                 <a 
-                  href="mailto:info@meteosyn.com"
+                  href="mailto:info@meteosync.com"
                   className="w-full sm:w-1/2 bg-blue-600 hover:bg-blue-100 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all transform hover:scale-105 flex items-center"
                 >
                   <Users className="mr-2" size={20} />
