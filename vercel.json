@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://mission-api-664674930671.us-central1.run.app/$1"
+    }
+  ]
+}
