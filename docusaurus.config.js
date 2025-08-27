@@ -103,43 +103,47 @@ const config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'WeatherCalendar',
+      title: 'Meteosync',
       logo: {
-        alt: 'WeatherCalendar Logo',
+        alt: 'Meteosync Logo',
         src: 'img/logo.svg',
       },
-      // items: [
-      //   { to: '/docs/intro', label: 'Docs', position: 'left' },
-      //   { to: '/blog', label: 'Blog', position: 'left' },
-      //   {
-      //     href: 'https://github.com/your-repo',
-      //     label: 'GitHub',
-      //     position: 'right',
-      //   },
-      //   {
-      //     to: '/api',
-      //     label: 'API',
-      //     position: 'left',
-      //   },        
-      // ],
+      items: [
+        // { to: '/docs/intro', label: 'Docs', position: 'left' },
+        // { to: '/blog', label: 'Blog', position: 'left' },
+        // {
+        //   href: 'https://github.com/facebook/docusaurus',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
+      ],
     },
     footer: {
       style: 'dark',
-      // links: [
-      //   {
-      //     title: 'Docs',
-      //     items: [
-      //       { label: 'Introduction', to: '/docs/intro' },
-      //     ],
-      //   },
-      //   {
-      //     title: 'Community',
-      //     items: [
-      //       { label: 'Discord', href: 'https://discord.gg/your-discord' },
-      //     ],
-      //   },
-      // ],
-      copyright: `Copyright © ${new Date().getFullYear()} WeatherCalendar. Built with Docusaurus.`,
+      links: [
+        {
+          title: 'Links',
+          items: [
+            {
+              label: 'WeatherCalendar',
+              href: 'https://weathercalendar.meteosync.com/',
+            },
+            // {
+            //   label: 'Docs',
+            //   to: '/docs/intro',
+            // },
+            // {
+            //   label: 'Blog',
+            //   to: '/blog',
+            // },
+            // {
+            //   label: 'GitHub',
+            //   href: 'https://github.com/facebook/docusaurus',
+            // },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Meteosync Built with Docusaurus.`,
     },
   },
 };
