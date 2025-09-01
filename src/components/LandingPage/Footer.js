@@ -14,7 +14,6 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-6 text-gray-300">Services</h3>
             <p><a href="#operations" className="text-gray-400 hover:text-white transition-colors">Weather Intelligence</a></p>
             <p><a href="#operations" className="text-gray-400 hover:text-white transition-colors">Operational Optimization</a></p>
-            <p><a href="#insights" className="text-gray-400 hover:text-white transition-colors">Predictive Analytics</a></p>
             <p><a href="#insights" className="text-gray-400 hover:text-white transition-colors">Custom Solutions</a></p>
           </div>
           
@@ -23,7 +22,7 @@ export default function Footer() {
             <p className="text-gray-400">Logistics & Transportation</p>
             <p className="text-gray-400">Energy & Utilities</p>
             <p className="text-gray-400">Agriculture</p>
-            <p className="text-gray-400">Construction</p>
+            <p className="text-gray-400">Fishery</p>
           </div>
           
           <div>

@@ -21,24 +21,18 @@ export default function WorkflowSection() {
           
           <div className="bg-white p-10 rounded-2xl shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
             <div className="w-20 h-20 bg-gradient-to-r from-[#116CB5] to-[#67C0DA] rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">3</div>
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">Predictive Insights</h3>
-            <p className="text-gray-600 leading-relaxed">Receive actionable forecasts and recommendations that enable proactive decision-making and risk mitigation strategies.</p>
-          </div>
-          
-          <div className="bg-white p-10 rounded-2xl shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-            <div className="w-20 h-20 bg-gradient-to-r from-[#116CB5] to-[#67C0DA] rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">4</div>
             <h3 className="text-2xl font-bold mb-4 text-gray-800">Workflow Optimization</h3>
             <p className="text-gray-600 leading-relaxed">Implement weather-aware workflows that automatically adjust operations based on current and forecasted conditions.</p>
           </div>
           
           <div className="bg-white p-10 rounded-2xl shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-            <div className="w-20 h-20 bg-gradient-to-r from-[#116CB5] to-[#67C0DA] rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">5</div>
+            <div className="w-20 h-20 bg-gradient-to-r from-[#116CB5] to-[#67C0DA] rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">4</div>
             <h3 className="text-2xl font-bold mb-4 text-gray-800">Performance Monitoring</h3>
             <p className="text-gray-600 leading-relaxed">Track the impact of weather-informed decisions with comprehensive analytics and continuous improvement recommendations.</p>
           </div>
           
           <div className="bg-white p-10 rounded-2xl shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-            <div className="w-20 h-20 bg-gradient-to-r from-[#116CB5] to-[#67C0DA] rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">6</div>
+            <div className="w-20 h-20 bg-gradient-to-r from-[#116CB5] to-[#67C0DA] rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">5</div>
             <h3 className="text-2xl font-bold mb-4 text-gray-800">Ongoing Support</h3>
             <p className="text-gray-600 leading-relaxed">Our expert team provides continuous support and system refinement to ensure maximum value from your weather intelligence investment.</p>
           </div>
