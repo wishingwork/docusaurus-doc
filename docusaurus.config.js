@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'WeatherCalendar',
   tagline: 'WeatherCalendar is cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/meteosync-favicon.ico',
 
   // Set the production url of your site here
   url: 'https://weathercalendar.meteosync.com/',
@@ -106,7 +106,7 @@ const config = {
       title: 'Meteosync',
       logo: {
         alt: 'Meteosync Logo',
-        src: 'img/logo.svg',
+        src: 'img/meteosync-logo.svg',
       },
       items: [
         // { to: '/docs/intro', label: 'Docs', position: 'left' },
