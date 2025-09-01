@@ -19,7 +19,7 @@ export default function TestimonialSection() {
             
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">Experience the power of weather-aware planning with our comprehensive suite of tools designed for modern businesses.</p>
             
-            <a href="https://weathercalendar.meteosync.com/" className="inline-block bg-gradient-to-r from-[#116CB5] to-[#67C0DA] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1">User Case: Weather Calendar</a>
+            <a href="https://www.meteosync.com/calendar" className="inline-block bg-gradient-to-r from-[#116CB5] to-[#67C0DA] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1">User Case: Weather Calendar</a>
           </div>
         </div>
       </div>

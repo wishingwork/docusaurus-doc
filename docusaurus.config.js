@@ -126,7 +126,7 @@ const config = {
           items: [
             {
               label: 'WeatherCalendar',
-              href: 'https://weathercalendar.meteosync.com/',
+              href: 'https://www.meteosync.com/calendar',
             },
             // {
             //   label: 'Docs',
