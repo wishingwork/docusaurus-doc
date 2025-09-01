@@ -10,12 +10,12 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'WeatherCalendar',
-  tagline: 'WeatherCalendar is cool',
+  title: 'Weather Intelligence for Smart Operations',
+  tagline: 'Weather Intelligence for Smart Operations',
   favicon: 'img/meteosync-favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://weathercalendar.meteosync.com/',
+  url: 'https://www.meteosync.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
