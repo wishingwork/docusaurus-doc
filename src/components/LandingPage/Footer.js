@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-6 text-gray-300">WeatherSync</h3>
+            <h3 className="text-xl font-bold mb-6 text-gray-300">Meteosync</h3>
             <p className="text-gray-400">Transforming businesses through intelligent weather insights and operational optimization solutions.</p>
           </div>
           
