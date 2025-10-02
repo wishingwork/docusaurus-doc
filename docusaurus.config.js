@@ -128,6 +128,10 @@ const config = {
               label: 'WeatherCalendar',
               href: 'https://www.meteosync.com/calendar',
             },
+            {
+              label: 'WeatherPlanB',
+              href: 'https://www.meteosync.com/trip-planner',
+            },            
             // {
             //   label: 'Docs',
             //   to: '/docs/intro',
