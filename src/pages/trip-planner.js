@@ -6,15 +6,13 @@ import Layout from '@theme/Layout';
 import { useTranslation } from 'react-i18next';
 
 // Import refactored section components
-import CalendarViewScreenshot from '../components/TripPlanner/CalendarViewScreenshot';
-import TimelineViewScreenshot from '../components/TripPlanner/TimelineViewScreenshot';
 import ContactSection from '../components/WeatherCalendar/ContactSection';
 import IntroductionSection from '../components/TripPlanner/IntroductionSection';
 import ScreenshotsSection from '../components/TripPlanner/ScreenshotsSection';
 import UsageExplanationSection from '../components/TripPlanner/UsageExplanationSection';
 
 const TripPlannerWebsite = () => {
-  const [activeView, setActiveView] = useState('calendar');
+  const [activeView, setActiveView] = useState('TripPlannerForm');
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
@@ -70,8 +68,6 @@ return (
         <ScreenshotsSection
             activeView={activeView}
             setActiveView={setActiveView}
-            CalendarViewScreenshot={CalendarViewScreenshot}
-            TimelineViewScreenshot={TimelineViewScreenshot}
         />
         {/* Usage Explanation Section */}
         <UsageExplanationSection />
