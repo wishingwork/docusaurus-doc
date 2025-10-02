@@ -44,6 +44,50 @@
     "description": "再也不用擔心天氣影響您的活動。我們的智慧行事曆整合即時天氣資料，協助您規劃、排程並管理活動，全面掌握天氣狀況。",
     "button": "申請內部測試"
   },
+  "tripPlanner": {
+    "intro": {
+      "title": "智慧行程規劃",
+      "subtitle": "無懼天氣的旅行",
+      "description": "別再讓壞天氣毀了您的計畫。我們的智慧應用程式能預測目的地天氣，並為您的旅程推薦最適合的室內或室外景點。",
+      "button": "申請內部測試"
+    },
+    "screenshots": {
+      "title": "智慧行程規劃，如此簡單",
+      "subtitle": "我們的智慧系統會分析天氣預報，並為您的旅行日期推薦最完美的景點，確保您總能擁有最佳體驗。",
+      "TripPlannerFormView": "輸入您的旅程",
+      "TripPlannerFormDesc": "只需輸入您的起點、終點和出發時間。我們的系統會計算您的抵達時間並分析天氣預報。",
+      "AttractionListView": "發現景點",
+      "AttractionListDesc": "在互動式地圖和詳細清單上瀏覽根據天氣狀況篩選的精選景點推薦。",
+      "MapView": "打造您的完美計畫",
+      "MapDesc": "儲存您最喜愛的景點，並建立一個包含路線、時間和應對多變天氣備案的優化行程計畫。",
+      "sunny": "晴天",
+      "cloudy": "多雲",
+      "rainy": "雨天",
+      "locationTypeIndicators": "室內/室外指示",
+      "location": "地點",
+      "weather": "天氣",
+      "route": "路線",
+      "address": "地址",
+      "departureTime": "出發時間"
+    },
+    "usage": {
+      "title": "智慧天氣旅遊規劃",
+      "subtitle": "別讓意想不到的天氣毀了您的完美旅程。我們的智慧系統確保您總能安排好合適的活動，無論是晴天、雨天還是大熱天。",
+      "step1": {
+        "title": "完美天氣日",
+        "desc": "在天氣狀況理想時，探索公園、地標、戶外市集和風景觀光景點。"
+      },
+      "step2": {
+        "title": "雨天備案",
+        "desc": "在天氣不佳時，探索博物館、購物中心、美術館和有遮蔽的景點。"
+      },
+      "step3": {
+        "title": "避暑計畫",
+        "desc": "在氣溫飆升超過32°C時，尋找有空調的場所、室內娛樂和陰涼區域。"
+      }
+    },
+    "deleteAccount": "申請刪除我的 WeatherPlanB 帳號"
+  },  
   "screenshots": {
     "title": "兩種強大檢視",
     "subtitle": "選擇最適合您規劃需求的檢視方式",
