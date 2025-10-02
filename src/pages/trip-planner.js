@@ -88,10 +88,10 @@ return (
                             className="w-12 h-12 object-contain rounded"
                             style={{ marginLeft: '-0.25rem' }}
                         />
-                        <span className="text-xl font-bold">WeatherCalendar</span>
+                        <span className="text-xl font-bold">WeatherPlanB</span>
                     </div>
                     <div className="text-center md:text-right">
-                        <p className="text-gray-400 mb-1">© 2025 WeatherCalendar. All rights reserved.</p>
+                        <p className="text-gray-400 mb-1">© 2025 WeatherPlanB. All rights reserved.</p>
                         <p className="text-gray-400">
                             Contact:
                             <a href="mailto:info@meteosync.com" className="text-blue-400 hover:text-blue-300 ml-1">

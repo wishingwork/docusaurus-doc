@@ -29,26 +29,26 @@ const ScreenshotsSection = ({
                         <div 
                             onClick={() => setActiveView('TripPlannerForm')}
                             className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${
-                                activeView === 'calendar' 
+                                activeView === 'TripPlannerForm' 
                                     ? 'bg-blue-600 text-white shadow-xl' 
                                     : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
                             }`}
                         >
                             <div className="flex items-center mb-3">
-                                <Route className={`mr-3 ${activeView === 'calendar' ? 'text-white' : 'text-blue-600'}`} size={32} />
+                                <Route className={`mr-3 ${activeView === 'TripPlannerForm' ? 'text-white' : 'text-blue-600'}`} size={32} />
                                 <h3 className="text-xl font-bold">{t('tripPlanner.screenshots.TripPlannerFormView')}</h3>
                             </div>
-                            <p className={`${activeView === 'calendar' ? 'text-blue-100' : 'text-gray-600'}`}>
+                            <p className={`${activeView === 'TripPlannerForm' ? 'text-blue-100' : 'text-gray-600'}`}>
                                 {t('tripPlanner.screenshots.TripPlannerFormDesc')}
                             </p>
                             <div className="mt-4 flex items-center space-x-4 text-sm">
                                 <div className="flex items-center">
-                                    <MapPin className={`mr-1 ${activeView === 'timeline' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
-                                    <span className={`${activeView === 'timeline' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.address')}</span>
+                                    <MapPin className={`mr-1 ${activeView === 'TripPlannerForm' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
+                                    <span className={`${activeView === 'TripPlannerForm' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.address')}</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <Clock className={`mr-1 ${activeView === 'timeline' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
-                                    <span className={`${activeView === 'timeline' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.departureTime')}</span>
+                                    <Clock className={`mr-1 ${activeView === 'TripPlannerForm' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
+                                    <span className={`${activeView === 'TripPlannerForm' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.departureTime')}</span>
                                 </div>
                             </div>
                         </div>
@@ -56,23 +56,23 @@ const ScreenshotsSection = ({
                         <div 
                             onClick={() => setActiveView('AttractionList')}
                             className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${
-                                activeView === 'timeline' 
+                                activeView === 'AttractionList' 
                                     ? 'bg-blue-600 text-white shadow-xl' 
                                     : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
                             }`}
                         >
                             <div className="flex items-center mb-3">
-                                <CloudSun className={`mr-3 ${activeView === 'timeline' ? 'text-white' : 'text-blue-600'}`} size={32} />
+                                <CloudSun className={`mr-3 ${activeView === 'AttractionList' ? 'text-white' : 'text-blue-600'}`} size={32} />
                                 <h3 className="text-xl font-bold">{t('tripPlanner.screenshots.AttractionListView')}</h3>
                             </div>
-                            <p className={`${activeView === 'timeline' ? 'text-blue-100' : 'text-gray-600'}`}>
+                            <p className={`${activeView === 'AttractionList' ? 'text-blue-100' : 'text-gray-600'}`}>
                                 {t('tripPlanner.screenshots.AttractionListDesc')}
                             </p>
                             <div className="mt-4 flex space-x-2">
                                 <div className="w-4 h-4 bg-red-400 rounded-full" title={t('screenshots.sunny')}></div>
                                 <div className="w-4 h-4 bg-blue-400 rounded-full" title={t('screenshots.cloudy')}></div>
                                 <div className="w-4 h-4 bg-green-500 rounded-full" title={t('screenshots.rainy')}></div>
-                                <span className={`text-sm ml-2 ${activeView === 'calendar' ? 'text-blue-100' : 'text-gray-500'}`}>
+                                <span className={`text-sm ml-2 ${activeView === 'AttractionList' ? 'text-blue-100' : 'text-gray-500'}`}>
                                     {t('tripPlanner.screenshots.locationTypeIndicators')}
                                 </span>
                             </div>
@@ -81,26 +81,26 @@ const ScreenshotsSection = ({
                         <div 
                             onClick={() => setActiveView('MapView')}
                             className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${
-                                activeView === 'timeline' 
+                                activeView === 'MapView' 
                                     ? 'bg-blue-600 text-white shadow-xl' 
                                     : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
                             }`}
                         >
                             <div className="flex items-center mb-3">
-                                <MapPinned className={`mr-3 ${activeView === 'timeline' ? 'text-white' : 'text-blue-600'}`} size={32} />
+                                <MapPinned className={`mr-3 ${activeView === 'MapView' ? 'text-white' : 'text-blue-600'}`} size={32} />
                                 <h3 className="text-xl font-bold">{t('tripPlanner.screenshots.MapView')}</h3>
                             </div>
-                            <p className={`${activeView === 'timeline' ? 'text-blue-100' : 'text-gray-600'}`}>
+                            <p className={`${activeView === 'MapView' ? 'text-blue-100' : 'text-gray-600'}`}>
                                 {t('tripPlanner.screenshots.MapDesc')}
                             </p>
                             <div className="mt-4 flex items-center space-x-4 text-sm">
                                 <div className="flex items-center">
-                                    <MapPin className={`mr-1 ${activeView === 'timeline' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
-                                    <span className={`${activeView === 'timeline' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.location')}</span>
+                                    <MapPin className={`mr-1 ${activeView === 'MapView' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
+                                    <span className={`${activeView === 'MapView' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.location')}</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <Route className={`mr-1 ${activeView === 'timeline' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
-                                    <span className={`${activeView === 'timeline' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.route')}</span>
+                                    <Route className={`mr-1 ${activeView === 'MapView' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
+                                    <span className={`${activeView === 'MapView' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.route')}</span>
                                 </div>
                             </div>
                         </div>                        
