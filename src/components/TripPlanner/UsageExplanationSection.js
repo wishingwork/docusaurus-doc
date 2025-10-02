@@ -1,18 +1,18 @@
 import React from 'react';
-import { Plus, Sun, Eye, Check } from 'lucide-react';
+import { Plus, Sun, Eye, Check, CloudRain, ThermometerSun } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const UsageExplanationSection = () => {
     const { t } = useTranslation();
     return (
-      <section className="py-16 bg-blue-600">
+      <section className="py-16 bg-gradient-to-br from-gray-800 to-blue-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {t('usage.title')}
+              {t('tripPlanner.usage.title')}
             </h2>
             <p className="text-lg text-white">
-              {t('usage.subtitle')}
+              {t('tripPlanner.usage.subtitle')}
             </p>
           </div>
           
@@ -20,31 +20,31 @@ const UsageExplanationSection = () => {
             {/* Step 1 */}
             <div className="text-center group">
               <div className="w-16 h-16 bg-yellow-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Plus size={32} />
+                <Sun size={32} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">{t('usage.step1.title')}</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{t('tripPlanner.usage.step1.title')}</h3>
               <p className="text-white mb-4">
-                {t('usage.step1.desc')}
+                {t('tripPlanner.usage.step1.desc')}
               </p>
             </div>
             {/* Step 2 */}
             <div className="text-center group">
-              <div className="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Sun size={32} />
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <CloudRain size={32} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">{t('usage.step2.title')}</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{t('tripPlanner.usage.step2.title')}</h3>
               <p className="text-white mb-4">
-                {t('usage.step2.desc')}
+                {t('tripPlanner.usage.step2.desc')}
               </p>
             </div>
             {/* Step 3 */}
             <div className="text-center group">
-              <div className="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Eye size={32} />
+              <div className="w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <ThermometerSun size={32} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">{t('usage.step3.title')}</h3>
+              <h3 className="text-xl font-bold text-white mb-2">{t('tripPlanner.usage.step3.title')}</h3>
               <p className="text-white mb-4">
-                {t('usage.step3.desc')}
+                {t('tripPlanner.usage.step3.desc')}
               </p>
             </div>
           </div>

@@ -69,7 +69,24 @@
       "route": "Route",
       "address": "Address",
       "departureTime": "Departure Time"
-    }
+    },
+    "usage": {
+      "title": "Weather-Smart Travel Planning",
+      "subtitle": "Don't let unexpected weather ruin your perfect trip. Our intelligent system ensures you always have the right activities planned, whether it's sunny, rainy, or too hot outside.",
+      "step1": {
+        "title": "Perfect Weather Days",
+        "desc": "Explore parks, landmarks, outdoor markets, and scenic viewpoints whene conditions are ideal."
+      },
+      "step2": {
+        "title": "Rainy Day Backup",
+        "desc": "Discover museums, shopping centers, galleries, and covered attractions when weather doesn't cooperate."
+      },
+      "step3": {
+        "title": "Beat the Heat",
+        "desc": "Find air-conditioned venues, indoor entertainment, and shaded areas when temperatures soar above 32°C."
+      }
+    },
+    "deleteAccount": "Request for Deleting My WeatherPlanB Account"
   },
   "screenshots": {
     "title": "Two Powerful Views",
