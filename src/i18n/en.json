@@ -44,6 +44,14 @@
     "description": "Never let weather surprise your events again. Our intelligent calendar integrates real-time weather data to help you plan, schedule, and manage events with complete weather awareness.",
     "button": "Request Internal Testing"
   },
+  "tripPlanner": {
+    "intro":{
+      "title": "Smart Trip Planning",
+      "subtitle": "Weather-Ready Adventures",
+      "description": "Never let bad weather ruin your plans again. Our intelligent app forecasts destination weather and recommends the perfect indoor or outdoor attractions for your journey.",
+      "button": "Request Internal Testing"
+    }
+  },
   "screenshots": {
     "title": "Two Powerful Views",
     "subtitle": "Choose the perfect view for your planning needs",
