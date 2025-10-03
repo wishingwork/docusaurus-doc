@@ -1,7 +1,7 @@
 import React, { act } from 'react';
-import { Calendar, Clock, MapPin, Sun, Route, MapPinned, CloudSun } from 'lucide-react';
+import { Calendar, Clock, MapPin, Sun, Route, MapPinned, CloudSun, Info } from 'lucide-react';
 import AttractionList from '../../assets/images/TripPlanner/AttractionList.png';
-import MapView from '../../assets/images/TripPlanner/MapView.png';
+import AttractionDetail from '../../assets/images/TripPlanner/AttractionDetail.png';
 import TripPlannerForm from '../../assets/images/TripPlanner/TripPlannerForm.png';
 
 import { useTranslation } from 'react-i18next';
@@ -79,28 +79,28 @@ const ScreenshotsSection = ({
                         </div>
 
                         <div 
-                            onClick={() => setActiveView('MapView')}
+                            onClick={() => setActiveView('AttractionDetail')}
                             className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${
-                                activeView === 'MapView' 
+                                activeView === 'AttractionDetail' 
                                     ? 'bg-blue-600 text-white shadow-xl' 
                                     : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
                             }`}
                         >
                             <div className="flex items-center mb-3">
-                                <MapPinned className={`mr-3 ${activeView === 'MapView' ? 'text-white' : 'text-blue-600'}`} size={32} />
-                                <h3 className="text-xl font-bold">{t('tripPlanner.screenshots.MapView')}</h3>
+                                <MapPinned className={`mr-3 ${activeView === 'AttractionDetail' ? 'text-white' : 'text-blue-600'}`} size={32} />
+                                <h3 className="text-xl font-bold">{t('tripPlanner.screenshots.AttractionDetailView')}</h3>
                             </div>
-                            <p className={`${activeView === 'MapView' ? 'text-blue-100' : 'text-gray-600'}`}>
-                                {t('tripPlanner.screenshots.MapDesc')}
+                            <p className={`${activeView === 'AttractionDetail' ? 'text-blue-100' : 'text-gray-600'}`}>
+                                {t('tripPlanner.screenshots.AttractionDetailDesc')}
                             </p>
                             <div className="mt-4 flex items-center space-x-4 text-sm">
                                 <div className="flex items-center">
-                                    <MapPin className={`mr-1 ${activeView === 'MapView' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
-                                    <span className={`${activeView === 'MapView' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.location')}</span>
+                                    <MapPin className={`mr-1 ${activeView === 'AttractionDetail' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
+                                    <span className={`${activeView === 'AttractionDetail' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.location')}</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <Route className={`mr-1 ${activeView === 'MapView' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
-                                    <span className={`${activeView === 'MapView' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.route')}</span>
+                                    <Info className={`mr-1 ${activeView === 'AttractionDetail' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
+                                    <span className={`${activeView === 'AttractionDetail' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.info')}</span>
                                 </div>
                             </div>
                         </div>                        
@@ -123,9 +123,9 @@ const ScreenshotsSection = ({
                                     className="rounded-xl shadow-lg w-2/3"
                                 />
                             )}           
-                            { activeView === 'MapView' && (
+                            { activeView === 'AttractionDetail' && (
                                 <img
-                                    src={MapView}
+                                    src={AttractionDetail}
                                     alt="Map View Screenshot"
                                     className="rounded-xl shadow-lg w-2/3"
                                 />
