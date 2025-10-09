@@ -3,6 +3,10 @@
     {
       "source": "/api/(.*)",
       "destination": "https://mission-api-664674930671.us-central1.run.app/$1"
+    },
+    {
+      "source": "/plan-b-api/(.*)",
+      "destination": "https://plan-b-api-664674930671.asia-east1.run.app/$1"
     }
   ]
 }
