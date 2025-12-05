@@ -99,7 +99,7 @@ return (
                             </a>
                         </p>
                         <p className="text-gray-400">
-                            <a href="/delete-account" className="text-blue-400 hover:text-blue-300">
+                            <a href="/delete-trip-account" className="text-blue-400 hover:text-blue-300">
                                 {t('tripPlanner.deleteAccount')}
                             </a>
                         </p>
