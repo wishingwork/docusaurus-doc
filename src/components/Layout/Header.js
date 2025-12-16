@@ -5,10 +5,10 @@ import {useTranslation} from 'react-i18next';
 
 export default function Header(){
   const { pathname } = useLocation();
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   // Determine variant based on URL
-  const title =  'WeatherPlanB';
+  const title =  t('tripPlanner.appTitle') || 'WeatherPlanB';
 
   return (
     <header className="bg-white shadow-sm border-b sticky top-0 z-50">

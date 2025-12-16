@@ -20,7 +20,7 @@ export default function Footer(){
               className="w-12 h-12 object-contain rounded"
               style={{ marginLeft: '-0.25rem' }}
             />
-            <span className="text-xl font-bold">{'WeatherPlanB'}</span>
+            <span className="text-xl font-bold">{t('tripPlanner.appTitle') || 'WeatherPlanB'}</span>
           </div>
 
           <div className="text-center md:text-right">

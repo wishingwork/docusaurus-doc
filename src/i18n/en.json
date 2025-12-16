@@ -45,6 +45,7 @@
     "button": "Request Internal Testing"
   },
   "tripPlanner": {
+    "appTitle": "WeatherPlanB",
     "intro":{
       "title": "Smart Trip Planning",
       "subtitle": "Weather-Ready Adventures",
