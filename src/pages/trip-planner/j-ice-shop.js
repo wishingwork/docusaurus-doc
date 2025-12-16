@@ -1,13 +1,13 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-
+import Header from '../../components/Layout/Header';
+import Footer from '../../components/Layout/Footer';
 export default function JIceShop() {
 return (
-    <Layout
-        title="J室冰舖 | 純粹滋味之旅"
-        description="板橋巷弄中的溫暖冰舖，尋回最純粹的美味與幸福感。">
-        
+    <div className="min-h-screen bg-white">
+        {/* Header (extracted) */}
+        <Header />    
         <main className="j-ice-container">
             
             {/* 1. Hero Section */}
@@ -152,6 +152,7 @@ return (
             </section>
 
         </main>
-    </Layout>
+        <Footer />
+    </div>    
 );
 }
