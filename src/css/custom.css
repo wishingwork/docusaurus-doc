@@ -101,3 +101,233 @@ button:hover, a:hover {
   --ifm-color-primary-lightest: #aee2f0;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* src/css/custom.css */
+
+/* J-Ice Shop Landing Page Styles */
+.j-ice-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.j-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.j-hero-overlay {
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+  padding: 2rem;
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+}
+
+.j-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.j-hero p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Section Common Styles */
+.j-section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.j-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+  position: relative;
+}
+
+.j-section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #e67e22; /* Accent color */
+  margin: 10px auto 0;
+}
+
+/* Two Column Layout (Text + Image) */
+.j-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.j-text-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #d35400;
+}
+
+.j-text-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.j-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.j-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.j-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Features/Menu Grid */
+.j-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.j-feature-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  border: 1px solid #eee;
+}
+
+.j-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.j-card-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.j-card-body {
+  padding: 1.5rem;
+}
+
+.j-card-body h4 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+/* Quote Section */
+.j-quote-section {
+  background-color: #f9f9f9;
+  text-align: center;
+  font-style: italic;
+  padding: 5rem 1rem;
+}
+
+.j-quote-text {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .j-grid-2 {
+    grid-template-columns: 1fr 1fr; /* Side by side on tablet/desktop */
+  }
+  
+  .j-grid-reverse .j-text-content {
+    order: 2; /* Text on right */
+  }
+  .j-grid-reverse .j-image-wrapper {
+    order: 1; /* Image on left */
+  }
+}
+
+@media (max-width: 767px) {
+  .j-hero h1 { font-size: 2rem; }
+  .j-hero p { font-size: 1.1rem; }
+  .j-section { padding: 3rem 1.5rem; }
+}
+
+.j-story-section {
+  background-color: #fff9f0; /* 溫暖的米黃色背景 */
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  margin: 4rem auto;
+  max-width: 1000px;
+  position: relative;
+  border: 1px solid #eee;
+}
+
+/* 裝飾性的引號 */
+.j-story-section::before {
+  content: '“';
+  font-size: 8rem;
+  color: #f3d2b3;
+  position: absolute;
+  top: -2rem;
+  left: 2rem;
+  font-family: serif;
+  opacity: 0.5;
+}
+
+.j-story-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.j-story-content h2 {
+  color: #d35400;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+
+.j-story-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+  line-height: 1.8;
+  text-align: justify; /*讓文字左右對齊，閱讀更舒適*/
+  text-justify: inter-ideograph;
+}
+
+/* 手機版調整 */
+@media (max-width: 767px) {
+  .j-story-section {
+    padding: 3rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+  .j-story-content p {
+    text-align: left; /* 手機版靠左對齊較易閱讀 */
+  }
+}
