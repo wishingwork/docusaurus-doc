@@ -1,5 +1,6 @@
 import React from 'react';
 import {useLocation} from '@docusaurus/router';
+import Link from '@docusaurus/Link';
 import logoImg from '../../assets/images/TripPlanner/logo.png';
 import {useTranslation} from 'react-i18next';
 
@@ -15,13 +16,15 @@ export default function Header(){
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16 justify-between">
           <div className="flex items-center">
-            <img
-              src={logoImg}
-              alt="Logo"
-              className="w-12 h-12 object-contain rounded"
-              style={{ marginLeft: '-0.25rem' }}
-            />
-            <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
+            <Link to="/trip-planner" aria-label="Go to trip planner" className="flex items-center">
+              <img
+                src={logoImg}
+                alt="Logo"
+                className="w-12 h-12 object-contain rounded"
+                style={{ marginLeft: '-0.25rem' }}
+              />
+              <h1 className="text-2xl font-bold text-gray-00 ml-3">{title}</h1>
+            </Link>
           </div>
 
           <div>
