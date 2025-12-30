@@ -1,11 +1,60 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import Head from '@docusaurus/Head';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Header from '../../components/Layout/Header';
 import Footer from '../../components/Layout/Footer';
+
 export default function JIceShop() {
-return (
-    <div className="min-h-screen bg-white">
+    const {siteConfig} = useDocusaurusContext();
+    const canonicalUrl = `${siteConfig.url}${useBaseUrl('/trip-planner/j-ice-shop')}`;
+    const ogImage = `${siteConfig.url}${useBaseUrl('/img/j-ice-shop/shop-front.jpg')}`;
+    const title = 'J室冰舖 — 一碗冰，一個故事 | 新北板橋手作冰品';
+    const description = '位於新北市板橋的手作冰品小店，主打麵茶剉冰與健康黑糖與手工配料。店家資訊、招牌推薦與地圖連結一覽。';
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'FoodEstablishment',
+        name: 'J室冰舖',
+        image: ogImage,
+        telephone: '0979721192',
+        address: {
+            '@type': 'PostalAddress',
+            streetAddress: '西門街1巷1號F棟',
+            addressLocality: '板橋區',
+            addressRegion: '新北市',
+            addressCountry: 'TW',
+        },
+        url: canonicalUrl,
+        description,
+    };
+
+    return (
+        <div className="min-h-screen bg-white">
+            <Head>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <link rel="canonical" href={canonicalUrl} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content={ogImage} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={canonicalUrl} />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={title} />
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:image" content={ogImage} />
+
+                <meta name="robots" content="index,follow" />
+
+                {/* JSON-LD */}
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            </Head>
         {/* Header (extracted) */}
         <Header />    
         <main className="j-ice-container">
