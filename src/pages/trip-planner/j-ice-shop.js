@@ -10,8 +10,9 @@ import Footer from '../../components/Layout/Footer';
 export default function JIceShop() {
     const {siteConfig} = useDocusaurusContext();
     const canonicalUrl = `${siteConfig.url}${useBaseUrl('/trip-planner/j-ice-shop')}`;
-    // Use a large image suitable for social preview (2048x1152)
-    const ogImage = `${siteConfig.url}${useBaseUrl('/img/j-ice-shop/shop-front2.jpg')}`;
+    // Use the large shop-front image and append a version query to bust social caches
+    const ogImageVersion = '2';
+    const ogImage = `${siteConfig.url}${useBaseUrl('/img/j-ice-shop/shop-front2.jpg')}?v=${ogImageVersion}`;
     const title = 'J室冰舖 — 一碗冰，一個故事 | 新北板橋手作冰品';
     const description = '位於新北市板橋的手作冰品小店，主打麵茶剉冰與健康黑糖與手工配料。店家資訊、招牌推薦與地圖連結一覽。';
     const jsonLd = {
@@ -47,8 +48,8 @@ export default function JIceShop() {
                 <meta name="image" content={ogImage} />
                 <meta property="og:image:secure_url" content={ogImage} />
                 <meta property="og:image:type" content="image/jpeg" />
-                <meta property="og:image:width" content="1200" />
-                <meta property="og:image:height" content="630" />
+                <meta property="og:image:width" content="2048" />
+                <meta property="og:image:height" content="1152" />
                 <meta property="og:image:alt" content="J室冰舖店面與招牌甜品" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={canonicalUrl} />
