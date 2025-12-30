@@ -41,6 +41,7 @@ return (
                             在這個充滿過度加工甜品的世界，我們選擇回歸傳統。每一份甜品，都是我們用心製作，為您獻上的真誠問候。
                         </p>
                         <p><strong>📍 地點：</strong>新北市板橋區西門街1巷1號F棟 (近林家花園)</p>
+                        <p><strong>📞 電話：</strong>0979721192</p>
                     </div>
                     <div className="j-image-wrapper">
                         <img src="/img/j-ice-shop/shop-front.jpg" alt="J室冰舖店面" />
@@ -62,10 +63,10 @@ return (
                                 <strong>清脆冰體：</strong>以清水清冰打底，口感細脆，不易融化。
                             </li>
                             <li>
-                                <strong>天然甜味：</strong>真的不用另外加糖，麵茶粉本身的甜度就足夠回甘。
+                                <strong>健康甘甜：</strong>嚴選健康黑糖，自然的甘甜滋味清爽不甜膩。麵茶自帶獨特香氣，無需額外加糖，身體負擔更少。
                             </li>
                             <li>
-                                <strong>豐富層次：</strong>略帶紅糖香氣與獨特的麵茶香，每一口都是驚喜。
+                                <strong>豐富層次：</strong>搭配多種新鮮配料，每一口都充滿驚喜與層次。這是我們姊妹倆用心製作，最純粹的幸福滋味。
                             </li>
                         </ul>
                     </div>
@@ -79,7 +80,7 @@ return (
                     
                     {/* Card 1: Pudding */}
                     <div className="j-feature-card">
-                        <img src="/img/j-ice-shop/red-beans.png" alt="手工布丁" className="j-card-image" />
+                        <img src="/img/j-ice-shop/red-beans.JPG" alt="手工布丁" className="j-card-image" />
                         <div className="j-card-body">
                             <h4>新鮮食材</h4>
                             <p>每日備料，新鮮現煮。</p>
@@ -88,7 +89,7 @@ return (
 
                     {/* Card 2: Toppings */}
                     <div className="j-feature-card">
-                        <img src="/img/j-ice-shop/taro-balls.png" alt="手工配料" className="j-card-image" />
+                        <img src="/img/j-ice-shop/materials.JPG" alt="手工配料" className="j-card-image" />
                         <div className="j-card-body">
                             <h4>純粹配料</h4>
                             <p>用心熬煮的芋圓與配料，無添加的自然風味。</p>
