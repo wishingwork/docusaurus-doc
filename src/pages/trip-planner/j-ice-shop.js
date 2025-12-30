@@ -42,10 +42,13 @@ export default function JIceShop() {
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={description} />
                 <meta property="og:image" content={ogImage} />
+                <link rel="image_src" href={ogImage} />
+                <meta itemProp="image" content={ogImage} />
+                <meta name="image" content={ogImage} />
                 <meta property="og:image:secure_url" content={ogImage} />
                 <meta property="og:image:type" content="image/jpeg" />
-                <meta property="og:image:width" content="2048" />
-                <meta property="og:image:height" content="1152" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
                 <meta property="og:image:alt" content="J室冰舖店面與招牌甜品" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={canonicalUrl} />
