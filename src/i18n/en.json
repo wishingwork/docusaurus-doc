@@ -45,7 +45,7 @@
     "button": "Request Internal Testing"
   },
   "tripPlanner": {
-    "appTitle": "WeatherPlanB",
+    "appTitle": "WeatherGo Plan",
     "intro":{
       "title": "Smart Trip Planning",
       "subtitle": "Weather-Ready Adventures",
@@ -90,7 +90,7 @@
         "desc": "Find air-conditioned venues, indoor entertainment, and shaded areas when temperatures soar above 32°C."
       }
     },
-    "deleteAccount": "Request for Deleting My WeatherPlanB Account"
+    "deleteAccount": "Request for Deleting My WeatherGo Plan Account"
   },
   "screenshots": {
     "title": "Two Powerful Views",

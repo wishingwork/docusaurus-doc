@@ -9,7 +9,7 @@ export default function Header(){
   const { i18n, t } = useTranslation();
 
   // Determine variant based on URL
-  const title =  t('tripPlanner.appTitle') || 'WeatherPlanB';
+  const title =  t('tripPlanner.appTitle') || 'WeatherGo Plan';
 
   return (
     <header className="bg-white shadow-sm border-b sticky top-0 z-50">
