@@ -1,13 +1,15 @@
 [
     {
         "relation": [
-            "delegate_permission/common.handle_all_urls"
+            "delegate_permission/common.handle_all_urls",
+            "delegate_permission/common.get_login_creds"
         ],
         "target": {
             "namespace": "android_app",
             "package_name": "com.wishingwork.weatherplanb",
             "sha256_cert_fingerprints": [
-                "A6:6D:E0:39:7E:53:BB:0C:CF:8E:E8:45:00:4A:8F:9C:E0:A0:E4:34:16:6F:22:85:B8:E4:BB:7F:BF:F3:FE:65"
+                "A6:6D:E0:39:7E:53:BB:0C:CF:8E:E8:45:00:4A:8F:9C:E0:A0:E4:34:16:6F:22:85:B8:E4:BB:7F:BF:F3:FE:65",
+                "E6:59:86:4E:EA:7D:3D:9A:90:3D:EE:25:07:67:CC:3B:45:D8:F0:54:EF:D0:81:7A:FA:09:9E:09:78:AC:5B:9F"
             ]
         }
     }
