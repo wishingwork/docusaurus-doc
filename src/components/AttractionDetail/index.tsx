@@ -128,23 +128,39 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                 {/* Dynamic SEO Meta Tags */}
                 <title>{item.name} | Weather Intelligence</title>
                 <meta name="description" content={item.toldescribe?.substring(0, 160)} />
+                <link rel="canonical" href={`https://www.meteosync.com/attraction/${publicId}`} />
 
                 {/* OpenGraph / Facebook */}
-                <meta property="og:type" content="website" />
                 <meta property="og:title" content={item.name} />
                 <meta property="og:description" content={item.toldescribe?.substring(0, 160)} />
-                {item.picture1 && <meta property="og:image" content={item.picture1} />}
+                {item.picture1 && (
+                    <>
+                        <meta property="og:image" content={item.picture1} />
+                        <link rel="image_src" href={item.picture1} />
+                        <meta itemProp="image" content={item.picture1} />
+                        <meta name="image" content={item.picture1} />
+                        <meta property="og:image:secure_url" content={item.picture1} />
+                        <meta property="og:image:alt" content={item.name} />
+                    </>
+                )}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`https://www.meteosync.com/attraction/${publicId}`} />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={item.name} />
                 <meta name="twitter:description" content={item.toldescribe?.substring(0, 160)} />
-                {item.picture1 && <meta name="twitter:image" content={item.picture1} />}
+                {item.picture1 && (
+                    <>
+                        <meta name="twitter:image" content={item.picture1} />
+                        <meta name="twitter:image:alt" content={item.name} />
+                    </>
+                )}
+
+                <meta name="robots" content="index,follow" />
 
                 {/* Structured Data */}
-                <script type="application/ld+json">
-                    {JSON.stringify(jsonLd)}
-                </script>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             </Head>
 
             <div className="max-w-4xl mx-auto px-4 py-8 bg-white shadow-sm rounded-xl">
@@ -216,16 +232,6 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                                 </p>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="pt-8 border-t border-gray-100">
-                        <button
-                            onClick={() => window.history.back()}
-                            className="flex items-center text-gray-600 hover:text-blue-600 transition font-medium"
-                        >
-                            <ArrowLeft className="w-5 h-5 mr-2" />
-                            Go Back
-                        </button>
                     </div>
                 </div>
             </div>
