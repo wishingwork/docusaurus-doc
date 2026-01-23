@@ -83,7 +83,7 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
     if (fetching) {
         return (
             <div className="flex justify-center items-center py-20">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#007BFF]"></div>
                 <p className="ml-4 text-gray-600">Loading attraction details...</p>
             </div>
         );
@@ -95,7 +95,7 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                 <p className="text-red-500 text-xl font-semibold">{error || 'Something went wrong'}</p>
                 <button
                     onClick={() => window.history.back()}
-                    className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                    className="mt-4 px-6 py-2 bg-[#007BFF] text-white rounded-lg hover:opacity-90 transition"
                 >
                     Go Back
                 </button>
@@ -187,8 +187,8 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                             >
                                 <X className="w-4 h-4" />
                             </button>
-                            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center p-1 overflow-hidden shadow-sm">
-                                <img src={logoImg} alt="App Icon" className="w-full h-full brightness-0 invert" />
+                            <div className="w-10 h-10 rounded-xl flex items-center justify-center p-1 overflow-hidden shadow-sm">
+                                <img src={logoImg} alt="App Icon" className="w-12 h-12 object-contain rounded-full" />
                             </div>
                             <div>
                                 <h4 className="text-sm font-bold text-gray-900 leading-tight">WeatherGo Plan</h4>
@@ -199,7 +199,7 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                             href={getAppStoreUrl()}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-blue-600 text-white text-sm font-bold px-4 py-2 rounded-full hover:bg-blue-700 transition active:scale-95 shadow-sm"
+                            className="bg-[#007BFF] text-white text-sm font-bold px-4 py-2 rounded-full hover:opacity-90 transition active:scale-95 shadow-sm"
                         >
                             立即開啟
                         </a>
@@ -231,7 +231,7 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-gray-100">
                         <div className="flex items-start space-x-3">
-                            <Phone className="w-5 h-5 text-blue-600 mt-1" />
+                            <Phone className="w-5 h-5 text-[#007BFF] mt-1" />
                             <div>
                                 <p className="font-semibold text-gray-900">Telephone</p>
                                 <p className="text-gray-600">{item.phone || 'N/A'}</p>
@@ -239,18 +239,18 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                         </div>
 
                         <div className="flex items-start space-x-3">
-                            <MapPin className="w-5 h-5 text-blue-600 mt-1" />
+                            <MapPin className="w-5 h-5 text-[#007BFF] mt-1" />
                             <div className="flex-1">
                                 <p className="font-semibold text-gray-900">Address</p>
                                 <div className="flex items-center group">
                                     <p className="text-gray-600 mr-2">{item.address || item.add}</p>
-                                    <button onClick={copyToClipboard} className="p-1 hover:bg-gray-100 rounded text-gray-400 hover:text-blue-600 transition">
+                                    <button onClick={copyToClipboard} className="p-1 hover:bg-gray-100 rounded text-gray-400 hover:text-[#007BFF] transition">
                                         <Copy className="w-4 h-4" />
                                     </button>
                                 </div>
                                 <button
                                     onClick={openGoogleMaps}
-                                    className="mt-2 text-blue-600 hover:text-blue-800 flex items-center text-sm font-medium transition"
+                                    className="mt-2 text-[#007BFF] hover:opacity-80 flex items-center text-sm font-medium transition"
                                 >
                                     View on Google Maps <ExternalLink className="w-3 h-3 ml-1" />
                                 </button>
@@ -258,7 +258,7 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                         </div>
 
                         <div className="flex items-start space-x-3">
-                            <Clock className="w-5 h-5 text-blue-600 mt-1" />
+                            <Clock className="w-5 h-5 text-[#007BFF] mt-1" />
                             <div>
                                 <p className="font-semibold text-gray-900">Open Hours</p>
                                 <p className="text-gray-600">{item.opentime || 'N/A'}</p>
