@@ -5,7 +5,8 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from 'prism-react-renderer';
-
+import dotenv from 'dotenv';
+dotenv.config();
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
@@ -164,6 +165,10 @@ const config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Meteosync Built with Docusaurus.`,
     },
+  },
+  customFields: {
+    // This makes the variable accessible in your React code
+    apiUrl: process.env.PUBLIC_API_SERVER_IP,
   },
 };
 

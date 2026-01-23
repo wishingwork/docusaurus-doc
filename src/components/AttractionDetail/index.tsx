@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Clock, Copy, ExternalLink, ArrowLeft } from 'lucide-react';
 import Head from '@docusaurus/Head';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 interface AttractionData {
     name: string;
@@ -35,13 +36,16 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
     const [fetching, setFetching] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
+    const { siteConfig } = useDocusaurusContext();
+    const { apiUrl } = siteConfig.customFields;
+
     useEffect(() => {
         if (publicId) {
             const getAttraction = async () => {
                 setFetching(true);
                 setError(null);
                 try {
-                    const response = await fetch(`http://localhost:3134/attractions/${publicId}`);
+                    const response = await fetch(`${apiUrl}/attractions/${publicId}`);
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
