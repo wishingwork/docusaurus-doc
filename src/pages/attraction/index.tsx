@@ -7,11 +7,15 @@ import Footer from '../../components/Layout/Footer';
 
 export default function AttractionPage() {
     const location = useLocation();
-    const match = matchPath<{ publicId: string }>(location.pathname, {
+    const matchWithSlug = matchPath<{ attractionName: string, publicId: string }>(location.pathname, {
+        path: '/attraction/:attractionName/:publicId',
+        exact: true,
+    });
+    const matchSimple = matchPath<{ publicId: string }>(location.pathname, {
         path: '/attraction/:publicId',
         exact: true,
     });
-    const publicId = match?.params?.publicId;
+    const publicId = matchWithSlug?.params?.publicId || matchSimple?.params?.publicId;
     const [attractionData, setAttractionData] = useState<any>(null);
 
     const goToTripPlanner = () => {

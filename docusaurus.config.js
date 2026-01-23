@@ -103,6 +103,11 @@ const config = {
         async contentLoaded({ actions }) {
           const { addRoute } = actions;
           addRoute({
+            path: '/attraction/:attractionName/:publicId',
+            component: '@site/src/pages/attraction/index.tsx',
+            exact: true,
+          });
+          addRoute({
             path: '/attraction/:publicId',
             component: '@site/src/pages/attraction/index.tsx',
             exact: true,
