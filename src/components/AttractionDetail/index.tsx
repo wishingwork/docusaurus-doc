@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Phone, Clock, Copy, ExternalLink, ArrowLeft, X } from 'lucide-react';
+import { MapPin, Phone, Clock, Copy, ExternalLink, ArrowLeft } from 'lucide-react';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import logoImg from '../../assets/images/TripPlanner/logo.png';
 
 interface AttractionData {
     name: string;
@@ -21,8 +19,6 @@ interface AttractionData {
     longitude?: number;
 }
 
-const ANDROID_URL = "https://play.google.com/store/apps/details?id=com.wishingwork.weatherplanb";
-const IOS_URL = "https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511";
 
 const LOCATION_CLASSES: Record<string, { labelKey: string, icon: string }> = {
     Indoor: { labelKey: 'indoor', icon: '🏛️' },
@@ -40,17 +36,10 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
     const [item, setItem] = useState<AttractionData | null>(null);
     const [fetching, setFetching] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [showAppBanner, setShowAppBanner] = useState(true);
 
     const { siteConfig } = useDocusaurusContext();
     const { apiUrl } = siteConfig.customFields;
 
-    const getAppStoreUrl = () => {
-        if (typeof window === 'undefined') return ANDROID_URL;
-        const userAgent = window.navigator.userAgent.toLowerCase();
-        if (/iphone|ipad|ipod/.test(userAgent)) return IOS_URL;
-        return ANDROID_URL;
-    };
 
     useEffect(() => {
         if (publicId) {
@@ -176,36 +165,6 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             </Head>
 
-            {/* Smart App Banner */}
-            {showAppBanner && (
-                <div className="sticky top-0 z-50 bg-gray-50 border-b border-gray-200 px-4 py-3 shadow-sm md:hidden">
-                    <div className="flex items-center justify-between max-w-4xl mx-auto">
-                        <div className="flex items-center space-x-3">
-                            <button
-                                onClick={() => setShowAppBanner(false)}
-                                className="p-1 hover:bg-gray-200 rounded-full text-gray-400"
-                            >
-                                <X className="w-4 h-4" />
-                            </button>
-                            <div className="w-10 h-10 rounded-xl flex items-center justify-center p-1 overflow-hidden shadow-sm">
-                                <img src={logoImg} alt="App Icon" className="w-12 h-12 object-contain rounded-full" />
-                            </div>
-                            <div>
-                                <h4 className="text-sm font-bold text-gray-900 leading-tight">WeatherGo Plan</h4>
-                                <p className="text-xs text-gray-500">立即開啟APP，解鎖更多功能</p>
-                            </div>
-                        </div>
-                        <a
-                            href={getAppStoreUrl()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-[#007BFF] text-white text-sm font-bold px-4 py-2 rounded-full hover:opacity-90 transition active:scale-95 shadow-sm"
-                        >
-                            立即開啟
-                        </a>
-                    </div>
-                </div>
-            )}
 
             <div className="max-w-4xl mx-auto px-4 py-8 bg-white shadow-sm rounded-xl">
                 <h1 className="text-3xl font-bold text-gray-900 mb-6">{item.name}</h1>

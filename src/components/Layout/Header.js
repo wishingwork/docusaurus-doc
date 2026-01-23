@@ -1,18 +1,18 @@
 import React from 'react';
-import {useLocation} from '@docusaurus/router';
+import { useLocation } from '@docusaurus/router';
 import Link from '@docusaurus/Link';
 import logoImg from '../../assets/images/TripPlanner/logo.png';
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
-export default function Header(){
+export default function Header({ className = "sticky top-0 z-50" }) {
   const { pathname } = useLocation();
   const { i18n, t } = useTranslation();
 
   // Determine variant based on URL
-  const title =  t('tripPlanner.appTitle') || 'WeatherGo Plan';
+  const title = t('tripPlanner.appTitle') || 'WeatherGo Plan';
 
   return (
-    <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+    <header className={`bg-white shadow-sm border-b ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-16 justify-between">
           <div className="flex items-center">
@@ -23,7 +23,7 @@ export default function Header(){
                 className="w-12 h-12 object-contain rounded"
                 style={{ marginLeft: '-0.25rem' }}
               />
-              <h1 className="text-2xl font-bold text-gray-00 ml-3">{title}</h1>
+              <h1 className="text-2xl font-bold text-gray-900 ml-3">{title}</h1>
             </Link>
           </div>
 
