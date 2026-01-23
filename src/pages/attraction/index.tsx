@@ -5,7 +5,7 @@ import { X } from 'lucide-react';
 import AttractionDetail from '../../components/AttractionDetail';
 import Header from '../../components/Layout/Header';
 import Footer from '../../components/Layout/Footer';
-import logoImg from '@site/src/assets/images/TripPlanner/logo.png';
+import logoImg from '../../assets/images/TripPlanner/logo.png';
 
 const ANDROID_URL = "https://play.google.com/store/apps/details?id=com.wishingwork.weatherplanb";
 const IOS_URL = "https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511";

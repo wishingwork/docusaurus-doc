@@ -5,7 +5,8 @@
             {
                 "appID": "VG5BDKY53V.com.wishingwork.weatherplanb",
                 "paths": [
-                    "/attraction/*"
+                    "/attraction/*",
+                    "/attraction/*/*"
                 ]
             }
         ]
