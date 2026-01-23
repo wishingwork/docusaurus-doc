@@ -93,7 +93,22 @@ const config = {
         },
       },
     ],
+  ],
 
+  plugins: [
+    async function dynamicRoutesPlugin(context, options) {
+      return {
+        name: 'docusaurus-plugin-dynamic-attraction-routes',
+        async contentLoaded({ actions }) {
+          const { addRoute } = actions;
+          addRoute({
+            path: '/attraction/:publicId',
+            component: '@site/src/pages/attraction/index.tsx',
+            exact: true,
+          });
+        },
+      };
+    },
   ],
 
   themeConfig: {
