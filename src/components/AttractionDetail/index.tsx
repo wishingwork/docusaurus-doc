@@ -123,7 +123,7 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
             "longitude": item.longitude
         } : undefined
     };
-
+    console.log(126, item.picture1);
     return (
         <>
             <Head>
@@ -135,16 +135,12 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                 {/* OpenGraph / Facebook */}
                 <meta property="og:title" content={item.name} />
                 <meta property="og:description" content={item.toldescribe?.substring(0, 160)} />
-                {item.picture1 && (
-                    <>
-                        <meta property="og:image" content={item.picture1} />
-                        <link rel="image_src" href={item.picture1} />
-                        <meta itemProp="image" content={item.picture1} />
-                        <meta name="image" content={item.picture1} />
-                        <meta property="og:image:secure_url" content={item.picture1} />
-                        <meta property="og:image:alt" content={item.name} />
-                    </>
-                )}
+                {item.picture1 && <meta property="og:image" content={item.picture1} />}
+                {item.picture1 && <link rel="image_src" href={item.picture1} />}
+                {item.picture1 && <meta itemProp="image" content={item.picture1} />}
+                {item.picture1 && <meta name="image" content={item.picture1} />}
+                {item.picture1 && <meta property="og:image:secure_url" content={item.picture1} />}
+                {item.picture1 && <meta property="og:image:alt" content={item.name} />}
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={`https://www.meteosync.com/attraction/${publicId}`} />
 
@@ -152,12 +148,8 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={item.name} />
                 <meta name="twitter:description" content={item.toldescribe?.substring(0, 160)} />
-                {item.picture1 && (
-                    <>
-                        <meta name="twitter:image" content={item.picture1} />
-                        <meta name="twitter:image:alt" content={item.name} />
-                    </>
-                )}
+                {item.picture1 && <meta name="twitter:image" content={item.picture1} />}
+                {item.picture1 && <meta name="twitter:image:alt" content={item.name} />}
 
                 <meta name="robots" content="index,follow" />
 
