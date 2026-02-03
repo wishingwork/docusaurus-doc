@@ -44,6 +44,15 @@
     "description": "Never let weather surprise your events again. Our intelligent calendar integrates real-time weather data to help you plan, schedule, and manage events with complete weather awareness.",
     "button": "Request Internal Testing"
   },
+  "attraction": {
+    "practicalInfo": "Practical Info",
+    "address": "Address",
+    "telephone": "Telephone",
+    "goBack": "Go Back",
+    "about": "About",
+    "facilitiesAndWeb": "Facilities and Web",
+    "officialSite": "Official Site"
+  },
   "tripPlanner": {
     "appTitle": "WeatherGo Plan",
     "intro": {

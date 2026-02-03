@@ -1,6 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Phone, Clock, Copy, ExternalLink, ArrowLeft } from 'lucide-react';
+import {
+    MapPin,
+    Phone,
+    Clock,
+    Copy,
+    ExternalLink,
+    ArrowLeft,
+    Star,
+    BadgeCheck,
+    Globe,
+    Facebook,
+    Instagram,
+    Store,
+    Bike,
+    Utensils,
+    List,
+    Share2,
+    Coffee,
+    IceCream,
+    Library,
+    Palette,
+    Factory,
+    Signpost,
+    GraduationCap,
+    Leaf,
+    PawPrint,
+    Fish,
+    Ship,
+    ShoppingCart,
+    Droplets,
+    Bed,
+    Gamepad2
+} from 'lucide-react';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { DotLottiePlayer } from '@dotlottie/react-player';
@@ -9,6 +41,7 @@ import '@dotlottie/react-player/dist/index.css';
 
 interface AttractionData {
     name: string;
+    public_id: string;
     picture1?: string;
     picture2?: string;
     picture3?: string;
@@ -20,6 +53,22 @@ interface AttractionData {
     classification?: string;
     latitude?: number;
     longitude?: number;
+    isVerified?: boolean;
+    rating?: number;
+    reviews?: number;
+    web?: Array<{
+        url: string;
+        name?: string;
+        label?: string;
+        platform?: string;
+    }>;
+    facilities?: Array<{
+        name: string;
+        description: string;
+        category: string;
+    }>;
+    ticket_pricing?: any;
+    status?: string;
 }
 
 
@@ -112,7 +161,46 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
         window.open(url, '_blank');
     };
 
-    const locationType = item.classification ? LOCATION_CLASSES[item.classification] : null;
+    const getClassificationIcon = (category: string | undefined) => {
+        if (!category) return MapPin;
+        const cat = category.toLowerCase();
+        if (cat.includes('咖啡') || cat.includes('下午茶') || cat.includes('茶')) return Coffee;
+        if (cat.includes('餐') || cat.includes('食') || cat.includes('酒') || cat.includes('味屋')) return Utensils;
+        if (cat.includes('冰') || cat.includes('甜點')) return IceCream;
+        if (cat.includes('博') || cat.includes('館')) return Library;
+        if (cat.includes('美術') || cat.includes('藝術') || cat.includes('畫')) return Palette;
+        if (cat.includes('工廠') || cat.includes('製造')) return Factory;
+        if (cat.includes('歷史') || cat.includes('蹟') || cat.includes('文化') || cat.includes('廟')) return Signpost;
+        if (cat.includes('校') || cat.includes('教室')) return GraduationCap;
+        if (cat.includes('公園') || cat.includes('林') || cat.includes('園區') || cat.includes('步道') || cat.includes('瀑布')) return Leaf;
+        if (cat.includes('農場') || cat.includes('牧場') || cat.includes('獸') || cat.includes('鳥')) return PawPrint;
+        if (cat.includes('水族') || cat.includes('魚')) return Fish;
+        if (cat.includes('海') || cat.includes('島') || cat.includes('岸')) return Ship;
+        if (cat.includes('商') || cat.includes('買') || cat.includes('伴手禮') || cat.includes('購') || cat.includes('集')) return ShoppingCart;
+        if (cat.includes('溫泉') || cat.includes('泳') || cat.includes('水') || cat.includes('戲水')) return Droplets;
+        if (cat.includes('宿') || cat.includes('飯店') || cat.includes('旅館')) return Bed;
+        if (cat.includes('玩') || cat.includes('親') || cat.includes('遊樂') || cat.includes('運')) return Gamepad2;
+        return MapPin;
+    };
+
+    const getClassificationColor = (item: AttractionData) => {
+        if (item.classification === 'Outdoor') return '#4CD964';
+        if (item.classification === 'Indoor') return '#FF3B30';
+        if (item.status === 'active') return '#FF9500';
+        return '#8E8E93';
+    };
+
+    const getFacilityIcon = (category: string) => {
+        switch (category) {
+            case 'equipment': return Store;
+            case 'activity': return Bike;
+            case 'restaurant': return Utensils;
+            default: return List;
+        }
+    };
+
+    const ClassificationIcon = getClassificationIcon(item.classification);
+    const classificationColor = getClassificationColor(item);
 
     // JSON-LD Structured Data for SEO
     const jsonLd = {
@@ -132,9 +220,9 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
             "longitude": item.longitude
         } : undefined
     };
-    console.log(126, item.picture1);
+
     return (
-        <>
+        <div className="bg-[#F5F7FA] min-h-screen">
             <Head>
                 {/* Dynamic SEO Meta Tags */}
                 <title>{item.name} | Weather Intelligence</title>
@@ -145,100 +233,154 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                 <meta property="og:title" content={item.name} />
                 <meta property="og:description" content={item.toldescribe?.substring(0, 160)} />
                 {item.picture1 && <meta property="og:image" content={item.picture1} />}
-                {item.picture1 && <link rel="image_src" href={item.picture1} />}
-                {item.picture1 && <meta itemProp="image" content={item.picture1} />}
-                {item.picture1 && <meta name="image" content={item.picture1} />}
-                {item.picture1 && <meta property="og:image:secure_url" content={item.picture1} />}
-                {item.picture1 && <meta property="og:image:alt" content={item.name} />}
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={`https://www.meteosync.com/attraction/${publicId}`} />
-
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={item.name} />
-                <meta name="twitter:description" content={item.toldescribe?.substring(0, 160)} />
-                {item.picture1 && <meta name="twitter:image" content={item.picture1} />}
-                {item.picture1 && <meta name="twitter:image:alt" content={item.name} />}
-
-                <meta name="robots" content="index,follow" />
 
                 {/* Structured Data */}
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             </Head>
 
-
-            <div className="max-w-4xl mx-auto px-4 py-8 bg-white shadow-sm rounded-xl">
-                <h1 className="text-3xl font-bold text-gray-900 mb-6">{item.name}</h1>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                    {item.picture1 && (
-                        <img src={item.picture1} alt={item.name} className="w-full h-64 object-cover rounded-lg shadow-md" />
+            <div className="max-w-4xl mx-auto pb-12">
+                {/* Section 1: Header/Hero */}
+                <div className="relative bg-white rounded-b-3xl shadow-sm overflow-hidden">
+                    {item.picture1 ? (
+                        <div className="h-64 md:h-96 w-full">
+                            <img src={item.picture1} alt={item.name} className="w-full h-full object-cover" />
+                        </div>
+                    ) : (
+                        <div className="h-32 md:h-48" />
                     )}
-                    <div className="grid grid-cols-2 gap-2">
-                        {item.picture2 && (
-                            <img src={item.picture2} alt={`${item.name} 2`} className="w-full h-64 md:h-32 object-cover rounded-lg shadow-sm" />
-                        )}
-                        {item.picture3 && (
-                            <img src={item.picture3} alt={`${item.name} 3`} className="w-full h-64 md:h-32 object-cover rounded-lg shadow-sm" />
+
+                    <div className="absolute top-4 right-4 z-10">
+                        <button
+                            onClick={() => {
+                                if (navigator.share) {
+                                    navigator.share({
+                                        title: item.name,
+                                        text: item.toldescribe,
+                                        url: window.location.href,
+                                    });
+                                }
+                            }}
+                            className="p-2 bg-black/30 backdrop-blur-md rounded-full text-white hover:bg-black/50 transition"
+                        >
+                            <Share2 className="w-5 h-5" />
+                        </button>
+                    </div>
+
+                    <div className="p-6 md:p-8">
+                        <div className="flex flex-wrap items-center gap-3 mb-3">
+                            <h1 className="text-3xl font-bold text-gray-900">{item.name}</h1>
+                            {item.isVerified && (
+                                <BadgeCheck className="w-6 h-6 text-[#007AFF]" />
+                            )}
+                            <div
+                                className="flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-semibold"
+                                style={{ backgroundColor: `${classificationColor}20`, color: classificationColor }}
+                            >
+                                <ClassificationIcon className="w-4 h-4" />
+                                <span>{item.classification || t('attraction')}</span>
+                            </div>
+                        </div>
+
+                        {item.rating && item.reviews && (
+                            <div className="flex items-center gap-1.5">
+                                <Star className="w-5 h-5 text-[#FF9500] fill-[#FF9500]" />
+                                <span className="text-lg font-bold text-[#FF9500]">{item.rating}</span>
+                                <span className="text-gray-400 text-sm">({item.reviews})</span>
+                            </div>
                         )}
                     </div>
                 </div>
 
-                <div className="space-y-6">
-                    <section>
-                        <p className="text-gray-700 leading-relaxed text-lg whitespace-pre-line">{item.toldescribe}</p>
-                    </section>
+                {/* Section 2: About */}
+                <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <h2 className="text-xl font-bold text-gray-900 mb-4">{t('attraction.about') || '關於'} {item.name}</h2>
+                    <p className="text-gray-600 leading-relaxed whitespace-pre-line">{item.toldescribe}</p>
+                </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-gray-100">
-                        <div className="flex items-start space-x-3">
-                            <Phone className="w-5 h-5 text-[#007BFF] mt-1" />
-                            <div>
-                                <p className="font-semibold text-gray-900">Telephone</p>
-                                <p className="text-gray-600">{item.phone || 'N/A'}</p>
-                            </div>
-                        </div>
+                {/* Section 3: Facilities & Social */}
+                {((item.web && item.web.length > 0) || (item.facilities && item.facilities.length > 0)) && (
+                    <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <h2 className="text-xl font-bold text-gray-900 mb-6">{t('attraction.facilitiesAndWeb') || '活動設施與網站'}</h2>
 
-                        <div className="flex items-start space-x-3">
-                            <MapPin className="w-5 h-5 text-[#007BFF] mt-1" />
-                            <div className="flex-1">
-                                <p className="font-semibold text-gray-900">Address</p>
-                                <div className="flex items-center group">
-                                    <p className="text-gray-600 mr-2">{item.address || item.add}</p>
-                                    <button onClick={copyToClipboard} className="p-1 hover:bg-gray-100 rounded text-gray-400 hover:text-[#007BFF] transition">
-                                        <Copy className="w-4 h-4" />
-                                    </button>
-                                </div>
-                                <button
-                                    onClick={openGoogleMaps}
-                                    className="mt-2 text-[#007BFF] hover:opacity-80 flex items-center text-sm font-medium transition"
+                        {item.web && item.web.length > 0 && (
+                            <div className="flex items-center gap-4 mb-8">
+                                {item.web.map((link, index) => {
+                                    const isFB = link.name?.includes('Facebook') || link.label?.includes('Facebook') || link.platform?.includes('Facebook');
+                                    const isIG = link.name?.includes('Instagram') || link.label?.includes('Instagram') || link.platform?.includes('Instagram');
+                                    return (
+                                        <a
+                                            key={index}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="p-3 bg-gray-50 rounded-xl text-gray-600 hover:text-[#007AFF] hover:bg-blue-50 transition"
+                                        >
+                                            {isFB ? <Facebook className="w-6 h-6" /> : isIG ? <Instagram className="w-6 h-6" /> : <Globe className="w-6 h-6" />}
+                                        </a>
+                                    );
+                                })}
+                                <a
+                                    href={item.web[0]?.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[#007AFF] font-medium hover:underline ml-2"
                                 >
-                                    View on Google Maps <ExternalLink className="w-3 h-3 ml-1" />
+                                    {t('attraction.officialSite') || '官方網站'}
+                                </a>
+                            </div>
+                        )}
+
+                        <div className="space-y-6">
+                            {item.facilities?.map((facility, index) => {
+                                const FacilityIcon = getFacilityIcon(facility.category);
+                                return (
+                                    <div key={index} className="flex gap-4">
+                                        <div className="w-10 h-10 shrink-0 bg-[#F5F7FA] rounded-xl flex items-center justify-center text-[#007AFF]">
+                                            <FacilityIcon className="w-5 h-5" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-bold text-gray-900 mb-1">{facility.name}</h3>
+                                            <p className="text-sm text-gray-500 leading-relaxed">{facility.description}</p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
+
+                {/* Section 4: Practical Info */}
+                <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                    <h2 className="text-xl font-bold text-gray-900 mb-6">{t('attraction.practicalInfo') || '實用資訊'}</h2>
+
+                    <div className="space-y-5">
+                        <div className="flex gap-4">
+                            <div className="w-30 shrink-0 text-sm font-bold text-gray-400 uppercase tracking-wider">{t('attraction.address') || '地址'}</div>
+                            <div className="flex-1 flex gap-2 items-start">
+                                <span className="text-gray-900 font-medium">{item.address || item.add}</span>
+                                <button onClick={copyToClipboard} className="p-1 hover:bg-gray-100 rounded transition text-gray-400 hover:text-blue-500">
+                                    <Copy className="w-4 h-4" />
+                                </button>
+                                <button onClick={openGoogleMaps} className="p-1 hover:bg-blue-50 rounded transition text-blue-500">
+                                    <MapPin className="w-4 h-4" />
                                 </button>
                             </div>
                         </div>
 
-                        <div className="flex items-start space-x-3">
-                            <Clock className="w-5 h-5 text-[#007BFF] mt-1" />
-                            <div>
-                                <p className="font-semibold text-gray-900">Open Hours</p>
-                                <p className="text-gray-600">{item.opentime || 'N/A'}</p>
-                            </div>
+                        <div className="flex gap-4">
+                            <div className="w-30 shrink-0 text-sm font-bold text-gray-400 uppercase tracking-wider">{t('openHour') || '營業時間'}</div>
+                            <div className="text-gray-900 font-medium">{item.opentime || 'N/A'}</div>
                         </div>
 
-                        <div className="flex items-start space-x-3">
-                            <div className="w-5 h-5 flex items-center justify-center mt-1">
-                                <span className="text-xl">{locationType?.icon || '📍'}</span>
-                            </div>
-                            <div>
-                                <p className="font-semibold text-gray-900">Location Type</p>
-                                <p className="text-gray-600">
-                                    {locationType ? t(locationType.labelKey) : (item.classification || 'N/A')}
-                                </p>
-                            </div>
+                        <div className="flex gap-4">
+                            <div className="w-30 shrink-0 text-sm font-bold text-gray-400 uppercase tracking-wider">{t('telephone') || '電話'}</div>
+                            <a href={`tel:${item.phone}`} className="text-gray-900 font-medium hover:text-[#007AFF] transition">{item.phone || 'N/A'}</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

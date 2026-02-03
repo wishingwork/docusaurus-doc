@@ -44,6 +44,15 @@
     "description": "再也不用擔心天氣影響您的活動。我們的智慧行事曆整合即時天氣資料，協助您規劃、排程並管理活動，全面掌握天氣狀況。",
     "button": "申請內部測試"
   },
+  "attraction": {
+    "practicalInfo": "實用資訊",
+    "address": "地址",
+    "telephone": "電話",
+    "goBack": "返回",
+    "about": "關於",
+    "facilitiesAndWeb": "活動設施與網站",
+    "officialSite": "官方網站"
+  },
   "tripPlanner": {
     "appTitle": "WeatherGo饗樂",
     "intro": {
