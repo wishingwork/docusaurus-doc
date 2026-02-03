@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Clock, Copy, ExternalLink, ArrowLeft } from 'lucide-react';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { DotLottiePlayer } from '@dotlottie/react-player';
+import '@dotlottie/react-player/dist/index.css';
+
 
 interface AttractionData {
     name: string;
@@ -71,9 +74,15 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
 
     if (fetching) {
         return (
-            <div className="flex justify-center items-center py-20">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#007BFF]"></div>
-                <p className="ml-4 text-gray-600">Loading attraction details...</p>
+            <div className="flex flex-col justify-center items-center py-20">
+                <div style={{ width: '300px', height: '300px' }}>
+                    <DotLottiePlayer
+                        src={`${siteConfig.baseUrl}lottie/Travel_is_fun.lottie`}
+                        autoplay
+                        loop
+                    />
+                </div>
+                <p className="mt-4 text-gray-600 font-medium">{t('loadingAttractionDetails') || 'Loading attraction details...'}</p>
             </div>
         );
     }

@@ -91,7 +91,7 @@
       }
     },
     "deleteAccount": "申請刪除我的 WeatherGo饗樂 帳號"
-  },  
+  },
   "screenshots": {
     "title": "兩種強大檢視",
     "subtitle": "選擇最適合您規劃需求的檢視方式",
@@ -122,5 +122,6 @@
       "desc": "以行事曆或時間軸檢視活動並以天氣色碼標示，協助您做出最佳決策。"
     }
   },
-  "deleteAccount": "申請刪除我的WeatherCalendar帳號"
+  "deleteAccount": "申請刪除我的WeatherCalendar帳號",
+  "loadingAttractionDetails": "正在載入景點資訊..."
 }
