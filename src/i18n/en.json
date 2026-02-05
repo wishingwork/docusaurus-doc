@@ -64,8 +64,8 @@
     "screenshots": {
       "title": "Smart Trip Planning Made Simple",
       "subtitle": "Our intelligent system analyzes weather forecasts and recommends the perfect attractions for your travel dates, ensuring you always have the best experience.",
-      "TripPlannerFormView": "Enter Your Journey",
-      "TripPlannerFormDesc": "Simply input your origin, destination, and departure time. Our system calculates your arrival time and analyzes the weather forecast.",
+      "CityDistrictSelectionView": "Enter Your Location",
+      "CityDistrictSelectionDesc": "Simply input your location area. Our system will show you the weather forecast and suggested attractions.",
       "AttractionListView": "Discover Attractions",
       "AttractionListDesc": "Browse curated attraction recommendations on both interactive maps and detailed lists, filtered by weather conditions.",
       "AttractionDetailView": "View Attraction Details",

@@ -2,13 +2,13 @@ import React, { act } from 'react';
 import { Calendar, Clock, MapPin, Sun, Route, MapPinned, CloudSun, Info } from 'lucide-react';
 import AttractionList from '../../assets/images/TripPlanner/AttractionList.png';
 import AttractionDetail from '../../assets/images/TripPlanner/AttractionDetail.png';
-import TripPlannerForm from '../../assets/images/TripPlanner/TripPlannerForm.png';
+import CityDistrictSelection from '../../assets/images/TripPlanner/CityDistrictSelection.png';
 
 import { useTranslation } from 'react-i18next';
 
 const ScreenshotsSection = ({
-  activeView,
-  setActiveView,
+    activeView,
+    setActiveView,
 }) => {
     const { t } = useTranslation();
     return (
@@ -22,44 +22,42 @@ const ScreenshotsSection = ({
                         {t('tripPlanner.screenshots.subtitle')}
                     </p>
                 </div>
-                
+
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Left Side - View Options */}
                     <div className="space-y-4">
-                        <div 
-                            onClick={() => setActiveView('TripPlannerForm')}
-                            className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${
-                                activeView === 'TripPlannerForm' 
-                                    ? 'bg-blue-600 text-white shadow-xl' 
-                                    : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
-                            }`}
+                        <div
+                            onClick={() => setActiveView('CityDistrictSelection')}
+                            className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${activeView === 'CityDistrictSelection'
+                                ? 'bg-blue-600 text-white shadow-xl'
+                                : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
+                                }`}
                         >
                             <div className="flex items-center mb-3">
-                                <Route className={`mr-3 ${activeView === 'TripPlannerForm' ? 'text-white' : 'text-blue-600'}`} size={32} />
-                                <h3 className="text-xl font-bold">{t('tripPlanner.screenshots.TripPlannerFormView')}</h3>
+                                <Route className={`mr-3 ${activeView === 'CityDistrictSelection' ? 'text-white' : 'text-blue-600'}`} size={32} />
+                                <h3 className="text-xl font-bold">{t('tripPlanner.screenshots.CityDistrictSelectionView')}</h3>
                             </div>
-                            <p className={`${activeView === 'TripPlannerForm' ? 'text-blue-100' : 'text-gray-600'}`}>
-                                {t('tripPlanner.screenshots.TripPlannerFormDesc')}
+                            <p className={`${activeView === 'CityDistrictSelection' ? 'text-blue-100' : 'text-gray-600'}`}>
+                                {t('tripPlanner.screenshots.CityDistrictSelectionDesc')}
                             </p>
                             <div className="mt-4 flex items-center space-x-4 text-sm">
                                 <div className="flex items-center">
-                                    <MapPin className={`mr-1 ${activeView === 'TripPlannerForm' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
-                                    <span className={`${activeView === 'TripPlannerForm' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.address')}</span>
+                                    <MapPin className={`mr-1 ${activeView === 'CityDistrictSelection' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
+                                    <span className={`${activeView === 'CityDistrictSelection' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.location')}</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <Clock className={`mr-1 ${activeView === 'TripPlannerForm' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
-                                    <span className={`${activeView === 'TripPlannerForm' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.departureTime')}</span>
+                                    <CloudSun className={`mr-1 ${activeView === 'CityDistrictSelection' ? 'text-blue-200' : 'text-gray-400'}`} size={16} />
+                                    <span className={`${activeView === 'CityDistrictSelection' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.weather')}</span>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div 
+
+                        <div
                             onClick={() => setActiveView('AttractionList')}
-                            className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${
-                                activeView === 'AttractionList' 
-                                    ? 'bg-blue-600 text-white shadow-xl' 
-                                    : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
-                            }`}
+                            className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${activeView === 'AttractionList'
+                                ? 'bg-blue-600 text-white shadow-xl'
+                                : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
+                                }`}
                         >
                             <div className="flex items-center mb-3">
                                 <CloudSun className={`mr-3 ${activeView === 'AttractionList' ? 'text-white' : 'text-blue-600'}`} size={32} />
@@ -78,13 +76,12 @@ const ScreenshotsSection = ({
                             </div>
                         </div>
 
-                        <div 
+                        <div
                             onClick={() => setActiveView('AttractionDetail')}
-                            className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${
-                                activeView === 'AttractionDetail' 
-                                    ? 'bg-blue-600 text-white shadow-xl' 
-                                    : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
-                            }`}
+                            className={`p-6 rounded-xl cursor-pointer transition-all transform hover:scale-105 ${activeView === 'AttractionDetail'
+                                ? 'bg-blue-600 text-white shadow-xl'
+                                : 'bg-gray-50 hover:bg-gray-100 text-gray-900'
+                                }`}
                         >
                             <div className="flex items-center mb-3">
                                 <MapPinned className={`mr-3 ${activeView === 'AttractionDetail' ? 'text-white' : 'text-blue-600'}`} size={32} />
@@ -103,33 +100,33 @@ const ScreenshotsSection = ({
                                     <span className={`${activeView === 'AttractionDetail' ? 'text-blue-100' : 'text-gray-500'}`}>{t('tripPlanner.screenshots.info')}</span>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
-                    
+
                     {/* Right Side - Screenshot Display */}
                     <div className="flex justify-center items-center">
                         <div className="w-full max-w-md flex justify-center">
-                            { activeView === 'TripPlannerForm' && (
+                            {activeView === 'CityDistrictSelection' && (
                                 <img
-                                    src={TripPlannerForm}
-                                    alt="Trip Planner Form Screenshot"
+                                    src={CityDistrictSelection}
+                                    alt="City District Selection Screenshot"
                                     className="rounded-xl shadow-lg w-2/3"
                                 />
                             )}
-                            { activeView === 'AttractionList' && (
+                            {activeView === 'AttractionList' && (
                                 <img
                                     src={AttractionList}
                                     alt="Attraction List View Screenshot"
                                     className="rounded-xl shadow-lg w-2/3"
                                 />
-                            )}           
-                            { activeView === 'AttractionDetail' && (
+                            )}
+                            {activeView === 'AttractionDetail' && (
                                 <img
                                     src={AttractionDetail}
                                     alt="Map View Screenshot"
                                     className="rounded-xl shadow-lg w-2/3"
                                 />
-                            )}                                                        
+                            )}
                         </div>
                     </div>
                 </div>

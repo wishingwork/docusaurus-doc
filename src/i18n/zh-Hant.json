@@ -64,8 +64,8 @@
     "screenshots": {
       "title": "智慧行程規劃，如此簡單",
       "subtitle": "我們的智慧系統會分析天氣預報，並為您的旅行日期推薦最完美的景點，確保您總能擁有最佳體驗。",
-      "TripPlannerFormView": "輸入您的旅程",
-      "TripPlannerFormDesc": "只需輸入您的起點、終點和出發時間。我們的系統會計算您的抵達時間並分析天氣預報。",
+      "CityDistrictSelectionView": "輸入您的地點",
+      "CityDistrictSelectionDesc": "只需輸入您的地點。我們的系統會顯示該地區的天氣預報和建議景點。",
       "AttractionListView": "發現景點",
       "AttractionListDesc": "在互動式地圖和詳細清單上瀏覽根據天氣狀況篩選的精選景點推薦。",
       "AttractionDetailView": "查看景點詳情",
