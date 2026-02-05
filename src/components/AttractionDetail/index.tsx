@@ -126,7 +126,7 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
             <div className="flex flex-col justify-center items-center py-20">
                 <div style={{ width: '300px', height: '300px' }}>
                     <DotLottiePlayer
-                        src={`${siteConfig.baseUrl}lottie/Travel_is_fun.lottie`}
+                        src={`${siteConfig.baseUrl}lottie/Weather_Travel_is_fun.lottie`}
                         autoplay
                         loop
                     />
