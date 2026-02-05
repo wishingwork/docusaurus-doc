@@ -146,12 +146,12 @@ const config = {
           title: 'Links',
           items: [
             {
-              label: 'WeatherCalendar',
-              href: 'https://www.meteosync.com/calendar',
-            },
-            {
               label: 'WeatherGo Plan',
               href: 'https://www.meteosync.com/trip-planner',
+            },
+            {
+              label: 'WeatherCalendar',
+              href: 'https://www.meteosync.com/calendar',
             },
             // {
             //   label: 'Docs',
