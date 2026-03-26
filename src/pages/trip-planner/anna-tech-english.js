@@ -172,19 +172,35 @@ export default function AnnaTechEnglish() {
                     </div>
                 </section>
 
-                {/* 5. Future Planning / Call to Action */}
-                <section className="anna-section text-center bg-blue-900 text-white rounded-3xl mb-20 mx-4">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">準備好加入我們了嗎？</h2>
-                    <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-10">
-                        未來我們計畫開設中高階線上課程，並持續邀請外商銀行顧問參與。
-                        現在就加入我們的 LINE 群組，掌握第一手課程訊息。
+                {/* 5. Contact / Call to Action */}
+                <section className="anna-section text-center bg-gray-900 text-white rounded-3xl mb-20 mx-4">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">準備好接軌未來了嗎？</h2>
+                    <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-12">
+                        未來我們計畫開設中高階線上課程，並持續邀請外籍顧問參與。<br />
+                        歡迎直接聯繫 Anna，加入我們的學習社群。
                     </p>
-                    <button
-                        className="px-12 py-4 bg-green-500 text-white rounded-full text-xl font-bold hover:bg-green-600 transition shadow-xl"
-                        onClick={() => alert('請搜尋 Anna Tech English 專屬 LINE 群組加入！')}
-                    >
-                        立即加入 LINE 社群
-                    </button>
+
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                        <div className="flex flex-col items-center">
+                            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 text-2xl">
+                                📞
+                            </div>
+                            <span className="text-gray-400 text-sm mb-1">電話聯繫</span>
+                            <a href="tel:0984452489" className="text-2xl font-bold hover:text-blue-400 transition">
+                                0984-452-489
+                            </a>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                            <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-4 text-2xl">
+                                ✉️
+                            </div>
+                            <span className="text-gray-400 text-sm mb-1">電子郵件</span>
+                            <a href="mailto:cedrusanna@proton.me" className="text-2xl font-bold hover:text-green-400 transition">
+                                cedrusanna@proton.me
+                            </a>
+                        </div>
+                    </div>
                 </section>
             </main>
 
