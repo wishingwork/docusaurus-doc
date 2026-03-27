@@ -157,7 +157,7 @@ export default function AnnaTechEnglish() {
                                 style={{ backgroundImage: `url(${useBaseUrl('/img/anna-tech-english/course-419.png')})` }}
                             ></div>
                             <div className="anna-course-content">
-                                <span className="anna-tag anna-tag-green">4月19日 課程專題</span>
+                                <span className="anna-tag anna-tag-green">4月19日 (14:00-17:00)</span>
                                 <h3 className="text-2xl font-bold mb-4 text-green-900">新一代 AI：從「對話」到「執行」</h3>
                                 <p className="text-gray-600 mb-6 font-semibold">
                                     深入探討 AI Agents 是如何從被動問答進化為主動替你完成工作的「執行者」。
