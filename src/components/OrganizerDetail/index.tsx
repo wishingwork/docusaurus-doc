@@ -113,11 +113,24 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                 <meta name="description" content={item.description?.substring(0, 160)} />
                 <link rel="canonical" href={`https://www.meteosync.com/organizer/${organizerId}`} />
 
-                <meta property="og:title" content={item.name} />
+                <meta property="og:title" content={`${item.name} | Meteosync`} />
                 <meta property="og:description" content={item.description?.substring(0, 160)} />
-                {item.image_url && <meta property="og:image" content={item.image_url} />}
-                <meta property="og:type" content="website" />
+                {item.image_url && (
+                    <>
+                        <meta property="og:image" content={item.image_url.startsWith('http') ? item.image_url : `https://www.meteosync.com${item.image_url}`} />
+                        <meta property="og:image:secure_url" content={item.image_url.startsWith('http') ? item.image_url : `https://www.meteosync.com${item.image_url}`} />
+                        <meta property="og:image:width" content="1200" />
+                        <meta property="og:image:height" content="630" />
+                        <meta property="og:image:alt" content={item.name} />
+                    </>
+                )}
+                <meta property="og:type" content="profile" />
                 <meta property="og:url" content={`https://www.meteosync.com/organizer/${organizerId}`} />
+                <meta property="og:site_name" content="Meteosync" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={item.name} />
+                <meta name="twitter:description" content={item.description?.substring(0, 160)} />
+                {item.image_url && <meta name="twitter:image" content={item.image_url.startsWith('http') ? item.image_url : `https://www.meteosync.com${item.image_url}`} />}
 
                 <script type="application/ld+json" dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
