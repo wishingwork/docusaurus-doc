@@ -112,6 +112,16 @@ const config = {
             component: '@site/src/pages/attraction/index.tsx',
             exact: true,
           });
+          addRoute({
+            path: '/event/:eventId',
+            component: '@site/src/pages/event/index.tsx',
+            exact: true,
+          });
+          addRoute({
+            path: '/organizer/:organizerId',
+            component: '@site/src/pages/organizer/index.tsx',
+            exact: true,
+          });
         },
       };
     },
