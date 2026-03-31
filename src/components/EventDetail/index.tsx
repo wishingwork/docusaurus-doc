@@ -69,11 +69,11 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                     if (result.data) {
                         setItem(result.data);
                     } else {
-                        setError('Event not found');
+                        setError(t('event.eventNotFound'));
                     }
                 } catch (error) {
                     console.error("Error fetching event:", error);
-                    setError('Failed to fetch event details');
+                    setError(t('event.failedToFetchEventDetails'));
                 } finally {
                     setFetching(false);
                 }
@@ -92,7 +92,7 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                         loop
                     />
                 </div>
-                <p className="mt-4 text-gray-600 font-medium">Loading event details...</p>
+                <p className="mt-4 text-gray-600 font-medium">{t('event.loadingEventDetails')}</p>
             </div>
         );
     }
@@ -158,7 +158,7 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                             </span>
                             {isExpired && (
                                 <span className="px-3 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-full uppercase tracking-wider">
-                                    Expired
+                                    {t('event.expired')}
                                 </span>
                             )}
                         </div>
@@ -175,7 +175,7 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                             </div>
                             <div className="flex items-center gap-3 text-gray-600">
                                 <Hourglass className="w-5 h-5 text-gray-400" />
-                                <span className="font-medium">{item.duration_minutes} minutes</span>
+                                <span className="font-medium">{item.duration_minutes} {t('event.minutes')}</span>
                             </div>
                             {item.merchant && (
                                 <div className="flex items-center gap-3 text-blue-600 cursor-pointer hover:underline" onClick={() => window.location.href = `/attraction/${item.merchant?.public_id}`}>
@@ -189,13 +189,13 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                 </div>
 
                 <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Description</h2>
+                    <h2 className="text-xl font-bold text-gray-900 mb-4">{t('event.description')}</h2>
                     <p className="text-gray-600 leading-relaxed whitespace-pre-line">{item.description}</p>
                 </div>
 
                 <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
                     <div className="flex justify-between items-center mb-6">
-                        <span className="text-gray-500 font-medium">Price</span>
+                        <span className="text-gray-500 font-medium">{t('event.price')}</span>
                         <span className="text-2xl font-bold text-blue-600">
                             {item.currency === 'TWD' ? '$' : (item.currency || '$')} {item.price}
                         </span>
@@ -207,14 +207,14 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                             rel="noopener noreferrer"
                             className="block w-full text-center py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-200"
                         >
-                            Book Now
+                            {t('event.bookNow')}
                         </a>
                     )}
                 </div>
 
                 {item.organizer && (
                     <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4">Hosted by</h2>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4">{t('event.hostedBy')}</h2>
                         <div
                             className="flex items-center gap-4 cursor-pointer hover:bg-gray-50 p-2 rounded-xl transition"
                             onClick={() => window.location.href = `/organizer/${item.organizer?.id}`}
@@ -231,7 +231,7 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                 )}
                 {item.cohost_organizations && item.cohost_organizations.length > 0 && (
                     <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4">Co-hosted by</h2>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4">{t('event.coHostedBy')}</h2>
                         {item.cohost_organizations.map((cohost, index) => (
                             <div
                                 key={index}

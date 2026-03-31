@@ -108,11 +108,11 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                         setItem(result.data);
                         if (onDataLoaded) onDataLoaded(result.data);
                     } else {
-                        setError('Attraction not found');
+                        setError(t('attraction.attractionNotFound'));
                     }
                 } catch (error) {
                     console.error("Error fetching attraction:", error);
-                    setError('Failed to fetch attraction details');
+                    setError(t('attraction.failedToFetchAttractionDetails'));
                 } finally {
                     setFetching(false);
                 }
@@ -131,7 +131,7 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
                         loop
                     />
                 </div>
-                <p className="mt-4 text-gray-600 font-medium">{t('loadingAttractionDetails') || 'Loading attraction details...'}</p>
+                <p className="mt-4 text-gray-600 font-medium">{t('attraction.loadingAttractionDetails')}</p>
             </div>
         );
     }

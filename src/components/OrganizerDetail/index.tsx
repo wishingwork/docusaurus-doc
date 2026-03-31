@@ -64,11 +64,11 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                     if (result.data) {
                         setItem(result.data);
                     } else {
-                        setError('Organizer not found');
+                        setError(t('organizer.organizerNotFound'));
                     }
                 } catch (error) {
                     console.error("Error fetching organizer:", error);
-                    setError('Failed to fetch organizer details');
+                    setError(t('organizer.failedToFetchOrganizerDetails'));
                 } finally {
                     setFetching(false);
                 }
@@ -87,7 +87,7 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                         loop
                     />
                 </div>
-                <p className="mt-4 text-gray-600 font-medium">Loading organizer details...</p>
+                <p className="mt-4 text-gray-600 font-medium">{t('organizer.loadingOrganizerDetails')}</p>
             </div>
         );
     }
@@ -150,7 +150,7 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                             </div>
                             <div className="flex items-start gap-3 text-gray-600 min-w-0">
                                 <User className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                                <span className="font-medium">Manager: {item.manager_name}</span>
+                                <span className="font-medium">{t('organizer.manager')}: {item.manager_name}</span>
                             </div>
                             {item.contact_phone && (
                                 <div className="flex items-start gap-3 text-blue-600 min-w-0">
@@ -167,7 +167,7 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                             {item.merchant && (
                                 <div className="flex items-start gap-3 text-blue-600 cursor-pointer hover:underline md:col-span-2 min-w-0 pt-2" onClick={() => window.location.href = `/attraction/${item.merchant?.public_id}`}>
                                     <Store className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                                    <span className="font-medium">Location: {item.merchant.merchant_name}</span>
+                                    <span className="font-medium">{t('organizer.location')}: {item.merchant.merchant_name}</span>
                                     <ChevronRight className="w-4 h-4 shrink-0 mt-1" />
                                 </div>
                             )}
@@ -176,13 +176,13 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                 </div>
 
                 <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">About</h2>
+                    <h2 className="text-xl font-bold text-gray-900 mb-4">{t('organizer.about')}</h2>
                     <p className="text-gray-600 leading-relaxed whitespace-pre-line">{item.description || 'No description available.'}</p>
                 </div>
 
                 {item.events && item.events.length > 0 && (
                     <div className="mt-6 mx-4">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4 px-2">Hosted Events</h2>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 px-2">{t('organizer.hostedEvents')}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {item.events.map((event) => {
                                 const isExpired = event.end_time ? dayjs().isAfter(dayjs(event.end_time)) : false;
@@ -196,7 +196,7 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                                             <img src={event.image_url} alt={event.title} className="w-full h-full object-cover" />
                                             {isExpired && (
                                                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                                                    <span className="bg-red-500 text-white px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wider">Expired</span>
+                                                    <span className="bg-red-500 text-white px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wider">{t('event.expired')}</span>
                                                 </div>
                                             )}
                                         </div>
@@ -216,7 +216,7 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                 )}
                 {item.cohostedEvents && item.cohostedEvents.length > 0 && (
                     <div className="mt-6 mx-4">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4">Co-hosted Events</h2>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4">{t('organizer.coHostedEvents')}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {item.cohostedEvents.map((event) => {
                                 const isExpired = event.end_time ? dayjs().isAfter(dayjs(event.end_time)) : false;
@@ -230,7 +230,7 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                                             <img src={event.image_url} alt={event.title} className="w-full h-full object-cover" />
                                             {isExpired && (
                                                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                                                    <span className="bg-red-500 text-white px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wider">Expired</span>
+                                                    <span className="bg-red-500 text-white px-3 py-1 rounded-lg text-sm font-bold uppercase tracking-wider">{t('event.expired')}</span>
                                                 </div>
                                             )}
                                         </div>

@@ -45,6 +45,9 @@
     "button": "Request Internal Testing"
   },
   "attraction": {
+    "attractionNotFound": "Attraction not found",
+    "failedToFetchAttractionDetails": "Failed to fetch attraction details",
+    "loadingAttractionDetails": "Loading attraction details...",
     "practicalInfo": "Practical Info",
     "address": "Address",
     "telephone": "Telephone",
@@ -52,6 +55,28 @@
     "about": "About",
     "facilitiesAndWeb": "Facilities and Web",
     "officialSite": "Official Site"
+  },
+  "event": {
+    "eventNotFound": "Event not found",
+    "failedToFetchEventDetails": "Failed to fetch event details",
+    "loadingEventDetails": "Loading event details...",
+    "expired": "Expired",
+    "minutes": "minutes",
+    "description": "Description",
+    "price": "Price",
+    "bookNow": "Book Now",
+    "hostedBy": "Hosted by",
+    "coHostedBy": "Co-hosted by"
+  },
+  "organizer": {
+    "organizerNotFound": "Organizer not found",
+    "failedToFetchOrganizerDetails": "Failed to fetch organizer details",
+    "loadingOrganizerDetails": "Loading organizer details...",
+    "manager": "Manager",
+    "location": "Location",
+    "about": "About",
+    "hostedEvents": "Hosted Events",
+    "coHostedEvents": "Co-hosted Events"
   },
   "tripPlanner": {
     "appTitle": "WeatherGo Plan",
@@ -131,6 +156,5 @@
       "desc": "See your events in calendar or timeline view with weather-coded colors. Make informed decisions about your activities."
     }
   },
-  "deleteAccount": "Request for Deleting My WeatherCalendar Account",
-  "loadingAttractionDetails": "Loading attraction details..."
+  "deleteAccount": "Request for Deleting My WeatherCalendar Account"
 }
