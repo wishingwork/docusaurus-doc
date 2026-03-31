@@ -122,24 +122,11 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                 <meta name="description" content={item.description?.substring(0, 160)} />
                 <link rel="canonical" href={`https://www.meteosync.com/event/${eventId}`} />
 
-                <meta property="og:title" content={`${item.title} | Meteosync`} />
+                <meta property="og:title" content={item.title} />
                 <meta property="og:description" content={item.description?.substring(0, 160)} />
-                {item.image_url && (
-                    <>
-                        <meta property="og:image" content={item.image_url.startsWith('http') ? item.image_url : `https://www.meteosync.com${item.image_url}`} />
-                        <meta property="og:image:secure_url" content={item.image_url.startsWith('http') ? item.image_url : `https://www.meteosync.com${item.image_url}`} />
-                        <meta property="og:image:width" content="1200" />
-                        <meta property="og:image:height" content="630" />
-                        <meta property="og:image:alt" content={item.title} />
-                    </>
-                )}
-                <meta property="og:type" content="article" />
+                {item.image_url && <meta property="og:image" content={item.image_url} />}
+                <meta property="og:type" content="website" />
                 <meta property="og:url" content={`https://www.meteosync.com/event/${eventId}`} />
-                <meta property="og:site_name" content="Meteosync" />
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={item.title} />
-                <meta name="twitter:description" content={item.description?.substring(0, 160)} />
-                {item.image_url && <meta name="twitter:image" content={item.image_url.startsWith('http') ? item.image_url : `https://www.meteosync.com${item.image_url}`} />}
 
                 {/* JSON-LD Schema Markup for Events */}
                 <script type="application/ld+json" dangerouslySetInnerHTML={{
