@@ -111,6 +111,34 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
             <Head>
                 <title>{item.name} | Organizer Detail</title>
                 <meta name="description" content={item.description?.substring(0, 160)} />
+                <link rel="canonical" href={`https://www.meteosync.com/organizer/${organizerId}`} />
+
+                <meta property="og:title" content={item.name} />
+                <meta property="og:description" content={item.description?.substring(0, 160)} />
+                {item.image_url && <meta property="og:image" content={item.image_url} />}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`https://www.meteosync.com/organizer/${organizerId}`} />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${item.name} | Organizer Detail`} />
+                <meta name="twitter:description" content={item.description?.substring(0, 160)} />
+                {item.image_url && <meta name="twitter:image" content={item.image_url} />}
+
+                <script type="application/ld+json" dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": item.name,
+                        "description": item.description,
+                        "image": item.image_url,
+                        "contactPoint": {
+                            "@type": "ContactPoint",
+                            "email": item.contact_email,
+                            "telephone": item.contact_phone
+                        },
+                        "url": `https://www.meteosync.com/organizer/${organizerId}`
+                    })
+                }} />
             </Head>
 
             <div className="max-w-4xl mx-auto pb-12">

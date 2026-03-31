@@ -117,11 +117,48 @@ export default function EventDetail({ eventId }: { eventId: string }) {
     return (
         <div className="bg-[#F5F7FA] min-h-screen">
             <Head>
+                {/* Dynamic SEO Meta Tags */}
                 <title>{item.title} | Event Detail</title>
                 <meta name="description" content={item.description?.substring(0, 160)} />
+                <link rel="canonical" href={`https://www.meteosync.com/event/${eventId}`} />
+
                 <meta property="og:title" content={item.title} />
                 <meta property="og:description" content={item.description?.substring(0, 160)} />
                 {item.image_url && <meta property="og:image" content={item.image_url} />}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`https://www.meteosync.com/event/${eventId}`} />
+
+                {/* Twitter Card Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${item.title} | Event Detail`} />
+                <meta name="twitter:description" content={item.description?.substring(0, 160)} />
+                {item.image_url && <meta name="twitter:image" content={item.image_url} />}
+
+                {/* JSON-LD Schema Markup for Events */}
+                <script type="application/ld+json" dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Event",
+                        "name": item.title,
+                        "startDate": item.start_time,
+                        "endDate": item.end_time,
+                        "description": item.description,
+                        "image": item.image_url,
+                        "location": {
+                            "@type": "Place",
+                            "name": item.address
+                        },
+                        "organizer": {
+                            "@type": "Organization",
+                            "name": item.organizer?.name || 'Event Organizer'
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "price": item.price,
+                            "priceCurrency": item.currency
+                        }
+                    })
+                }} />
             </Head>
 
             <div className="max-w-4xl mx-auto pb-12">
