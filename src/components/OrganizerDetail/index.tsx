@@ -119,11 +119,6 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={`https://www.meteosync.com/organizer/${organizerId}`} />
 
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${item.name} | Organizer Detail`} />
-                <meta name="twitter:description" content={item.description?.substring(0, 160)} />
-                {item.image_url && <meta name="twitter:image" content={item.image_url} />}
-
                 <script type="application/ld+json" dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
