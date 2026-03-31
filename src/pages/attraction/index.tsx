@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
-import { useLocation, matchPath, useParams } from '@docusaurus/router';
+import { useLocation, matchPath } from '@docusaurus/router';
 import { X } from 'lucide-react';
 import AttractionDetail from '../../components/AttractionDetail';
 import Header from '../../components/Layout/Header';
@@ -11,8 +11,16 @@ const ANDROID_URL = "https://play.google.com/store/apps/details?id=com.wishingwo
 const IOS_URL = "https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511";
 
 export default function AttractionPage() {
-    const { attractionName, publicId: paramPublicId } = useParams<{ attractionName?: string, publicId?: string }>();
-    const publicId = paramPublicId;
+    const location = useLocation();
+    const matchWithSlug = matchPath<{ attractionName: string, publicId: string }>(location.pathname, {
+        path: '/attraction/:attractionName/:publicId',
+        exact: true,
+    });
+    const matchSimple = matchPath<{ publicId: string }>(location.pathname, {
+        path: '/attraction/:publicId',
+        exact: true,
+    });
+    const publicId = matchWithSlug?.params?.publicId || matchSimple?.params?.publicId;
     const [attractionData, setAttractionData] = useState<any>(null);
     const [showAppBanner, setShowAppBanner] = useState(true);
 
@@ -30,7 +38,7 @@ export default function AttractionPage() {
     };
 
     return (
-        <Layout title={attractionData?.name ? `${attractionData.name} | Attraction Detail` : 'Attraction Detail'}>
+        <div title={attractionData?.name ? `${attractionData.name} | Attraction Detail` : 'Attraction Detail'}>
             <div className="min-h-screen bg-gray-50 flex flex-col">
                 <div className="sticky top-0 z-50">
                     {/* Smart App Banner */}
@@ -97,6 +105,6 @@ export default function AttractionPage() {
 
                 <Footer />
             </div>
-        </Layout>
+        </div>
     );
 }
