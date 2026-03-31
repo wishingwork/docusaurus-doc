@@ -143,32 +143,32 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
                     <div className="p-6 md:p-8">
                         <h1 className="text-3xl font-bold text-gray-900 mb-6">{item.name}</h1>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="flex items-center gap-3 text-gray-600">
-                                <Mail className="w-5 h-5 text-gray-400" />
-                                <span className="font-medium">{item.contact_email}</span>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                            <div className="flex items-start gap-3 text-gray-600 min-w-0">
+                                <Mail className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+                                <span className="font-medium break-all">{item.contact_email}</span>
                             </div>
-                            <div className="flex items-center gap-3 text-gray-600">
-                                <User className="w-5 h-5 text-gray-400" />
+                            <div className="flex items-start gap-3 text-gray-600 min-w-0">
+                                <User className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
                                 <span className="font-medium">Manager: {item.manager_name}</span>
                             </div>
                             {item.contact_phone && (
-                                <div className="flex items-center gap-3 text-blue-600">
-                                    <Phone className="w-5 h-5 text-blue-600" />
-                                    <a href={`tel:${item.contact_phone}`} className="font-medium hover:underline">{item.contact_phone}</a>
+                                <div className="flex items-start gap-3 text-blue-600 min-w-0">
+                                    <Phone className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                                    <a href={`tel:${item.contact_phone}`} className="font-medium hover:underline break-all">{item.contact_phone}</a>
                                 </div>
                             )}
                             {item.website_url && (
-                                <div className="flex items-center gap-3 text-blue-600">
-                                    <Globe className="w-5 h-5 text-blue-600" />
-                                    <a href={item.website_url} target="_blank" rel="noopener noreferrer" className="font-medium hover:underline">{item.website_url}</a>
+                                <div className="flex items-start gap-3 text-blue-600 min-w-0">
+                                    <Globe className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                                    <a href={item.website_url} target="_blank" rel="noopener noreferrer" className="font-medium hover:underline break-all">{item.website_url}</a>
                                 </div>
                             )}
                             {item.merchant && (
-                                <div className="flex items-center gap-3 text-blue-600 cursor-pointer hover:underline col-span-2" onClick={() => window.location.href = `/attraction/${item.merchant?.public_id}`}>
-                                    <Store className="w-5 h-5 text-blue-600" />
+                                <div className="flex items-start gap-3 text-blue-600 cursor-pointer hover:underline md:col-span-2 min-w-0 pt-2" onClick={() => window.location.href = `/attraction/${item.merchant?.public_id}`}>
+                                    <Store className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                                     <span className="font-medium">Location: {item.merchant.merchant_name}</span>
-                                    <ChevronRight className="w-4 h-4" />
+                                    <ChevronRight className="w-4 h-4 shrink-0 mt-1" />
                                 </div>
                             )}
                         </div>
