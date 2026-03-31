@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
-import { useLocation, matchPath } from '@docusaurus/router';
+import { useLocation, matchPath, useParams } from '@docusaurus/router';
 import { X } from 'lucide-react';
 import EventDetail from '../../components/EventDetail';
 import Header from '../../components/Layout/Header';
@@ -11,13 +11,7 @@ const ANDROID_URL = "https://play.google.com/store/apps/details?id=com.wishingwo
 const IOS_URL = "https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511";
 
 export default function EventPage() {
-    console.log(11, 'EventPage')
-    const location = useLocation();
-    const matchSimple = matchPath<{ eventId: string }>(location.pathname, {
-        path: '/event/:eventId',
-        exact: true,
-    });
-    const eventId = matchSimple?.params?.eventId;
+    const { eventId } = useParams<{ eventId: string }>();
     const [showAppBanner, setShowAppBanner] = useState(true);
 
     const getAppStoreUrl = () => {
