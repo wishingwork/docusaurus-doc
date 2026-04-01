@@ -45,6 +45,7 @@
     "button": "申請內部測試"
   },
   "attraction": {
+    "attractionDetail": "景點詳情",
     "attractionNotFound": "找不到景點",
     "failedToFetchAttractionDetails": "無法載入景點詳細資訊",
     "loadingAttractionDetails": "載入景點詳細資訊...",
@@ -57,6 +58,7 @@
     "officialSite": "官方網站"
   },
   "event": {
+    "eventDetail": "活動詳情",
     "eventNotFound": "找不到活動",
     "failedToFetchEventDetails": "無法載入活動詳細資訊",
     "loadingEventDetails": "載入活動細節...",
@@ -69,6 +71,7 @@
     "coHostedBy": "協辦單位"
   },
   "organizer": {
+    "organizerDetail": "主辦單位詳情",
     "organizerNotFound": "找不到主辦單位",
     "failedToFetchOrganizerDetails": "無法載入主辦單位詳細資訊",
     "loadingOrganizerDetails": "載入主辦單位詳細資訊...",

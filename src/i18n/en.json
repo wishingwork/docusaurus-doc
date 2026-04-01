@@ -45,6 +45,7 @@
     "button": "Request Internal Testing"
   },
   "attraction": {
+    "attractionDetail": "Attraction Detail",
     "attractionNotFound": "Attraction not found",
     "failedToFetchAttractionDetails": "Failed to fetch attraction details",
     "loadingAttractionDetails": "Loading attraction details...",
@@ -57,6 +58,7 @@
     "officialSite": "Official Site"
   },
   "event": {
+    "eventDetail": "Event Detail",
     "eventNotFound": "Event not found",
     "failedToFetchEventDetails": "Failed to fetch event details",
     "loadingEventDetails": "Loading event details...",
@@ -69,6 +71,7 @@
     "coHostedBy": "Co-hosted by"
   },
   "organizer": {
+    "organizerDetail": "Organizer Detail",
     "organizerNotFound": "Organizer not found",
     "failedToFetchOrganizerDetails": "Failed to fetch organizer details",
     "loadingOrganizerDetails": "Loading organizer details...",

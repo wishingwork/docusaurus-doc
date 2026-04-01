@@ -225,7 +225,7 @@ export default function AttractionDetail({ publicId, onDataLoaded }: { publicId:
         <div className="bg-[#F5F7FA] min-h-screen">
             <Head>
                 {/* Dynamic SEO Meta Tags */}
-                <title>{item.name} | Weather Intelligence</title>
+                <title>{item.name} | {t('attraction.attractionDetail')}</title>
                 <meta name="description" content={item.toldescribe?.substring(0, 160)} />
                 <link rel="canonical" href={`https://www.meteosync.com/attraction/${publicId}`} />
 

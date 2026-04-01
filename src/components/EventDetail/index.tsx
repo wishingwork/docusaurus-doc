@@ -87,7 +87,7 @@ export default function EventDetail({ eventId }: { eventId: string }) {
             <div className="flex flex-col justify-center items-center py-20">
                 <div style={{ width: '300px', height: '300px' }}>
                     <DotLottiePlayer
-                        src={`${siteConfig.baseUrl}lottie/Weather_Travel_is_fun.lottie`}
+                        src={`${siteConfig.baseUrl}lottie/Weather_app_animation.lottie`}
                         autoplay
                         loop
                     />
@@ -118,7 +118,7 @@ export default function EventDetail({ eventId }: { eventId: string }) {
         <div className="bg-[#F5F7FA] min-h-screen">
             <Head>
                 {/* Dynamic SEO Meta Tags */}
-                <title>{item.title} | Event Detail</title>
+                <title>{item.title} | {t('event.eventDetail')}</title>
                 <meta name="description" content={item.description?.substring(0, 160)} />
                 <link rel="canonical" href={`https://www.meteosync.com/event/${eventId}`} />
 
@@ -138,10 +138,6 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                         "endDate": item.end_time,
                         "description": item.description,
                         "image": item.image_url,
-                        "location": {
-                            "@type": "Place",
-                            "name": item.address
-                        },
                         "organizer": {
                             "@type": "Organization",
                             "name": item.organizer?.name || 'Event Organizer'

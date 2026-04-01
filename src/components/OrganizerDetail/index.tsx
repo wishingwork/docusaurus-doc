@@ -82,7 +82,7 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
             <div className="flex flex-col justify-center items-center py-20">
                 <div style={{ width: '300px', height: '300px' }}>
                     <DotLottiePlayer
-                        src={`${siteConfig.baseUrl}lottie/Weather_Travel_is_fun.lottie`}
+                        src={`${siteConfig.baseUrl}lottie/Weather_app_animation.lottie`}
                         autoplay
                         loop
                     />
@@ -109,7 +109,7 @@ export default function OrganizerDetail({ organizerId }: { organizerId: string }
     return (
         <div className="bg-[#F5F7FA] min-h-screen">
             <Head>
-                <title>{item.name} | Organizer Detail</title>
+                <title>{item.name} | {t('organizer.organizerDetail')}</title>
                 <meta name="description" content={item.description?.substring(0, 160)} />
                 <link rel="canonical" href={`https://www.meteosync.com/organizer/${organizerId}`} />
 

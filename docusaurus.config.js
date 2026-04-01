@@ -178,7 +178,7 @@ const config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Meteosync Built with Docusaurus.`,
+      copyright: `Copyright © 2025 - ${new Date().getFullYear()} Meteosync Built with Docusaurus.`,
     },
   },
   customFields: {
