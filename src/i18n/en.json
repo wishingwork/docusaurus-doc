@@ -68,7 +68,11 @@
     "price": "Price",
     "bookNow": "Book Now",
     "hostedBy": "Hosted by",
-    "coHostedBy": "Co-hosted by"
+    "coHostedBy": "Co-hosted by",
+    "hostInfo": "Host Info",
+    "host": "Host",
+    "phone": "Phone",
+    "email": "Email"
   },
   "organizer": {
     "organizerDetail": "Organizer Detail",

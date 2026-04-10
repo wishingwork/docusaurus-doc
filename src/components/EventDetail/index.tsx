@@ -219,7 +219,46 @@ export default function EventDetail({ eventId }: { eventId: string }) {
                     <h2 className="text-xl font-bold text-gray-900 mb-4">{t('event.description')}</h2>
                     <p className="text-gray-600 leading-relaxed whitespace-pre-line">{item.description}</p>
                 </div>
-
+                {item.event_host && (
+                    <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <h2 className="text-xl font-bold text-gray-900 mb-4">{t('event.hostInfo')}</h2>
+                        <div className="space-y-4">
+                            {item.event_host.host_name && (
+                                <div className="flex items-center gap-3 text-gray-600">
+                                    <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-gray-400">
+                                        <User className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="text-xs text-gray-400 font-medium uppercase">{t('event.host')}</p>
+                                        <p className="text-gray-900 font-semibold">{item.event_host.host_name}</p>
+                                    </div>
+                                </div>
+                            )}
+                            {item.event_host.phone && (
+                                <div className="flex items-center gap-3 text-gray-600">
+                                    <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-gray-400">
+                                        <Phone className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="text-xs text-gray-400 font-medium uppercase">{t('event.phone')}</p>
+                                        <p className="text-gray-900 font-semibold">{item.event_host.phone}</p>
+                                    </div>
+                                </div>
+                            )}
+                            {item.event_host.email && (
+                                <div className="flex items-center gap-3 text-gray-600">
+                                    <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-gray-400">
+                                        <Mail className="w-5 h-5" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="text-xs text-gray-400 font-medium uppercase">{t('event.email')}</p>
+                                        <p className="text-gray-900 font-semibold">{item.event_host.email}</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
                 <div className="mt-6 mx-4 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
                     <div className="flex justify-between items-center mb-6">
                         <span className="text-gray-500 font-medium">{t('event.price')}</span>

@@ -68,7 +68,11 @@
     "price": "價格",
     "bookNow": "立即預訂",
     "hostedBy": "主辦單位",
-    "coHostedBy": "協辦單位"
+    "coHostedBy": "協辦單位",
+    "hostInfo": "主辦單位資訊",
+    "host": "主辦單位",
+    "phone": "電話",
+    "email": "電子郵件"
   },
   "organizer": {
     "organizerDetail": "主辦單位詳情",
