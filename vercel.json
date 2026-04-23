@@ -9,8 +9,8 @@
       "destination": "https://plan-b-api-664674930671.asia-east1.run.app/$1"
     },
     {
-      "source": "/trip-planner/operators/(.*)",
-      "destination": "https://weathergo-admin-dashboard.vercel.app/$1"
+      "source": "/trip-planner/operators/:path*",
+      "destination": "https://weathergo-admin-dashboard.vercel.app/:path*"
     }
   ]
 }
