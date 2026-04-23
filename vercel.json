@@ -18,7 +18,7 @@
           "value": "weathergo-admin-dashboard.vercel.app"
         }
       ],
-      "destination": "https://app.meteosync.com/$1",
+      "destination": "https://weathergo.meteosync.com/$1",
       "permanent": true
     }
   ]
