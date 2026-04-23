@@ -7,10 +7,19 @@
     {
       "source": "/plan-b-api/(.*)",
       "destination": "https://plan-b-api-664674930671.asia-east1.run.app/$1"
-    },
+    }
+  ],
+  "redirects": [
     {
-      "source": "/trip-planner/operators/:path*",
-      "destination": "https://weathergo-admin-dashboard.vercel.app/:path*"
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "weathergo-admin-dashboard.vercel.app"
+        }
+      ],
+      "destination": "https://app.meteosync.com/$1",
+      "permanent": true
     }
   ]
 }
