@@ -10,6 +10,20 @@ import '../../css/custom.css';
 
 import { useTranslation } from 'react-i18next';
 
+// Centralized color definitions
+export const colors = {
+  primary: '#007BFF',
+  secondary: '#005FA0',
+  accent: '#ffd33d',
+  error: 'red',
+  background: '#f5f5f5',
+  white: '#fff',
+  text: '#333',
+  textSecondary: '#888',
+  border: '#ccc',
+  borderLight: '#e0e0e0',
+};
+
 const Navbar = () => {
   const { i18n } = useTranslation();
 
@@ -20,34 +34,35 @@ const Navbar = () => {
   }, [i18n]);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#e0e0e0] px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 text-blue-900 font-bold text-xl no-underline hover:text-blue-600 transition-colors">
-          <div className="bg-blue-600 p-1.5 rounded-lg flex items-center justify-center">
+        <a href="#" className="flex items-center gap-2 font-bold text-xl no-underline transition-colors" style={{ color: colors.secondary }}>
+          <div className="p-1.5 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>
           </div>
           WeatherGoPlan
         </a>
-        <ul className="hidden md:flex items-center gap-8 text-gray-600 font-medium list-none mb-0">
-          <li><a href="#features" className="hover:text-blue-600 transition-colors no-underline">Features</a></li>
-          <li><a href="#organizer" className="hover:text-blue-600 transition-colors no-underline">For Organizers</a></li>
-          <li><a href="#sharing" className="hover:text-blue-600 transition-colors no-underline">Social Growth</a></li>
-          <li><a href="#how" className="hover:text-blue-600 transition-colors no-underline">How It Works</a></li>
+        <ul className="hidden md:flex items-center gap-8 font-medium list-none mb-0" style={{ color: colors.text }}>
+          <li><a href="#features" className="hover:opacity-80 transition-colors no-underline text-inherit">Features</a></li>
+          <li><a href="#organizer" className="hover:opacity-80 transition-colors no-underline text-inherit">For Organizers</a></li>
+          <li><a href="#sharing" className="hover:opacity-80 transition-colors no-underline text-inherit">Social Growth</a></li>
+          <li><a href="#how" className="hover:opacity-80 transition-colors no-underline text-inherit">How It Works</a></li>
         </ul>
         <div className="flex items-center gap-2 md:gap-5">
-          <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-lg px-2 py-1.5 hover:bg-gray-100 transition-colors">
-            <Languages className="w-4 h-4 text-gray-400" />
+          <div className="flex items-center gap-2 border rounded-lg px-2 py-1.5 transition-colors" style={{ backgroundColor: colors.background, borderColor: colors.borderLight }}>
+            <Languages className="w-4 h-4" style={{ color: colors.textSecondary }} />
             <select
               value={i18n.language}
               onChange={e => i18n.changeLanguage(e.target.value)}
-              className="bg-transparent text-xs sm:text-sm font-semibold text-gray-600 border-none focus:ring-0 cursor-pointer outline-none"
+              className="bg-transparent text-xs sm:text-sm font-semibold border-none focus:ring-0 cursor-pointer outline-none"
+              style={{ color: colors.text }}
             >
               <option value="en">EN</option>
               <option value="zh-Hant">繁中</option>
             </select>
           </div>
-          <a href="#" className="text-gray-600 font-medium hover:text-blue-600 transition-colors hidden lg:block no-underline">Sign In</a>
-          <a href="#" className="bg-blue-600 hover:bg-blue-700 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full font-bold shadow-md transition-all flex items-center gap-1 no-underline whitespace-nowrap text-xs md:text-base">
+          <a href="#" className="font-medium transition-colors hidden lg:block no-underline" style={{ color: colors.text }}>Sign In</a>
+          <a href="#" className="text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full font-bold shadow-md transition-all flex items-center gap-1 no-underline whitespace-nowrap text-xs md:text-base" style={{ backgroundColor: colors.primary }}>
             Become <span className="hidden sm:inline">an Organizer</span> <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </a>
         </div>
@@ -64,40 +79,40 @@ const HeroSection = () => (
 
     <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
       <div className="hero-content">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-semibold text-sm mb-8">
-          <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full font-semibold text-sm mb-8" style={{ backgroundColor: '#EBF5FF', border: '1px solid #DBEAFE', color: colors.primary }}>
+          <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: colors.primary }}></div>
           Event & Trip Engagement Platform
         </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 mb-8 leading-[1.1] tracking-tight">
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight" style={{ color: colors.text }}>
           Organize Better Events with <br />
-          <span className="italic text-blue-600">Smart Trip Planning</span>
+          <span className="italic" style={{ color: colors.primary }}>Smart Trip Planning</span>
         </h1>
-        <p className="text-xl text-gray-500 mb-10 max-w-xl leading-relaxed">
+        <p className="text-xl mb-10 max-w-xl leading-relaxed" style={{ color: colors.textSecondary }}>
           Create events, guide participants, discover attractions, and stay weather-ready with your branded event experience.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-blue-200 transition-all flex items-center justify-center gap-2 group">
+          <button className="text-white px-8 py-4 rounded-xl font-bold shadow-xl transition-all flex items-center justify-center gap-2 group hover:opacity-90" style={{ backgroundColor: colors.primary, boxShadow: `0 20px 25px -5px ${colors.primary}33` }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
             Become an Organizer
           </button>
-          <button className="bg-white border border-gray-200 hover:border-gray-300 text-gray-900 px-8 py-4 rounded-xl font-bold shadow-sm transition-all flex items-center justify-center gap-2">
+          <button className="bg-white border hover:border-gray-300 px-8 py-4 rounded-xl font-bold shadow-sm transition-all flex items-center justify-center gap-2" style={{ borderColor: colors.border, color: colors.text }}>
             <span className="text-sm">▶</span> Watch Demo
           </button>
         </div>
 
-        <div className="flex flex-wrap items-center gap-8 md:gap-12 border-t border-gray-100 pt-10">
+        <div className="flex flex-wrap items-center gap-8 md:gap-12 border-t pt-10" style={{ borderColor: colors.borderLight }}>
           <div>
-            <div className="text-2xl md:text-3xl font-bold text-gray-900">10K+</div>
-            <div className="text-xs md:text-sm text-gray-400 font-medium">App users</div>
+            <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>10K+</div>
+            <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>App users</div>
           </div>
           <div>
-            <div className="text-2xl md:text-3xl font-bold text-gray-900">500+</div>
-            <div className="text-xs md:text-sm text-gray-400 font-medium">Events published</div>
+            <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>500+</div>
+            <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>Events published</div>
           </div>
           <div>
-            <div className="text-2xl md:text-3xl font-bold text-gray-900">Free</div>
-            <div className="text-xs md:text-sm text-gray-400 font-medium">To start</div>
+            <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>Free</div>
+            <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>To start</div>
           </div>
         </div>
       </div>
@@ -215,11 +230,11 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section id="features" className="py-24 bg-white scroll-mt-20">
+    <section id="features" className="py-24 scroll-mt-20" style={{ backgroundColor: colors.background }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
-          <span className="text-blue-600 font-bold tracking-widest text-xs uppercase mb-4 block">Why Organizers Love It</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <span className="font-bold tracking-widest text-xs uppercase mb-4 block" style={{ color: colors.primary }}>Why Organizers Love It</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight" style={{ color: colors.text }}>
             Built for organizers.<br />
             Loved by participants.
           </h2>
@@ -229,13 +244,14 @@ const BenefitsSection = () => {
           {benefits.map((benefit, idx) => (
             <div
               key={idx}
-              className={`bg-white p-8 rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md ${benefit.isWide ? 'lg:col-span-2' : ''}`}
+              className={`p-8 rounded-3xl border transition-all duration-300 hover:shadow-md bg-white ${benefit.isWide ? 'lg:col-span-2' : ''}`}
+              style={{ borderColor: colors.borderLight }}
             >
-              <div className={`w-12 h-12 ${benefit.bg} ${benefit.color} rounded-xl flex items-center justify-center mb-8`}>
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-8`} style={{ backgroundColor: `${colors.primary}15`, color: colors.primary }}>
                 <benefit.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">{benefit.title}</h3>
-              <p className="text-gray-500 leading-relaxed text-sm md:text-base">
+              <h3 className="text-xl font-bold mb-4" style={{ color: colors.text }}>{benefit.title}</h3>
+              <p className="leading-relaxed text-sm md:text-base" style={{ color: colors.textSecondary }}>
                 {benefit.desc}
               </p>
             </div>
@@ -411,12 +427,12 @@ const FeatureArchitectureSection = () => {
   };
 
   return (
-    <section id="features-arch" className="py-24 bg-[#05192D] text-white scroll-mt-20">
+    <section id="features-arch" className="py-24 text-white scroll-mt-20" style={{ backgroundColor: colors.secondary }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-12">
-          <span className="text-gray-400 font-bold tracking-widest text-xs uppercase mb-4 block">Feature architecture</span>
+          <span className="font-bold tracking-widest text-xs uppercase mb-4 block" style={{ color: colors.accent }}>Feature architecture</span>
           <h2 className="text-5xl font-extrabold mb-6 leading-tight">Everything your event needs</h2>
-          <p className="text-xl text-gray-400 max-w-4xl leading-relaxed">
+          <p className="text-xl max-w-4xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
             Four interconnected systems — trip planning, event management, social sharing, and weather intelligence — working together seamlessly.
           </p>
         </div>
@@ -427,8 +443,8 @@ const FeatureArchitectureSection = () => {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${activeTab === tab.id
-                ? 'bg-white text-[#05192D] shadow-xl'
-                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                ? 'bg-white text-[#005FA0] shadow-xl'
+                : 'text-white/50 hover:text-white hover:bg-white/5'
                 }`}
             >
               {tab.label}
@@ -460,71 +476,71 @@ const FeatureArchitectureSection = () => {
 };
 
 const OrganizerDashboardSection = () => (
-  <section id="organizer" className="py-24 bg-white scroll-mt-20">
+  <section id="organizer" className="py-24 scroll-mt-20" style={{ backgroundColor: colors.white }}>
     <div className="max-w-7xl mx-auto px-6">
       <div className="mb-16">
-        <span className="text-blue-600 font-bold tracking-widest text-xs uppercase mb-4 block">Organizer dashboard</span>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">Powerful Organizer Dashboard</h2>
-        <p className="text-xl text-gray-600 max-w-3xl leading-relaxed">Manage events, organization profiles, and participant engagement from one central portal.</p>
+        <span className="font-bold tracking-widest text-xs uppercase mb-4 block" style={{ color: colors.primary }}>Organizer tools</span>
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight" style={{ color: colors.text }}>Powerful Organizer Dashboard</h2>
+        <p className="text-xl max-w-3xl leading-relaxed" style={{ color: colors.textSecondary }}>Manage events, organization profiles, and participant engagement from one central portal.</p>
       </div>
 
-      <div className="bg-[#F8F9FA] rounded-[2.5rem] p-4 md:p-8 border border-gray-100 shadow-2xl mb-16 overflow-hidden">
+      <div className="rounded-[2.5rem] p-4 md:p-8 border shadow-2xl mb-16 overflow-hidden" style={{ backgroundColor: colors.background, borderColor: colors.borderLight }}>
         {/* Mockup Header */}
-        <div className="bg-white border-b border-gray-100 p-4 md:px-6 md:py-3 flex items-center justify-between rounded-t-2xl shadow-sm">
+        <div className="border-b p-4 md:px-6 md:py-3 flex items-center justify-between rounded-t-2xl shadow-sm bg-white" style={{ borderColor: colors.borderLight }}>
           <div className="flex items-center gap-8">
-            <div className="text-blue-600 font-black text-sm tracking-tight">WeatherGoPlan</div>
+            <div className="font-black text-sm tracking-tight" style={{ color: colors.primary }}>WeatherGoPlan</div>
             <div className="hidden md:flex items-center gap-1 bg-gray-50 px-3 py-1 rounded text-[10px] text-gray-400 font-bold border border-gray-100">
               Dashboard <span className="text-gray-300">›</span> Organizer
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">週</div>
-            <div className="hidden sm:block text-xs font-bold text-gray-800">週六跑跑團 <span className="text-gray-400 ml-1 font-normal">Organizer</span></div>
+            <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold" style={{ backgroundColor: `${colors.primary}15`, color: colors.primary }}>週</div>
+            <div className="hidden sm:block text-xs font-bold" style={{ color: colors.text }}>週六跑跑團 <span className="ml-1 font-normal" style={{ color: colors.textSecondary }}>Organizer</span></div>
           </div>
         </div>
         {/* Mockup Body */}
-        <div className="flex min-h-[500px] bg-white rounded-b-2xl border-x border-b border-gray-100 overflow-hidden">
+        <div className="flex min-h-[500px] bg-white rounded-b-2xl border-x border-b overflow-hidden" style={{ borderColor: colors.borderLight }}>
           {/* Sidebar */}
-          <div className="w-48 bg-gray-50/50 border-r border-gray-100 hidden md:block py-6">
+          <div className="w-48 border-r hidden md:block py-6" style={{ backgroundColor: `${colors.background}80`, borderColor: colors.borderLight }}>
             <div className="space-y-1 px-3">
               {[
                 { label: 'Dashboard', icon: LayoutDashboard },
                 { label: 'Merchants', icon: Home },
                 { label: 'Organizers', icon: User, active: true },
               ].map((item, i) => (
-                <div key={i} className={`flex items-center gap-3 px-4 py-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${item.active ? 'bg-blue-50 text-blue-600' : 'text-gray-500 hover:bg-gray-100'}`}>
+                <div key={i} className={`flex items-center gap-3 px-4 py-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${item.active ? 'text-white' : ''}`} style={{ backgroundColor: item.active ? colors.primary : 'transparent', color: item.active ? 'white' : colors.textSecondary }}>
                   <item.icon className="w-4 h-4" /> {item.label}
                 </div>
               ))}
             </div>
           </div>
           {/* Main Content */}
-          <div className="flex-1 p-6 md:p-8 overflow-x-auto">
-            <div className="text-[10px] text-gray-400 font-bold mb-6 uppercase tracking-wider">Dashboard › Organizer › 週六跑跑團</div>
+          <div className="flex-1 p-6 md:p-8 overflow-x-auto bg-white">
+            <div className="text-[10px] font-bold mb-6 uppercase tracking-wider" style={{ color: colors.textSecondary }}>Dashboard › Organizer › 週六跑跑團</div>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-              <h3 className="text-2xl font-extrabold text-gray-900">週六跑跑團</h3>
+              <h3 className="text-2xl font-extrabold" style={{ color: colors.text }}>週六跑跑團</h3>
               <div className="flex items-center gap-2 whitespace-nowrap">
-                <button className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-xl text-xs font-bold text-gray-700 hover:bg-gray-100">+ Add Event</button>
-                <button className="bg-blue-600 px-4 py-2 rounded-xl text-xs font-bold text-white shadow-lg shadow-blue-200 flex items-center gap-2"><Edit2 className="w-3.5 h-3.5" /> Edit Organizer</button>
+                <button className="border px-4 py-2 rounded-xl text-xs font-bold transition-all hover:bg-gray-50" style={{ backgroundColor: colors.background, borderColor: colors.border, color: colors.text }}>+ Add Event</button>
+                <button className="px-4 py-2 rounded-xl text-xs font-bold text-white shadow-lg flex items-center gap-2 hover:opacity-90" style={{ backgroundColor: colors.primary, boxShadow: `0 10px 15px -3px ${colors.primary}33` }}><Edit2 className="w-3.5 h-3.5" /> Edit Organizer</button>
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
               {[
-                { val: '4', label: 'Total events', color: 'text-blue-600' },
-                { val: '3', label: 'Published', color: 'text-emerald-600' },
-                { val: '1', label: 'Draft', color: 'text-amber-600' },
+                { val: '4', label: 'Total events', color: colors.primary },
+                { val: '3', label: 'Published', color: '#10B981' },
+                { val: '1', label: 'Draft', color: colors.accent },
               ].map((stat, i) => (
-                <div key={i} className="bg-gray-50/50 border border-gray-100 p-6 rounded-2xl">
-                  <div className={`text-3xl md:text-4xl font-black mb-1 ${stat.color}`}>{stat.val}</div>
-                  <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">{stat.label}</div>
+                <div key={i} className="border p-6 rounded-2xl" style={{ backgroundColor: `${colors.background}50`, borderColor: colors.borderLight }}>
+                  <div className={`text-3xl md:text-4xl font-black mb-1`} style={{ color: stat.color }}>{stat.val}</div>
+                  <div className="text-[10px] font-bold uppercase tracking-widest" style={{ color: colors.textSecondary }}>{stat.label}</div>
                 </div>
               ))}
             </div>
 
-            <div className="border border-gray-100 rounded-2xl overflow-hidden">
+            <div className="border rounded-2xl overflow-hidden" style={{ borderColor: colors.borderLight }}>
               <table className="w-full text-left border-collapse">
-                <thead className="bg-gray-50/80 text-[10px] text-gray-400 uppercase font-bold border-b border-gray-100">
+                <thead className="text-[10px] uppercase font-bold border-b" style={{ backgroundColor: `${colors.background}80`, color: colors.textSecondary, borderColor: colors.borderLight }}>
                   <tr>
                     <th className="px-6 py-4">Event name</th>
                     <th className="px-6 py-4">Date</th>
@@ -533,20 +549,20 @@ const OrganizerDashboardSection = () => (
                     <th className="px-6 py-4 text-right">Action</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-50 text-xs">
+                <tbody className="divide-y text-xs" style={{ borderColor: colors.borderLight }}>
                   {[
                     { name: '親子瑜珈體驗班', date: '04/19/2026 · 10:00 AM', status: 'Published', pub: true, cat: '親子' },
                     { name: '追火車馬拉松', date: '04/26/2026 · 06:00 AM', status: 'Draft', cat: 'Festival' },
                     { name: '銀髮社區健康講座', date: '05/03/2026 · 09:30 AM', status: 'Published', pub: true, cat: '銀髮' },
                   ].map((row, i) => (
                     <tr key={i} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-5 font-bold text-gray-900">{row.name}</td>
-                      <td className="px-6 py-5 text-gray-400">{row.date}</td>
+                      <td className="px-6 py-5 font-bold" style={{ color: colors.text }}>{row.name}</td>
+                      <td className="px-6 py-5" style={{ color: colors.textSecondary }}>{row.date}</td>
                       <td className="px-6 py-5">
-                        <span className={`px-2 py-0.5 rounded-full font-bold text-[10px] ${row.pub ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'}`}>{row.status}</span>
+                        <span className={`px-2 py-0.5 rounded-full font-bold text-[10px]`} style={{ backgroundColor: row.pub ? '#10B98120' : `${colors.accent}20`, color: row.pub ? '#10B981' : '#B45309' }}>{row.status}</span>
                       </td>
-                      <td className="px-6 py-5 text-gray-400">{row.cat}</td>
-                      <td className="px-6 py-5 text-right"><span className="text-blue-600 font-bold cursor-pointer flex items-center justify-end gap-1">View <Edit2 className="w-3 h-3" /></span></td>
+                      <td className="px-6 py-5" style={{ color: colors.textSecondary }}>{row.cat}</td>
+                      <td className="px-6 py-5 text-right"><span className="font-bold cursor-pointer flex items-center justify-end gap-1" style={{ color: colors.primary }}>View <Edit2 className="w-3 h-3" /></span></td>
                     </tr>
                   ))}
                 </tbody>
@@ -579,16 +595,16 @@ const OrganizerDashboardSection = () => (
             items: ['Multi-date event series support', 'Session duration & timing control', 'Event status tracking', 'Edit events at any time']
           },
         ].map((card, idx) => (
-          <div key={idx} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
-            <h4 className="text-xl font-bold mb-4 text-gray-900 leading-tight">{card.title}</h4>
-            <p className="text-sm text-gray-500 mb-8 leading-relaxed">{card.desc}</p>
+          <div key={idx} className="p-8 rounded-3xl border shadow-sm hover:shadow-xl transition-all duration-300 bg-white" style={{ borderColor: colors.borderLight }}>
+            <h4 className="text-xl font-bold mb-4 leading-tight" style={{ color: colors.text }}>{card.title}</h4>
+            <p className="text-sm mb-8 leading-relaxed" style={{ color: colors.textSecondary }}>{card.desc}</p>
             <ul className="space-y-4">
               {card.items.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="mt-1 w-4 h-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                  <div className="mt-1 w-4 h-4 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: '#10B98115', color: '#10B981' }}>
                     <CheckCircle className="w-3 h-3" />
                   </div>
-                  <span className="text-xs font-semibold text-gray-700">{item}</span>
+                  <span className="text-xs font-semibold" style={{ color: colors.text }}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -600,12 +616,12 @@ const OrganizerDashboardSection = () => (
 );
 
 const SocialSharingSection = () => (
-  <section id="sharing" className="py-24 bg-gray-50 scroll-mt-20">
+  <section id="sharing" className="py-24 scroll-mt-20" style={{ backgroundColor: colors.background }}>
     <div className="max-w-7xl mx-auto px-6">
       <div className="mb-16">
-        <span className="text-blue-600 font-bold tracking-widest text-xs uppercase mb-4 block">Viral growth, built in</span>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">Built for Social Sharing</h2>
-        <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">
+        <span className="font-bold tracking-widest text-xs uppercase mb-4 block" style={{ color: colors.primary }}>Viral growth, built in</span>
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight" style={{ color: colors.text }}>Built for Social Sharing</h2>
+        <p className="text-xl max-w-4xl leading-relaxed" style={{ color: colors.textSecondary }}>
           Every attraction, event, and organization page has a shareable link — turning every participant into a natural promoter.
         </p>
       </div>
@@ -632,11 +648,11 @@ const SocialSharingSection = () => (
             link: 'wgp.app/place/lin-ben-yuan-garden'
           },
         ].map((card, idx) => (
-          <div key={idx} className={`bg-white p-8 rounded-[2rem] border transition-all duration-300 hover:shadow-xl ${card.active ? 'border-blue-200 ring-4 ring-blue-50' : 'border-gray-100 shadow-sm'}`}>
+          <div key={idx} className={`p-8 rounded-[2rem] border transition-all duration-300 hover:shadow-xl bg-white`} style={{ borderColor: card.active ? `${colors.primary}50` : colors.borderLight, boxShadow: card.active ? `0 0 0 4px ${colors.primary}10` : 'none' }}>
             <div className="text-3xl mb-10">{card.icon}</div>
-            <h3 className="text-xl font-bold mb-4 text-gray-900">{card.title}</h3>
-            <p className="text-sm text-gray-500 mb-10 leading-relaxed h-24 overflow-hidden">{card.desc}</p>
-            <div className="bg-blue-50/50 p-3 rounded-xl border border-blue-50 text-[10px] font-bold text-blue-600 truncate">
+            <h3 className="text-xl font-bold mb-4" style={{ color: colors.text }}>{card.title}</h3>
+            <p className="text-sm mb-10 leading-relaxed h-24 overflow-hidden" style={{ color: colors.textSecondary }}>{card.desc}</p>
+            <div className="p-3 rounded-xl border text-[10px] font-bold truncate" style={{ backgroundColor: `${colors.primary}05`, borderColor: `${colors.primary}15`, color: colors.primary }}>
               {card.link}
             </div>
           </div>
@@ -647,12 +663,12 @@ const SocialSharingSection = () => (
 );
 
 const WhoIsThisForSection = () => (
-  <section id="for-who" className="py-24 bg-white scroll-mt-20">
+  <section id="for-who" className="py-24 scroll-mt-20" style={{ backgroundColor: colors.white }}>
     <div className="max-w-7xl mx-auto px-6">
       <div className="mb-16">
-        <span className="text-blue-600 font-bold tracking-widest text-[10px] uppercase mb-4 block">WHO IT'S FOR</span>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight">Made for every kind <br className="hidden md:block" /> of event organizer</h2>
-        <p className="text-lg text-gray-500 max-w-2xl leading-relaxed font-medium">
+        <span className="font-bold tracking-widest text-[10px] uppercase mb-4 block" style={{ color: colors.primary }}>WHO IT'S FOR</span>
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight" style={{ color: colors.text }}>Made for every kind <br className="hidden md:block" /> of event organizer</h2>
+        <p className="text-lg max-w-2xl leading-relaxed font-medium" style={{ color: colors.textSecondary }}>
           Whether you run a weekly class, a school program, or a community workshop — WeatherGoPlan was built for you.
         </p>
       </div>
@@ -683,14 +699,18 @@ const WhoIsThisForSection = () => (
         ].map((item, idx) => (
           <div
             key={idx}
-            className={`bg-white p-10 rounded-[2rem] border transition-all duration-300 flex flex-col items-center text-center ${item.active
-              ? 'border-gray-900 shadow-2xl shadow-gray-200/50 scale-[1.02] z-10'
-              : 'border-gray-100 hover:shadow-xl hover:shadow-gray-100/50 hover:border-gray-200'
+            className={`p-10 rounded-[2rem] border transition-all duration-300 flex flex-col items-center text-center bg-white ${item.active
+              ? 'shadow-2xl scale-[1.02] z-10'
+              : 'hover:shadow-xl'
               }`}
+            style={{ 
+              borderColor: item.active ? colors.secondary : colors.borderLight,
+              boxShadow: item.active ? `0 25px 50px -12px ${colors.secondary}33` : 'none'
+            }}
           >
             <div className="text-4xl mb-8">{item.emoji}</div>
-            <h3 className="font-bold text-xl text-gray-900 mb-4">{item.title}</h3>
-            <p className="text-sm text-gray-400 leading-relaxed font-medium px-2">
+            <h3 className="font-bold text-xl mb-4" style={{ color: colors.text }}>{item.title}</h3>
+            <p className="text-sm leading-relaxed font-medium px-2" style={{ color: colors.textSecondary }}>
               {item.desc}
             </p>
           </div>
@@ -721,28 +741,28 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how" className="py-24 bg-[#F4F2EE] scroll-mt-20">
+    <section id="how" className="py-24 scroll-mt-20" style={{ backgroundColor: colors.background }}>
       <div className="max-w-7xl mx-auto px-6 text-center">
         <div className="mb-20">
-          <span className="text-blue-600 font-bold tracking-widest text-[10px] uppercase mb-4 block">HOW IT WORKS</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight">From signup to participants exploring</h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
+          <span className="font-bold tracking-widest text-[10px] uppercase mb-4 block" style={{ color: colors.primary }}>HOW IT WORKS</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight" style={{ color: colors.text }}>From signup to participants exploring</h2>
+          <p className="text-lg max-w-2xl mx-auto leading-relaxed font-medium" style={{ color: colors.textSecondary }}>
             Four simple steps to take your event from idea to engaged community.
           </p>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
           {/* Connecting Line */}
-          <div className="absolute top-[32px] left-[12.5%] right-[12.5%] h-[1px] bg-blue-200 hidden md:block"></div>
+          <div className="absolute top-[32px] left-[12.5%] right-[12.5%] h-[1px] hidden md:block" style={{ backgroundColor: colors.border }}></div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
             {steps.map((step, idx) => (
               <div key={idx} className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-xl shadow-blue-100 border-[8px] border-[#F4F2EE] mb-8 transition-transform hover:scale-105">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-xl mb-8 transition-transform hover:scale-105 border-[8px]" style={{ backgroundColor: colors.primary, borderColor: colors.background, boxShadow: `0 20px 25px -5px ${colors.primary}33` }}>
                   {idx + 1}
                 </div>
-                <h3 className="text-lg font-extrabold text-gray-900 mb-4">{step.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed font-medium px-4">
+                <h3 className="text-lg font-extrabold mb-4" style={{ color: colors.text }}>{step.title}</h3>
+                <p className="text-sm leading-relaxed font-medium px-4" style={{ color: colors.textSecondary }}>
                   {step.desc}
                 </p>
               </div>
@@ -755,16 +775,16 @@ const HowItWorksSection = () => {
 };
 
 const CTASection = () => (
-  <section className="py-24 bg-[#05192D] text-white overflow-hidden relative">
+  <section className="py-24 text-white overflow-hidden relative" style={{ backgroundColor: colors.secondary }}>
     <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
       <div className="relative z-10">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight">Ready to run better <br className="hidden sm:block" /> events?</h2>
-        <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-xl leading-relaxed font-medium">
+        <p className="text-lg md:text-xl mb-12 max-w-xl leading-relaxed font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
           Join organizers across Taiwan using WeatherGoPlan to create events, engage participants, and grow their communities — for free.
         </p>
 
         <div className="flex flex-col gap-4 max-w-md">
-          <button className="w-full bg-white text-gray-900 px-8 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98]">
+          <button className="w-full px-8 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98]" style={{ backgroundColor: colors.white, color: colors.secondary }}>
             <User className="w-5 h-5" /> Become an Organizer — it's free
           </button>
 
@@ -852,21 +872,21 @@ const Footer = () => {
   const { i18n } = useTranslation();
 
   return (
-    <footer className="bg-[#1A1A1A] text-white pt-24 pb-12 border-t border-white/5">
+    <footer className="text-white pt-24 pb-12" style={{ backgroundColor: colors.secondary }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
           <div className="lg:col-span-5 space-y-8">
             <div className="text-white font-bold text-2xl tracking-tight">
               WeatherGoPlan
             </div>
-            <p className="text-gray-400 text-lg max-w-sm leading-relaxed font-medium">
+            <p className="text-lg max-w-sm leading-relaxed font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
               Event and trip engagement platform for organizers and participants. Discover, plan, and share experiences — weather-aware and location-smart.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10">
+              <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10">
                 <Smartphone className="w-5 h-5 opacity-70" /> App Store
               </button>
-              <button className="bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10">
+              <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10">
                 <Play className="w-5 h-5 fill-white" /> Google Play
               </button>
             </div>
@@ -875,50 +895,50 @@ const Footer = () => {
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-12">
             <div className="space-y-6">
               <h4 className="font-bold text-white text-lg">For Organizers</h4>
-              <ul className="space-y-4 text-gray-400 font-medium list-none p-0 m-0">
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Become an Organizer</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Organizer Dashboard</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Create Event</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Manage Organization</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Pricing</a></li>
+              <ul className="space-y-4 font-medium list-none p-0 m-0" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Become an Organizer</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Organizer Dashboard</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Create Event</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Manage Organization</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Pricing</a></li>
               </ul>
             </div>
             <div className="space-y-6">
               <h4 className="font-bold text-white text-lg">For Participants</h4>
-              <ul className="space-y-4 text-gray-400 font-medium list-none p-0 m-0">
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Download App</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Explore Events</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Trip Planner</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Nearby Attractions</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Coupons</a></li>
+              <ul className="space-y-4 font-medium list-none p-0 m-0" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Download App</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Explore Events</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Trip Planner</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Nearby Attractions</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Coupons</a></li>
               </ul>
             </div>
             <div className="space-y-6">
               <h4 className="font-bold text-white text-lg">Company</h4>
-              <ul className="space-y-4 text-gray-400 font-medium list-none p-0 m-0">
-                <li><a href="#" className="hover:text-white transition-colors no-underline">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Contact</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline">Terms of Service</a></li>
+              <ul className="space-y-4 font-medium list-none p-0 m-0" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">About</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Contact</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Terms of Service</a></li>
               </ul>
             </div>
           </div>
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-8">
-          <p className="text-gray-500 font-medium text-sm mb-0">
+          <p className="font-medium text-sm mb-0" style={{ color: 'rgba(255,255,255,0.4)' }}>
             © 2026 WeatherGoPlan · MeteoSync. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
             <button
               onClick={() => i18n.changeLanguage('zh-Hant')}
-              className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all ${i18n.language === 'zh-Hant' ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-500 hover:text-white hover:bg-white/10'}`}
+              className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all ${i18n.language === 'zh-Hant' ? 'bg-white/10 text-white' : 'bg-white/5 text-white/40 hover:text-white hover:bg-white/10'}`}
             >
               <Globe className="w-4 h-4" /> 繁體中文
             </button>
             <button
               onClick={() => i18n.changeLanguage('en')}
-              className={`px-4 py-2 rounded-xl text-sm font-bold transition-all ${i18n.language === 'en' ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-500 hover:text-white hover:bg-white/10'}`}
+              className={`px-4 py-2 rounded-xl text-sm font-bold transition-all ${i18n.language === 'en' ? 'bg-white/10 text-white' : 'bg-white/5 text-white/40 hover:text-white hover:bg-white/10'}`}
             >
               English
             </button>
