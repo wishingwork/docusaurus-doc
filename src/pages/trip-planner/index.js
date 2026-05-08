@@ -723,28 +723,59 @@ const WhoIsThisForSection = () => (
   </section>
 );
 
-const HowItWorksSection = () => (
-  <section id="how" className="py-24 bg-gray-50 border-t border-gray-100 scroll-mt-20">
-    <div className="max-w-7xl mx-auto px-6">
-      <h2 className="text-4xl lg:text-5xl font-extrabold text-center mb-20 text-gray-900">How It Works</h2>
-      <div className="grid md:grid-cols-4 gap-10">
-        {[
-          { step: '01', title: 'Create Organization', desc: 'Set up your branded organization profile in minutes.' },
-          { step: '02', title: 'Publish Event', desc: 'Add detailed itineraries, schedules, and destinations.' },
-          { step: '03', title: 'Share with Participants', desc: 'Distribute beautiful event links directly to your audience.' },
-          { step: '04', title: 'Explore Together', desc: 'Participants engage and navigate via our smart app.' },
-        ].map((item, idx) => (
-          <div key={idx} className="relative group">
-            <div className="text-7xl font-black text-gray-200 mb-6 group-hover:text-blue-100 transition-colors">{item.step}</div>
-            <h3 className="text-2xl font-bold mb-3 text-gray-900">{item.title}</h3>
-            <p className="text-gray-600 text-lg leading-relaxed">{item.desc}</p>
-            {idx < 3 && <ArrowRight className="hidden md:block absolute top-10 -right-8 text-gray-300 w-10 h-10 transform group-hover:translate-x-2 transition-transform" />}
+const HowItWorksSection = () => {
+  const steps = [
+    { 
+      title: 'Create organization', 
+      desc: 'Set up your organizer profile with name, logo, type, and contact info. Your public page is ready instantly.' 
+    },
+    { 
+      title: 'Publish your event', 
+      desc: 'Fill in event details — date, location, price, audience — and hit publish. It appears on the map and Explore feed.' 
+    },
+    { 
+      title: 'Share with participants', 
+      desc: 'Share your event page link via LINE, IG, or any channel. Participants tap through to book instantly.' 
+    },
+    { 
+      title: 'Participants explore', 
+      desc: 'Attendees open the app, discover your event in context with nearby attractions and weather-smart suggestions.' 
+    },
+  ];
+
+  return (
+    <section id="how" className="py-24 bg-[#F4F2EE] scroll-mt-20">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <div className="mb-20">
+          <span className="text-blue-600 font-bold tracking-widest text-[10px] uppercase mb-4 block">HOW IT WORKS</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight">From signup to participants exploring</h2>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
+            Four simple steps to take your event from idea to engaged community.
+          </p>
+        </div>
+
+        <div className="relative max-w-6xl mx-auto">
+          {/* Connecting Line */}
+          <div className="absolute top-[32px] left-[12.5%] right-[12.5%] h-[1px] bg-blue-200 hidden md:block"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+            {steps.map((step, idx) => (
+              <div key={idx} className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-xl shadow-blue-100 border-[8px] border-[#F4F2EE] mb-8 transition-transform hover:scale-105">
+                  {idx + 1}
+                </div>
+                <h3 className="text-lg font-extrabold text-gray-900 mb-4">{step.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed font-medium px-4">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const CTASection = () => (
   <section className="py-24 bg-blue-600 text-white overflow-hidden relative">
