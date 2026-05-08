@@ -71,8 +71,12 @@ const Navbar = () => {
   );
 };
 
-const HeroSection = () => (
-  <section className="relative pt-20 pb-32 px-6 overflow-hidden bg-white">
+const HeroSection = () => {
+  const { i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
+
+  return (
+    <section className="relative pt-20 pb-32 px-6 overflow-hidden bg-white">
     <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
       style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
     <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-blue-50 rounded-full filter blur-[100px] opacity-40 z-0 animate-pulse"></div>
@@ -134,43 +138,12 @@ const HeroSection = () => (
           </div>
         </div>
 
-        <div className="relative z-10 w-[240px] md:w-[300px] h-[480px] md:h-[600px] bg-gray-900 rounded-[2.5rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl border-[6px] md:border-[8px] border-gray-800 overflow-hidden">
-          <div className="w-full h-full bg-white rounded-[2rem] md:rounded-[2.2rem] overflow-hidden flex flex-col">
-            <div className="bg-blue-600 pt-8 md:pt-10 pb-4 md:pb-6 px-4 md:px-5 text-white">
-              <div className="text-base md:text-lg font-bold mb-4">Explore</div>
-              <div className="flex justify-between items-center gap-1">
-                {[
-                  { d: 'MON', i: '☀️', t: '25°' },
-                  { d: 'TUE', i: '🌧️', t: '22°' },
-                  { d: 'WED', i: '⛅', t: '24°', active: true },
-                  { d: 'THU', i: '☀️', t: '26°' },
-                  { d: 'FRI', i: '🌧️', t: '21°' },
-                ].map((w, idx) => (
-                  <div key={idx} className={`flex flex-col items-center gap-0.5 md:gap-1 p-1 md:p-1.5 rounded-lg transition-colors ${w.active ? 'bg-white/20 ring-1 ring-white/30' : ''}`}>
-                    <span className="text-[8px] md:text-[10px] font-bold opacity-70">{w.d}</span>
-                    <span className="text-xs md:text-sm">{w.i}</span>
-                    <span className="text-[8px] md:text-[10px] font-bold">{w.t}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex border-b border-gray-100">
-              <div className="flex-1 text-center py-2 md:py-3 text-[10px] md:text-xs font-bold text-blue-600 border-b-2 border-blue-600">All</div>
-              <div className="flex-1 text-center py-2 md:py-3 text-[10px] md:text-xs font-bold text-gray-400">親子</div>
-              <div className="flex-1 text-center py-2 md:py-3 text-[10px] md:text-xs font-bold text-gray-400">銀髮</div>
-            </div>
-            <div className="p-3 md:p-4 flex-1 overflow-y-auto space-y-3 md:space-y-4">
-              <div className="bg-blue-50/50 rounded-xl p-2.5 md:p-3 border border-blue-50">
-                <div className="aspect-[16/9] bg-blue-100 rounded-lg mb-2 md:mb-3 flex items-center justify-center overflow-hidden">
-                  <img src="../../" />
-                </div>
-                <div className="inline-block px-1.5 py-0.5 rounded bg-blue-600 text-[8px] md:text-[10px] font-bold text-white mb-1.5 md:mb-2">親子</div>
-                <div className="text-xs md:text-sm font-bold text-gray-800 mb-1 leading-tight">【台北】幼兒發展 | 中階課程</div>
-                <div className="text-[9px] md:text-[10px] text-gray-400 mb-1.5 md:mb-2">🕙 10:00 – 11:30 · 2 yrs – 2.5 yrs</div>
-                <div className="text-[10px] md:text-xs font-bold text-blue-600">$ 500.00</div>
-              </div>
-            </div>
-          </div>
+        <div className="relative z-10 w-[240px] md:w-[300px] h-[480px] md:h-[600px] bg-gray-900 rounded-[2.5rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl border-[6px] md:border-[8px] border-gray-800 overflow-hidden" id="hero-mobile">
+            <img
+              src={isEn ? "/img/trip-planner/explore_en.PNG" : "/img/trip-planner/explore_zh.PNG"}
+              alt="App Mobile Screen"
+              className="w-full h-full object-cover rounded-[2rem] md:rounded-[2.2rem]"
+            />
         </div>
 
         <div className="absolute bottom-10 -right-4 md:-right-20 z-20 bg-white rounded-2xl shadow-2xl p-4 md:p-5 border border-gray-100 w-44 md:w-56 transform rotate-2 hover:rotate-0 transition-transform duration-500">
@@ -186,8 +159,9 @@ const HeroSection = () => (
         </div>
       </div>
     </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const BenefitsSection = () => {
   const benefits = [
@@ -703,7 +677,7 @@ const WhoIsThisForSection = () => (
               ? 'shadow-2xl scale-[1.02] z-10'
               : 'hover:shadow-xl'
               }`}
-            style={{ 
+            style={{
               borderColor: item.active ? colors.secondary : colors.borderLight,
               boxShadow: item.active ? `0 25px 50px -12px ${colors.secondary}33` : 'none'
             }}
