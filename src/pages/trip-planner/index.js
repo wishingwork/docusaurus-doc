@@ -274,7 +274,6 @@ const FeatureArchitectureSection = () => {
             </div>
           </div>
 
-
         </div>
       )
     },
@@ -297,47 +296,14 @@ const FeatureArchitectureSection = () => {
             <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-blue-400">{isEn ? 'Organizer Portal' : '主辦者專業後台'}</h3>
           </div>
 
-          {/* Central Phone Mockup */}
-          <div className="relative z-10 w-[220px] h-[450px] hidden md:block lg:block md:w-[260px] md:h-[530px] bg-gray-900 rounded-[2.5rem] p-2 border-[6px] border-gray-800 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.5)] transform translate-y-8 md:translate-y-12">
-            <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col relative">
-              <img src={isEn ? "/img/trip-planner/dashboard_en.png" : "/img/trip-planner/dashboard_zh.png"} className="w-full h-full object-cover" alt="Dashboard" />
+          {/* Laptop Mockup */}
+          <div className="relative z-10 w-[85%] max-w-[550px]  bg-gray-800 rounded-xl p-1.5 md:p-2 border-[4px] md:border-[6px] border-gray-700 shadow-2xl transform translate-y-8">
+            <div className="w-full h-full bg-white rounded-lg overflow-hidden relative border border-gray-600">
+              <img src={isEn ? "/img/trip-planner/dashboard_en.png" : "/img/trip-planner/dashboard_zh.png"} className="w-full h-full" alt="Dashboard" />
             </div>
-          </div>
-
-          {/* Floating Cards */}
-          <div className="absolute top-[25%] left-[5%] z-20 w-44 md:w-52 bg-white rounded-2xl shadow-2xl p-3 border border-gray-100 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
-            <div className="text-[9px] font-bold text-gray-400 mb-3 uppercase tracking-tight">{isEn ? 'Event Status' : '活動發布狀態'}</div>
-            <div className="space-y-2">
-              {[
-                { name: '親子瑜珈體驗班', status: 'Published', color: 'bg-emerald-400' },
-                { name: '追火車馬拉松', status: 'Draft', color: 'bg-amber-400' }
-              ].map((ev, i) => (
-                <div key={i} className="flex items-center justify-between bg-gray-50 p-2 rounded-lg">
-                  <div className="text-[8px] font-bold text-gray-800 truncate pr-2">{ev.name}</div>
-                  <div className={`text-[6px] px-1 py-0.5 rounded text-white font-bold ${ev.color}`}>{ev.status}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="absolute bottom-[20%] left-[5%] z-20 w-40 md:w-48 bg-blue-600 rounded-2xl shadow-2xl p-4 text-white rotate-[1deg] hover:rotate-0 transition-all duration-500">
-            <div className="flex items-center justify-between mb-3">
-              <Users className="w-4 h-4 text-white/80" />
-              <div className="text-[8px] font-bold text-white/60">ANALYTICS</div>
-            </div>
-            <div className="text-xl font-bold mb-0.5">1,284</div>
-            <div className="text-[7px] text-white/60 font-bold">{isEn ? 'Total Participants' : '累積參加人數'}</div>
-            <div className="mt-3 pt-3 border-t border-white/10 flex justify-between items-center">
-              <div className="text-[8px] font-bold">+12% vs last month</div>
-              <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-            </div>
-          </div>
-
-          <div className="absolute top-[30%] right-[5%] z-20 w-40 md:w-44 bg-white rounded-2xl shadow-2xl p-3 border border-gray-100 rotate-[3deg] hover:rotate-0 transition-all duration-500">
-            <div className="bg-blue-600 text-white rounded-xl p-3 flex flex-col items-center text-center shadow-lg">
-              <Plus className="w-5 h-5 mb-1" />
-              <div className="text-[9px] font-bold">{isEn ? 'Create New Event' : '新增活動'}</div>
-            </div>
+            {/* Subtle laptop details */}
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[105%] h-2 bg-gray-700 rounded-b-xl shadow-md"></div>
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-gray-600 rounded-full"></div>
           </div>
         </div>
       )
