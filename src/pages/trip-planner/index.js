@@ -669,23 +669,53 @@ const SocialSharingSection = () => (
 );
 
 const WhoIsThisForSection = () => (
-  <section id="for-who" className="py-24 bg-gray-900 text-white relative overflow-hidden scroll-mt-20">
-    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-900 rounded-full mix-blend-screen filter blur-[100px] opacity-20 transform translate-x-1/3 -translate-y-1/3"></div>
-    <div className="max-w-7xl mx-auto px-6 relative z-10">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl lg:text-5xl font-extrabold mb-6">Who Is This For?</h2>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">Built for organizers across industries to elevate their group experiences.</p>
+  <section id="for-who" className="py-24 bg-white scroll-mt-20">
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="mb-16">
+        <span className="text-blue-600 font-bold tracking-widest text-[10px] uppercase mb-4 block">WHO IT'S FOR</span>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight">Made for every kind <br className="hidden md:block" /> of event organizer</h2>
+        <p className="text-lg text-gray-500 max-w-2xl leading-relaxed font-medium">
+          Whether you run a weekly class, a school program, or a community workshop — WeatherGoPlan was built for you.
+        </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { title: 'Event Organizers', icon: Calendar, color: 'text-blue-400' },
-          { title: 'School Programs', icon: School, color: 'text-green-400' },
-          { title: 'Tour Hosts', icon: Navigation, color: 'text-indigo-400' },
-          { title: 'Communities & Workshops', icon: Users, color: 'text-purple-400' },
+          { 
+            emoji: '🎯', 
+            title: 'Event Organizer', 
+            desc: 'Fitness events, marathons, community activities, adult classes' 
+          },
+          { 
+            emoji: '🏫', 
+            title: 'School Program', 
+            desc: 'Parent-child classes, early childhood programs, school excursions',
+            active: true 
+          },
+          { 
+            emoji: '🗺️', 
+            title: 'Tour Host', 
+            desc: 'Cultural tours, walking groups, guided experiences, travel itineraries' 
+          },
+          { 
+            emoji: '🤝', 
+            title: 'Communities & Workshops', 
+            desc: 'Senior groups, craft meetups, hobbyist clubs, neighborhood programs' 
+          },
         ].map((item, idx) => (
-          <div key={idx} className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 p-8 rounded-2xl text-center hover:bg-gray-700 hover:-translate-y-2 transition-all duration-300 shadow-lg">
-            <item.icon className={`w-16 h-16 mx-auto mb-6 ${item.color} drop-shadow-md`} />
-            <h3 className="font-bold text-xl">{item.title}</h3>
+          <div 
+            key={idx} 
+            className={`bg-white p-10 rounded-[2rem] border transition-all duration-300 flex flex-col items-center text-center ${
+              item.active 
+                ? 'border-gray-900 shadow-2xl shadow-gray-200/50 scale-[1.02] z-10' 
+                : 'border-gray-100 hover:shadow-xl hover:shadow-gray-100/50 hover:border-gray-200'
+            }`}
+          >
+            <div className="text-4xl mb-8">{item.emoji}</div>
+            <h3 className="font-bold text-xl text-gray-900 mb-4">{item.title}</h3>
+            <p className="text-sm text-gray-400 leading-relaxed font-medium px-2">
+              {item.desc}
+            </p>
           </div>
         ))}
       </div>
