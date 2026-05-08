@@ -289,11 +289,11 @@ const FeatureArchitectureSection = () => {
         <div className="bg-[#11253E] rounded-3xl p-6 border border-white/5 h-full">
           <div className="text-[10px] text-gray-400 font-bold mb-4 uppercase tracking-wider">Trip Planner — Participant View</div>
           <div className="bg-[#0A1A2F] rounded-xl p-4 aspect-[16/10] relative mb-4 border border-white/5 overflow-hidden">
-             <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-             <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-blue-500 rounded-full shadow-[0_0:10px_rgba(59,130,246,0.5)]"></div>
-             <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-emerald-500 rounded-full shadow-[0_0:10px_rgba(16,185,129,0.5)]"></div>
-             <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-rose-500 rounded-full shadow-[0_0:10px_rgba(244,63,94,0.5)]"></div>
-             <div className="absolute bottom-4 right-4 bg-white/90 px-3 py-1 rounded text-[10px] border border-white/10 text-gray-900 font-bold">搜尋此區域</div>
+            <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+            <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-blue-500 rounded-full shadow-[0_0:10px_rgba(59,130,246,0.5)]"></div>
+            <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-emerald-500 rounded-full shadow-[0_0:10px_rgba(16,185,129,0.5)]"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-rose-500 rounded-full shadow-[0_0:10px_rgba(244,63,94,0.5)]"></div>
+            <div className="absolute bottom-4 right-4 bg-white/90 px-3 py-1 rounded text-[10px] border border-white/10 text-gray-900 font-bold">搜尋此區域</div>
           </div>
           <div className="text-[10px] text-gray-400 font-bold uppercase mb-3">附近景點</div>
           <div className="space-y-2">
@@ -304,11 +304,11 @@ const FeatureArchitectureSection = () => {
             ].map((item, i) => (
               <div key={i} className="flex items-center justify-between bg-[#0A1A2F] p-3 rounded-xl border border-white/5">
                 <div className="flex items-center gap-3">
-                   <div className="text-lg">{item.icon}</div>
-                   <div>
-                     <div className="text-xs font-bold text-white">{item.name}</div>
-                     <div className="text-[9px] text-gray-500">{item.type}</div>
-                   </div>
+                  <div className="text-lg">{item.icon}</div>
+                  <div>
+                    <div className="text-xs font-bold text-white">{item.name}</div>
+                    <div className="text-[9px] text-gray-500">{item.type}</div>
+                  </div>
                 </div>
                 <div className={`text-[9px] font-bold px-2 py-0.5 rounded ${item.badgeColor || 'bg-emerald-400/20 text-emerald-400'}`}>{item.badge}</div>
               </div>
@@ -409,22 +409,22 @@ const FeatureArchitectureSection = () => {
           </div>
           <div className="text-[10px] text-emerald-400 font-bold mb-4">Tuesday (rainy): Indoor recommendations</div>
           <div className="space-y-3">
-             {[
-               { icon: '🏛️', name: '板橋慈惠宮', type: 'Indoor · 0.3 km' },
-               { icon: '🍧', name: 'J 室冰鋪', type: 'IceShop · 0.1 km' },
-               { icon: '🦋', name: '兜長的鍬大 昆蟲館', type: 'Indoor · 0.2 km' },
-             ].map((item, i) => (
-               <div key={i} className="flex items-center justify-between bg-[#0A1A2F] p-3 rounded-xl border border-white/5">
-                 <div className="flex items-center gap-3">
-                   <div className="text-base">{item.icon}</div>
-                   <div>
-                     <div className="text-xs font-bold">{item.name}</div>
-                     <div className="text-[9px] text-gray-500">{item.type}</div>
-                   </div>
-                 </div>
-                 <div className="text-[8px] font-bold text-emerald-400 px-2 py-0.5 rounded border border-emerald-400/30">Recommended</div>
-               </div>
-             ))}
+            {[
+              { icon: '🏛️', name: '板橋慈惠宮', type: 'Indoor · 0.3 km' },
+              { icon: '🍧', name: 'J 室冰鋪', type: 'IceShop · 0.1 km' },
+              { icon: '🦋', name: '兜長的鍬大 昆蟲館', type: 'Indoor · 0.2 km' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center justify-between bg-[#0A1A2F] p-3 rounded-xl border border-white/5">
+                <div className="flex items-center gap-3">
+                  <div className="text-base">{item.icon}</div>
+                  <div>
+                    <div className="text-xs font-bold">{item.name}</div>
+                    <div className="text-[9px] text-gray-500">{item.type}</div>
+                  </div>
+                </div>
+                <div className="text-[8px] font-bold text-emerald-400 px-2 py-0.5 rounded border border-emerald-400/30">Recommended</div>
+              </div>
+            ))}
           </div>
         </div>
       )
@@ -447,11 +447,10 @@ const FeatureArchitectureSection = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                activeTab === tab.id
-                  ? 'bg-white text-[#05192D] shadow-xl'
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
-              }`}
+              className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${activeTab === tab.id
+                ? 'bg-white text-[#05192D] shadow-xl'
+                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                }`}
             >
               {tab.label}
             </button>
@@ -466,8 +465,8 @@ const FeatureArchitectureSection = () => {
                   <feature.icon className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                   <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
-                   <p className="text-sm text-gray-400 leading-relaxed">{feature.desc}</p>
+                  <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{feature.desc}</p>
                 </div>
               </div>
             ))}
@@ -491,112 +490,112 @@ const OrganizerDashboardSection = () => (
       </div>
 
       <div className="bg-[#F8F9FA] rounded-[2.5rem] p-4 md:p-8 border border-gray-100 shadow-2xl mb-16 overflow-hidden">
-         {/* Mockup Header */}
-         <div className="bg-white border-b border-gray-100 p-4 md:px-6 md:py-3 flex items-center justify-between rounded-t-2xl shadow-sm">
-            <div className="flex items-center gap-8">
-               <div className="text-blue-600 font-black text-sm tracking-tight">WeatherGoPlan</div>
-               <div className="hidden md:flex items-center gap-1 bg-gray-50 px-3 py-1 rounded text-[10px] text-gray-400 font-bold border border-gray-100">
-                 Dashboard <span className="text-gray-300">›</span> Organizer
-               </div>
+        {/* Mockup Header */}
+        <div className="bg-white border-b border-gray-100 p-4 md:px-6 md:py-3 flex items-center justify-between rounded-t-2xl shadow-sm">
+          <div className="flex items-center gap-8">
+            <div className="text-blue-600 font-black text-sm tracking-tight">WeatherGoPlan</div>
+            <div className="hidden md:flex items-center gap-1 bg-gray-50 px-3 py-1 rounded text-[10px] text-gray-400 font-bold border border-gray-100">
+              Dashboard <span className="text-gray-300">›</span> Organizer
             </div>
-            <div className="flex items-center gap-3">
-               <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">週</div>
-               <div className="hidden sm:block text-xs font-bold text-gray-800">週六跑跑團 <span className="text-gray-400 ml-1 font-normal">Organizer</span></div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">週</div>
+            <div className="hidden sm:block text-xs font-bold text-gray-800">週六跑跑團 <span className="text-gray-400 ml-1 font-normal">Organizer</span></div>
+          </div>
+        </div>
+        {/* Mockup Body */}
+        <div className="flex min-h-[500px] bg-white rounded-b-2xl border-x border-b border-gray-100 overflow-hidden">
+          {/* Sidebar */}
+          <div className="w-48 bg-gray-50/50 border-r border-gray-100 hidden md:block py-6">
+            <div className="space-y-1 px-3">
+              {[
+                { label: 'Dashboard', icon: LayoutDashboard },
+                { label: 'Merchants', icon: Home },
+                { label: 'Organizers', icon: User, active: true },
+              ].map((item, i) => (
+                <div key={i} className={`flex items-center gap-3 px-4 py-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${item.active ? 'bg-blue-50 text-blue-600' : 'text-gray-500 hover:bg-gray-100'}`}>
+                  <item.icon className="w-4 h-4" /> {item.label}
+                </div>
+              ))}
             </div>
-         </div>
-         {/* Mockup Body */}
-         <div className="flex min-h-[500px] bg-white rounded-b-2xl border-x border-b border-gray-100 overflow-hidden">
-            {/* Sidebar */}
-            <div className="w-48 bg-gray-50/50 border-r border-gray-100 hidden md:block py-6">
-               <div className="space-y-1 px-3">
-                  {[
-                    { label: 'Dashboard', icon: LayoutDashboard },
-                    { label: 'Merchants', icon: Home },
-                    { label: 'Organizers', icon: User, active: true },
-                  ].map((item, i) => (
-                    <div key={i} className={`flex items-center gap-3 px-4 py-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${item.active ? 'bg-blue-50 text-blue-600' : 'text-gray-500 hover:bg-gray-100'}`}>
-                      <item.icon className="w-4 h-4" /> {item.label}
-                    </div>
-                  ))}
-               </div>
+          </div>
+          {/* Main Content */}
+          <div className="flex-1 p-6 md:p-8 overflow-x-auto">
+            <div className="text-[10px] text-gray-400 font-bold mb-6 uppercase tracking-wider">Dashboard › Organizer › 週六跑跑團</div>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+              <h3 className="text-2xl font-extrabold text-gray-900">週六跑跑團</h3>
+              <div className="flex items-center gap-2 whitespace-nowrap">
+                <button className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-xl text-xs font-bold text-gray-700 hover:bg-gray-100">+ Add Event</button>
+                <button className="bg-blue-600 px-4 py-2 rounded-xl text-xs font-bold text-white shadow-lg shadow-blue-200 flex items-center gap-2"><Edit2 className="w-3.5 h-3.5" /> Edit Organizer</button>
+              </div>
             </div>
-            {/* Main Content */}
-            <div className="flex-1 p-6 md:p-8 overflow-x-auto">
-               <div className="text-[10px] text-gray-400 font-bold mb-6 uppercase tracking-wider">Dashboard › Organizer › 週六跑跑團</div>
-               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-                  <h3 className="text-2xl font-extrabold text-gray-900">週六跑跑團</h3>
-                  <div className="flex items-center gap-2 whitespace-nowrap">
-                    <button className="bg-gray-50 border border-gray-200 px-4 py-2 rounded-xl text-xs font-bold text-gray-700 hover:bg-gray-100">+ Add Event</button>
-                    <button className="bg-blue-600 px-4 py-2 rounded-xl text-xs font-bold text-white shadow-lg shadow-blue-200 flex items-center gap-2"><Edit2 className="w-3.5 h-3.5" /> Edit Organizer</button>
-                  </div>
-               </div>
-               
-               <div className="grid grid-cols-3 gap-4 mb-8">
-                  {[
-                    { val: '4', label: 'Total events', color: 'text-blue-600' },
-                    { val: '3', label: 'Published', color: 'text-emerald-600' },
-                    { val: '1', label: 'Draft', color: 'text-amber-600' },
-                  ].map((stat, i) => (
-                    <div key={i} className="bg-gray-50/50 border border-gray-100 p-6 rounded-2xl">
-                      <div className={`text-4xl font-black mb-1 ${stat.color}`}>{stat.val}</div>
-                      <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">{stat.label}</div>
-                    </div>
-                  ))}
-               </div>
 
-               <div className="border border-gray-100 rounded-2xl overflow-hidden">
-                  <table className="w-full text-left border-collapse">
-                    <thead className="bg-gray-50/80 text-[10px] text-gray-400 uppercase font-bold border-b border-gray-100">
-                      <tr>
-                        <th className="px-6 py-4">Event name</th>
-                        <th className="px-6 py-4">Date</th>
-                        <th className="px-6 py-4">Status</th>
-                        <th className="px-6 py-4">Category</th>
-                        <th className="px-6 py-4 text-right">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-50 text-xs">
-                      {[
-                        { name: '親子瑜珈體驗班', date: '04/19/2026 · 10:00 AM', status: 'Published', pub: true, cat: '親子' },
-                        { name: '追火車馬拉松', date: '04/26/2026 · 06:00 AM', status: 'Draft', cat: 'Festival' },
-                        { name: '銀髮社區健康講座', date: '05/03/2026 · 09:30 AM', status: 'Published', pub: true, cat: '銀髮' },
-                      ].map((row, i) => (
-                        <tr key={i} className="hover:bg-gray-50 transition-colors">
-                          <td className="px-6 py-5 font-bold text-gray-900">{row.name}</td>
-                          <td className="px-6 py-5 text-gray-400">{row.date}</td>
-                          <td className="px-6 py-5">
-                            <span className={`px-2 py-0.5 rounded-full font-bold text-[10px] ${row.pub ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'}`}>{row.status}</span>
-                          </td>
-                          <td className="px-6 py-5 text-gray-400">{row.cat}</td>
-                          <td className="px-6 py-5 text-right"><span className="text-blue-600 font-bold cursor-pointer flex items-center justify-end gap-1">View <Edit2 className="w-3 h-3" /></span></td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-               </div>
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              {[
+                { val: '4', label: 'Total events', color: 'text-blue-600' },
+                { val: '3', label: 'Published', color: 'text-emerald-600' },
+                { val: '1', label: 'Draft', color: 'text-amber-600' },
+              ].map((stat, i) => (
+                <div key={i} className="bg-gray-50/50 border border-gray-100 p-6 rounded-2xl">
+                  <div className={`text-4xl font-black mb-1 ${stat.color}`}>{stat.val}</div>
+                  <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">{stat.label}</div>
+                </div>
+              ))}
             </div>
-         </div>
+
+            <div className="border border-gray-100 rounded-2xl overflow-hidden">
+              <table className="w-full text-left border-collapse">
+                <thead className="bg-gray-50/80 text-[10px] text-gray-400 uppercase font-bold border-b border-gray-100">
+                  <tr>
+                    <th className="px-6 py-4">Event name</th>
+                    <th className="px-6 py-4">Date</th>
+                    <th className="px-6 py-4">Status</th>
+                    <th className="px-6 py-4">Category</th>
+                    <th className="px-6 py-4 text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-50 text-xs">
+                  {[
+                    { name: '親子瑜珈體驗班', date: '04/19/2026 · 10:00 AM', status: 'Published', pub: true, cat: '親子' },
+                    { name: '追火車馬拉松', date: '04/26/2026 · 06:00 AM', status: 'Draft', cat: 'Festival' },
+                    { name: '銀髮社區健康講座', date: '05/03/2026 · 09:30 AM', status: 'Published', pub: true, cat: '銀髮' },
+                  ].map((row, i) => (
+                    <tr key={i} className="hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-5 font-bold text-gray-900">{row.name}</td>
+                      <td className="px-6 py-5 text-gray-400">{row.date}</td>
+                      <td className="px-6 py-5">
+                        <span className={`px-2 py-0.5 rounded-full font-bold text-[10px] ${row.pub ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'}`}>{row.status}</span>
+                      </td>
+                      <td className="px-6 py-5 text-gray-400">{row.cat}</td>
+                      <td className="px-6 py-5 text-right"><span className="text-blue-600 font-bold cursor-pointer flex items-center justify-end gap-1">View <Edit2 className="w-3 h-3" /></span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { 
-            title: 'Event creation & publishing', 
+          {
+            title: 'Event creation & publishing',
             desc: 'Build event pages with all the details participants need — and publish to the live app in one click.',
             items: ['Add title, date, time, duration', 'Set price and audience age group', 'Attach location & category', 'Draft → Publish with one click']
           },
-          { 
-            title: 'Organization profile management', 
+          {
+            title: 'Organization profile management',
             desc: 'Your public-facing organizer page — manage branding, contact info, and event listings all in one place.',
             items: ['Set unique organizer ID & logo', 'Person or Organization type', 'Contact email and phone', 'All hosted events visible on profile']
           },
-          { 
-            title: 'Participant sharing & reach', 
+          {
+            title: 'Participant sharing & reach',
             desc: 'Every event page is shareable — to LINE groups, Instagram, or a direct link for your newsletter.',
             items: ['Unique shareable event URL', 'Book Now CTA on every page', 'Participants invite friends via app', 'Organizer profile link shareable']
           },
-          { 
-            title: 'Schedule & series management', 
+          {
+            title: 'Schedule & series management',
             desc: 'Run weekly classes or multi-session programs? Manage them as a series without recreating from scratch.',
             items: ['Multi-date event series support', 'Session duration & timing control', 'Event status tracking', 'Edit events at any time']
           },
@@ -634,24 +633,24 @@ const SocialSharingSection = () => (
 
       <div className="grid md:grid-cols-3 gap-8">
         {[
-          { 
-            icon: '🎟️', 
-            title: 'Every event is shareable', 
-            desc: 'Each event has a clean, mobile-optimized page with details, pricing, and a Book Now button — ready to share via LINE, Instagram, or any messaging app.', 
+          {
+            icon: '🎟️',
+            title: 'Every event is shareable',
+            desc: 'Each event has a clean, mobile-optimized page with details, pricing, and a Book Now button — ready to share via LINE, Instagram, or any messaging app.',
             link: 'wgp.app/event/baby-yoga-taichung',
             active: true
           },
-          { 
-            icon: '🏢', 
-            title: 'Organizations get a profile link', 
-            desc: 'Your branded organizer page lists all your events in one place — perfect for bios, newsletters, and word-of-mouth referrals.', 
-            link: 'wgp.app/org/我好你好親子空間' 
+          {
+            icon: '🏢',
+            title: 'Organizations get a profile link',
+            desc: 'Your branded organizer page lists all your events in one place — perfect for bios, newsletters, and word-of-mouth referrals.',
+            link: 'wgp.app/org/我好你好親子空間'
           },
-          { 
-            icon: '📍', 
-            title: 'Attractions are also shareable', 
-            desc: 'Participants discovering a great café or park can share it directly with friends — keeping your event top-of-mind even after it ends.', 
-            link: 'wgp.app/place/lin-ben-yuan-garden' 
+          {
+            icon: '📍',
+            title: 'Attractions are also shareable',
+            desc: 'Participants discovering a great café or park can share it directly with friends — keeping your event top-of-mind even after it ends.',
+            link: 'wgp.app/place/lin-ben-yuan-garden'
           },
         ].map((card, idx) => (
           <div key={idx} className={`bg-white p-8 rounded-[2rem] border transition-all duration-300 hover:shadow-xl ${card.active ? 'border-blue-200 ring-4 ring-blue-50' : 'border-gray-100 shadow-sm'}`}>
@@ -681,35 +680,34 @@ const WhoIsThisForSection = () => (
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { 
-            emoji: '🎯', 
-            title: 'Event Organizer', 
-            desc: 'Fitness events, marathons, community activities, adult classes' 
+          {
+            emoji: '🎯',
+            title: 'Event Organizer',
+            desc: 'Fitness events, marathons, community activities, adult classes'
           },
-          { 
-            emoji: '🏫', 
-            title: 'School Program', 
+          {
+            emoji: '🏫',
+            title: 'School Program',
             desc: 'Parent-child classes, early childhood programs, school excursions',
-            active: true 
+            active: true
           },
-          { 
-            emoji: '🗺️', 
-            title: 'Tour Host', 
-            desc: 'Cultural tours, walking groups, guided experiences, travel itineraries' 
+          {
+            emoji: '🗺️',
+            title: 'Tour Host',
+            desc: 'Cultural tours, walking groups, guided experiences, travel itineraries'
           },
-          { 
-            emoji: '🤝', 
-            title: 'Communities & Workshops', 
-            desc: 'Senior groups, craft meetups, hobbyist clubs, neighborhood programs' 
+          {
+            emoji: '🤝',
+            title: 'Communities & Workshops',
+            desc: 'Senior groups, craft meetups, hobbyist clubs, neighborhood programs'
           },
         ].map((item, idx) => (
-          <div 
-            key={idx} 
-            className={`bg-white p-10 rounded-[2rem] border transition-all duration-300 flex flex-col items-center text-center ${
-              item.active 
-                ? 'border-gray-900 shadow-2xl shadow-gray-200/50 scale-[1.02] z-10' 
-                : 'border-gray-100 hover:shadow-xl hover:shadow-gray-100/50 hover:border-gray-200'
-            }`}
+          <div
+            key={idx}
+            className={`bg-white p-10 rounded-[2rem] border transition-all duration-300 flex flex-col items-center text-center ${item.active
+              ? 'border-gray-900 shadow-2xl shadow-gray-200/50 scale-[1.02] z-10'
+              : 'border-gray-100 hover:shadow-xl hover:shadow-gray-100/50 hover:border-gray-200'
+              }`}
           >
             <div className="text-4xl mb-8">{item.emoji}</div>
             <h3 className="font-bold text-xl text-gray-900 mb-4">{item.title}</h3>
@@ -725,21 +723,21 @@ const WhoIsThisForSection = () => (
 
 const HowItWorksSection = () => {
   const steps = [
-    { 
-      title: 'Create organization', 
-      desc: 'Set up your organizer profile with name, logo, type, and contact info. Your public page is ready instantly.' 
+    {
+      title: 'Create organization',
+      desc: 'Set up your organizer profile with name, logo, type, and contact info. Your public page is ready instantly.'
     },
-    { 
-      title: 'Publish your event', 
-      desc: 'Fill in event details — date, location, price, audience — and hit publish. It appears on the map and Explore feed.' 
+    {
+      title: 'Publish your event',
+      desc: 'Fill in event details — date, location, price, audience — and hit publish. It appears on the map and Explore feed.'
     },
-    { 
-      title: 'Share with participants', 
-      desc: 'Share your event page link via LINE, IG, or any channel. Participants tap through to book instantly.' 
+    {
+      title: 'Share with participants',
+      desc: 'Share your event page link via LINE, IG, or any channel. Participants tap through to book instantly.'
     },
-    { 
-      title: 'Participants explore', 
-      desc: 'Attendees open the app, discover your event in context with nearby attractions and weather-smart suggestions.' 
+    {
+      title: 'Participants explore',
+      desc: 'Attendees open the app, discover your event in context with nearby attractions and weather-smart suggestions.'
     },
   ];
 
@@ -757,7 +755,7 @@ const HowItWorksSection = () => {
         <div className="relative max-w-6xl mx-auto">
           {/* Connecting Line */}
           <div className="absolute top-[32px] left-[12.5%] right-[12.5%] h-[1px] bg-blue-200 hidden md:block"></div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
             {steps.map((step, idx) => (
               <div key={idx} className="flex flex-col items-center">
@@ -790,7 +788,7 @@ const CTASection = () => (
           <button className="w-full bg-white text-gray-900 px-8 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98]">
             <User className="w-5 h-5" /> Become an Organizer — it's free
           </button>
-          
+
           <button className="w-full bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-3 hover:bg-white/10">
             <Play className="w-5 h-5" /> Watch demo
           </button>
@@ -809,21 +807,21 @@ const CTASection = () => (
       <div className="relative flex justify-center lg:justify-end lg:pr-12 group">
         {/* Browser Mockup */}
         <div className="bg-[#FAF9F6] rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-[320px] sm:w-[420px] aspect-[4/3] border border-white/5 relative transform rotate-2 group-hover:rotate-0 transition-transform duration-700">
-           <div className="flex gap-1.5 mb-6 opacity-40">
-              <div className="w-2 h-2 rounded-full bg-rose-400"></div>
-              <div className="w-2 h-2 rounded-full bg-amber-400"></div>
-              <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-           </div>
-           <div className="space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <div className="h-4 bg-gray-200/80 rounded-full w-4/5"></div>
-                <div className="h-4 bg-gray-900/80 rounded-full w-full"></div>
-              </div>
-              <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
-              <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
-              <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
-              <div className="w-1/2 h-10 bg-blue-600 rounded-xl mt-6"></div>
-           </div>
+          <div className="flex gap-1.5 mb-6 opacity-40">
+            <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+            <div className="w-2 h-2 rounded-full bg-amber-400"></div>
+            <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+          </div>
+          <div className="space-y-3">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="h-4 bg-gray-200/80 rounded-full w-4/5"></div>
+              <div className="h-4 bg-gray-900/80 rounded-full w-full"></div>
+            </div>
+            <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
+            <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
+            <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
+            <div className="w-1/2 h-10 bg-blue-600 rounded-xl mt-6"></div>
+          </div>
         </div>
 
         {/* Phone Frame */}
@@ -841,27 +839,27 @@ const CTASection = () => (
               </div>
             </div>
             <div className="p-3 flex-1 space-y-3">
-               <div className="aspect-[16/10] bg-blue-100/50 rounded-xl"></div>
-               <div className="text-[9px] font-bold text-gray-800 leading-tight">親子課程 · 週四上午</div>
-               <div className="text-[8px] text-gray-500 font-medium">10:00 - 11:30 · $500</div>
-               
-               <div className="pt-2 border-t border-gray-100">
-                 <div className="text-[7px] font-bold text-gray-400 mb-2 uppercase">附近景點</div>
-                 <div className="space-y-1.5">
-                   <div className="flex items-center justify-between">
-                     <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
-                       <span className="text-green-500">●</span> 林本源園邸
-                     </span>
-                     <span className="text-[7px] text-gray-400">0.2km</span>
-                   </div>
-                   <div className="flex items-center justify-between">
-                     <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
-                       <span className="text-blue-500">●</span> J 室冰鋪
-                     </span>
-                     <span className="text-[7px] text-gray-400">0.1km</span>
-                   </div>
-                 </div>
-               </div>
+              <div className="aspect-[16/10] bg-blue-100/50 rounded-xl"></div>
+              <div className="text-[9px] font-bold text-gray-800 leading-tight">親子課程 · 週四上午</div>
+              <div className="text-[8px] text-gray-500 font-medium">10:00 - 11:30 · $500</div>
+
+              <div className="pt-2 border-t border-gray-100">
+                <div className="text-[7px] font-bold text-gray-400 mb-2 uppercase">附近景點</div>
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
+                      <span className="text-green-500">●</span> 林本源園邸
+                    </span>
+                    <span className="text-[7px] text-gray-400">0.2km</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
+                      <span className="text-blue-500">●</span> J 室冰鋪
+                    </span>
+                    <span className="text-[7px] text-gray-400">0.1km</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -872,7 +870,7 @@ const CTASection = () => (
 
 const Footer = () => {
   const { i18n } = useTranslation();
-  
+
   return (
     <footer className="bg-[#1A1A1A] text-white pt-24 pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -932,18 +930,18 @@ const Footer = () => {
             © 2026 WeatherGoPlan · MeteoSync. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
-             <button 
-               onClick={() => i18n.changeLanguage('zh-Hant')}
-               className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all ${i18n.language === 'zh-Hant' ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-500 hover:text-white hover:bg-white/10'}`}
-             >
-                <Globe className="w-4 h-4" /> 繁體中文
-             </button>
-             <button 
-               onClick={() => i18n.changeLanguage('en')}
-               className={`px-4 py-2 rounded-xl text-sm font-bold transition-all ${i18n.language === 'en' ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-500 hover:text-white hover:bg-white/10'}`}
-             >
-                English
-             </button>
+            <button
+              onClick={() => i18n.changeLanguage('zh-Hant')}
+              className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all ${i18n.language === 'zh-Hant' ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-500 hover:text-white hover:bg-white/10'}`}
+            >
+              <Globe className="w-4 h-4" /> 繁體中文
+            </button>
+            <button
+              onClick={() => i18n.changeLanguage('en')}
+              className={`px-4 py-2 rounded-xl text-sm font-bold transition-all ${i18n.language === 'en' ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-500 hover:text-white hover:bg-white/10'}`}
+            >
+              English
+            </button>
           </div>
         </div>
       </div>
@@ -953,21 +951,17 @@ const Footer = () => {
 
 export default function TripPlannerWebsite() {
   return (
-    <Layout
-      title="Organize Better Events"
-      description="Event and trip engagement platform for organizers and participants">
-      <div className="trip-planner-redesign antialiased selection:bg-blue-200">
-        <Navbar />
-        <HeroSection />
-        <BenefitsSection />
-        <FeatureArchitectureSection />
-        <OrganizerDashboardSection />
-        <SocialSharingSection />
-        <WhoIsThisForSection />
-        <HowItWorksSection />
-        <CTASection />
-        <Footer />
-      </div>
-    </Layout>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <HeroSection />
+      <BenefitsSection />
+      <FeatureArchitectureSection />
+      <OrganizerDashboardSection />
+      <SocialSharingSection />
+      <WhoIsThisForSection />
+      <HowItWorksSection />
+      <CTASection />
+      <Footer />
+    </div>
   );
 }
