@@ -34,21 +34,21 @@ const Navbar = () => {
           <li><a href="#sharing" className="hover:text-blue-600 transition-colors no-underline">Social Growth</a></li>
           <li><a href="#how" className="hover:text-blue-600 transition-colors no-underline">How It Works</a></li>
         </ul>
-        <div className="flex items-center gap-3 md:gap-5">
+        <div className="flex items-center gap-2 md:gap-5">
           <div className="flex items-center gap-2 bg-gray-50 border border-gray-100 rounded-lg px-2 py-1.5 hover:bg-gray-100 transition-colors">
             <Languages className="w-4 h-4 text-gray-400" />
             <select
               value={i18n.language}
               onChange={e => i18n.changeLanguage(e.target.value)}
-              className="bg-transparent text-sm font-semibold text-gray-600 border-none focus:ring-0 cursor-pointer outline-none"
+              className="bg-transparent text-xs sm:text-sm font-semibold text-gray-600 border-none focus:ring-0 cursor-pointer outline-none"
             >
               <option value="en">EN</option>
               <option value="zh-Hant">繁中</option>
             </select>
           </div>
-          <a href="#" className="text-gray-600 font-medium hover:text-blue-600 transition-colors hidden sm:block no-underline">Sign In</a>
-          <a href="#" className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-bold shadow-md transition-all flex items-center gap-1 no-underline whitespace-nowrap">
-            Become an Organizer <ArrowRight className="w-4 h-4" />
+          <a href="#" className="text-gray-600 font-medium hover:text-blue-600 transition-colors hidden lg:block no-underline">Sign In</a>
+          <a href="#" className="bg-blue-600 hover:bg-blue-700 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full font-bold shadow-md transition-all flex items-center gap-1 no-underline whitespace-nowrap text-xs md:text-base">
+            Become <span className="hidden sm:inline">an Organizer</span> <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </a>
         </div>
       </div>
@@ -86,47 +86,43 @@ const HeroSection = () => (
           </button>
         </div>
 
-        <div className="flex items-center gap-12 border-t border-gray-100 pt-10">
+        <div className="flex flex-wrap items-center gap-8 md:gap-12 border-t border-gray-100 pt-10">
           <div>
-            <div className="text-3xl font-bold text-gray-900">10K+</div>
-            <div className="text-sm text-gray-400 font-medium">App users</div>
+            <div className="text-2xl md:text-3xl font-bold text-gray-900">10K+</div>
+            <div className="text-xs md:text-sm text-gray-400 font-medium">App users</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-gray-900">500+</div>
-            <div className="text-sm text-gray-400 font-medium">Events published</div>
+            <div className="text-2xl md:text-3xl font-bold text-gray-900">500+</div>
+            <div className="text-xs md:text-sm text-gray-400 font-medium">Events published</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-gray-900">Free</div>
-            <div className="text-sm text-gray-400 font-medium">To start</div>
+            <div className="text-2xl md:text-3xl font-bold text-gray-900">Free</div>
+            <div className="text-xs md:text-sm text-gray-400 font-medium">To start</div>
           </div>
         </div>
       </div>
 
-      <div className="relative flex justify-center lg:justify-end pr-12 lg:pr-20">
-        <div className="absolute top-20 -left-10 md:-left-20 z-20 bg-white rounded-2xl shadow-2xl p-5 border border-gray-100 w-64 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-          <div className="flex items-center gap-2 text-sm font-bold text-gray-800 mb-4 pb-2 border-b border-gray-50">
+      <div className="relative flex justify-center lg:justify-end lg:pr-20 mt-16 lg:mt-0">
+        <div className="absolute top-10 -left-4 md:-left-20 z-20 bg-white rounded-2xl shadow-2xl p-4 md:p-5 border border-gray-100 w-48 md:w-64 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+          <div className="flex items-center gap-2 text-[10px] md:text-sm font-bold text-gray-800 mb-3 md:mb-4 pb-2 border-b border-gray-50">
             <span>📅</span> Hosted Events
           </div>
-          <div className="space-y-3">
-            <div className="flex items-center justify-between gap-3 text-xs">
-              <span className="font-semibold text-gray-700">親子瑜珈體驗班</span>
-              <span className="px-2 py-0.5 rounded-full bg-green-50 text-green-600 font-bold">Published</span>
+          <div className="space-y-2 md:space-y-3">
+            <div className="flex items-center justify-between gap-3 text-[10px]">
+              <span className="font-semibold text-gray-700 truncate">親子瑜珈體驗班</span>
+              <span className="px-2 py-0.5 rounded-full bg-green-50 text-green-600 font-bold shrink-0">Published</span>
             </div>
-            <div className="flex items-center justify-between gap-3 text-xs">
-              <span className="font-semibold text-gray-700">追火車馬拉松</span>
-              <span className="px-2 py-0.5 rounded-full bg-amber-50 text-amber-600 font-bold">Draft</span>
-            </div>
-            <div className="flex items-center justify-between gap-3 text-xs">
-              <span className="font-semibold text-gray-700">銀髮社區講座</span>
-              <span className="px-2 py-0.5 rounded-full bg-green-50 text-green-600 font-bold">Published</span>
+            <div className="flex items-center justify-between gap-3 text-[10px]">
+              <span className="font-semibold text-gray-700 truncate">追火車馬拉松</span>
+              <span className="px-2 py-0.5 rounded-full bg-amber-50 text-amber-600 font-bold shrink-0">Draft</span>
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 w-[300px] h-[600px] bg-gray-900 rounded-[3rem] p-3 shadow-2xl border-[8px] border-gray-800 overflow-hidden">
-          <div className="w-full h-full bg-white rounded-[2.2rem] overflow-hidden flex flex-col">
-            <div className="bg-blue-600 pt-10 pb-6 px-5 text-white">
-              <div className="text-lg font-bold mb-4">Explore</div>
+        <div className="relative z-10 w-[240px] md:w-[300px] h-[480px] md:h-[600px] bg-gray-900 rounded-[2.5rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl border-[6px] md:border-[8px] border-gray-800 overflow-hidden">
+          <div className="w-full h-full bg-white rounded-[2rem] md:rounded-[2.2rem] overflow-hidden flex flex-col">
+            <div className="bg-blue-600 pt-8 md:pt-10 pb-4 md:pb-6 px-4 md:px-5 text-white">
+              <div className="text-base md:text-lg font-bold mb-4">Explore</div>
               <div className="flex justify-between items-center gap-1">
                 {[
                   { d: 'MON', i: '☀️', t: '25°' },
@@ -135,60 +131,43 @@ const HeroSection = () => (
                   { d: 'THU', i: '☀️', t: '26°' },
                   { d: 'FRI', i: '🌧️', t: '21°' },
                 ].map((w, idx) => (
-                  <div key={idx} className={`flex flex-col items-center gap-1 p-1.5 rounded-lg transition-colors ${w.active ? 'bg-white/20 ring-1 ring-white/30' : ''}`}>
-                    <span className="text-[10px] font-bold opacity-70">{w.d}</span>
-                    <span className="text-sm">{w.i}</span>
-                    <span className="text-[10px] font-bold">{w.t}</span>
+                  <div key={idx} className={`flex flex-col items-center gap-0.5 md:gap-1 p-1 md:p-1.5 rounded-lg transition-colors ${w.active ? 'bg-white/20 ring-1 ring-white/30' : ''}`}>
+                    <span className="text-[8px] md:text-[10px] font-bold opacity-70">{w.d}</span>
+                    <span className="text-xs md:text-sm">{w.i}</span>
+                    <span className="text-[8px] md:text-[10px] font-bold">{w.t}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="flex border-b border-gray-100">
-              <div className="flex-1 text-center py-3 text-xs font-bold text-blue-600 border-b-2 border-blue-600">All</div>
-              <div className="flex-1 text-center py-3 text-xs font-bold text-gray-400">親子</div>
-              <div className="flex-1 text-center py-3 text-xs font-bold text-gray-400">銀髮</div>
+              <div className="flex-1 text-center py-2 md:py-3 text-[10px] md:text-xs font-bold text-blue-600 border-b-2 border-blue-600">All</div>
+              <div className="flex-1 text-center py-2 md:py-3 text-[10px] md:text-xs font-bold text-gray-400">親子</div>
+              <div className="flex-1 text-center py-2 md:py-3 text-[10px] md:text-xs font-bold text-gray-400">銀髮</div>
             </div>
-            <div className="p-4 flex-1 overflow-y-auto space-y-4">
-              <div className="bg-blue-50/50 rounded-xl p-3 border border-blue-50">
-                <div className="aspect-[16/9] bg-blue-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#185FA5" strokeWidth="1.5" opacity="0.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /></svg>
+            <div className="p-3 md:p-4 flex-1 overflow-y-auto space-y-3 md:space-y-4">
+              <div className="bg-blue-50/50 rounded-xl p-2.5 md:p-3 border border-blue-50">
+                <div className="aspect-[16/9] bg-blue-100 rounded-lg mb-2 md:mb-3 flex items-center justify-center overflow-hidden">
+                  <img src="../../" />
                 </div>
-                <div className="inline-block px-2 py-0.5 rounded bg-blue-600 text-[10px] font-bold text-white mb-2">親子</div>
-                <div className="text-sm font-bold text-gray-800 mb-1 leading-tight">【台北】幼兒發展 | 中階課程</div>
-                <div className="text-[10px] text-gray-400 mb-2">🕙 10:00 – 11:30 · 2 yrs – 2.5 yrs</div>
-                <div className="text-xs font-bold text-blue-600">$ 500.00</div>
-              </div>
-              <div className="space-y-3">
-                {[
-                  { icon: '🌳', name: '林本源園邸', type: 'Outdoor', dist: '0.2 km' },
-                  { icon: '🏛️', name: '板橋慈惠宮', type: 'Indoor', dist: '0.3 km' },
-                  { icon: '🍧', name: 'J 室冰鋪', type: 'IceShop', dist: '0.1 km' },
-                ].map((a, i) => (
-                  <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors">
-                    <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-lg">{a.icon}</div>
-                    <div className="flex-1">
-                      <div className="text-xs font-bold text-gray-800">{a.name}</div>
-                      <div className="text-[10px] text-gray-400">{a.type}</div>
-                    </div>
-                    <div className="text-[10px] font-bold text-gray-400">{a.dist}</div>
-                  </div>
-                ))}
+                <div className="inline-block px-1.5 py-0.5 rounded bg-blue-600 text-[8px] md:text-[10px] font-bold text-white mb-1.5 md:mb-2">親子</div>
+                <div className="text-xs md:text-sm font-bold text-gray-800 mb-1 leading-tight">【台北】幼兒發展 | 中階課程</div>
+                <div className="text-[9px] md:text-[10px] text-gray-400 mb-1.5 md:mb-2">🕙 10:00 – 11:30 · 2 yrs – 2.5 yrs</div>
+                <div className="text-[10px] md:text-xs font-bold text-blue-600">$ 500.00</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-10 -right-10 md:-right-20 z-20 bg-white rounded-2xl shadow-2xl p-5 border border-gray-100 w-56 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-          <div className="text-sm font-bold text-gray-800 mb-4 pb-2 border-b border-gray-50">
+        <div className="absolute bottom-10 -right-4 md:-right-20 z-20 bg-white rounded-2xl shadow-2xl p-4 md:p-5 border border-gray-100 w-44 md:w-56 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+          <div className="text-[10px] md:text-sm font-bold text-gray-800 mb-3 md:mb-4 pb-2 border-b border-gray-50">
             🔗 Share Event
           </div>
-          <div className="flex gap-2 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-[#06C755] flex items-center justify-center text-white text-xs font-bold">L</div>
-            <div className="w-8 h-8 rounded-lg bg-[#E1306C] flex items-center justify-center text-white text-[10px] font-bold italic">ig</div>
-            <div className="w-8 h-8 rounded-lg bg-[#1877F2] flex items-center justify-center text-white text-xs font-bold">f</div>
-            <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 text-xs font-bold">🔗</div>
+          <div className="flex gap-1.5 md:gap-2 mb-3 md:mb-4">
+            <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#06C755] flex items-center justify-center text-white text-[10px] md:text-xs font-bold">L</div>
+            <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#E1306C] flex items-center justify-center text-white text-[9px] md:text-[10px] font-bold italic">ig</div>
+            <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#1877F2] flex items-center justify-center text-white text-[10px] md:text-xs font-bold">f</div>
           </div>
-          <div className="text-[10px] text-gray-400 font-medium">wgp.app/event/yoga-kids</div>
+          <div className="text-[8px] md:text-[10px] text-gray-400 font-medium truncate">wgp.app/event/yoga-kids</div>
         </div>
       </div>
     </div>
@@ -442,7 +421,7 @@ const FeatureArchitectureSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-12 bg-white/5 p-1 rounded-2xl inline-flex border border-white/5">
+        <div className="flex overflow-x-auto no-scrollbar gap-2 mb-12 bg-white/5 p-1 rounded-2xl md:inline-flex border border-white/5 whitespace-nowrap">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -530,14 +509,14 @@ const OrganizerDashboardSection = () => (
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
               {[
                 { val: '4', label: 'Total events', color: 'text-blue-600' },
                 { val: '3', label: 'Published', color: 'text-emerald-600' },
                 { val: '1', label: 'Draft', color: 'text-amber-600' },
               ].map((stat, i) => (
                 <div key={i} className="bg-gray-50/50 border border-gray-100 p-6 rounded-2xl">
-                  <div className={`text-4xl font-black mb-1 ${stat.color}`}>{stat.val}</div>
+                  <div className={`text-3xl md:text-4xl font-black mb-1 ${stat.color}`}>{stat.val}</div>
                   <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">{stat.label}</div>
                 </div>
               ))}
@@ -779,8 +758,8 @@ const CTASection = () => (
   <section className="py-24 bg-[#05192D] text-white overflow-hidden relative">
     <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
       <div className="relative z-10">
-        <h2 className="text-5xl font-extrabold mb-8 leading-tight tracking-tight">Ready to run better <br className="hidden sm:block" /> events?</h2>
-        <p className="text-xl text-gray-400 mb-12 max-w-xl leading-relaxed font-medium">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight">Ready to run better <br className="hidden sm:block" /> events?</h2>
+        <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-xl leading-relaxed font-medium">
           Join organizers across Taiwan using WeatherGoPlan to create events, engage participants, and grow their communities — for free.
         </p>
 
@@ -795,7 +774,7 @@ const CTASection = () => (
 
           <div className="grid grid-cols-2 gap-4 pt-4">
             <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
-              <Navigation className="w-4 h-4" /> App Store
+              <Smartphone className="w-4 h-4" /> App Store
             </button>
             <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
               <Play className="w-4 h-4" /> Google Play
@@ -804,9 +783,9 @@ const CTASection = () => (
         </div>
       </div>
 
-      <div className="relative flex justify-center lg:justify-end lg:pr-12 group">
+      <div className="relative flex justify-center lg:justify-end lg:pr-12 group mt-20 lg:mt-0 px-4 sm:px-0">
         {/* Browser Mockup */}
-        <div className="bg-[#FAF9F6] rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-[320px] sm:w-[420px] aspect-[4/3] border border-white/5 relative transform rotate-2 group-hover:rotate-0 transition-transform duration-700">
+        <div className="bg-[#FAF9F6] rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-[280px] sm:w-[420px] aspect-[4/3] border border-white/5 relative transform rotate-2 group-hover:rotate-0 transition-transform duration-700">
           <div className="flex gap-1.5 mb-6 opacity-40">
             <div className="w-2 h-2 rounded-full bg-rose-400"></div>
             <div className="w-2 h-2 rounded-full bg-amber-400"></div>
@@ -825,38 +804,39 @@ const CTASection = () => (
         </div>
 
         {/* Phone Frame */}
-        <div className="absolute -right-4 sm:-right-8 top-1/2 -translate-y-1/2 w-[170px] sm:w-[200px] h-[340px] sm:h-[420px] bg-gray-900 rounded-[2.5rem] p-2.5 shadow-2xl border-[6px] border-gray-800 z-10 transform -rotate-2 group-hover:rotate-0 transition-transform duration-700 overflow-hidden">
-          <div className="w-full h-full bg-white rounded-[1.8rem] overflow-hidden flex flex-col">
-            <div className="bg-blue-600 pt-6 pb-3 px-3 text-white text-center">
-              <div className="text-[10px] font-bold mb-3 uppercase tracking-wider">Explore</div>
-              <div className="flex justify-between items-center gap-1 px-1">
-                {['25°', '20°', '23°', '26°', '19°'].map((t, idx) => (
-                  <div key={idx} className="flex flex-col items-center opacity-70">
-                    <Sun className="w-2 h-2 mb-0.5" />
-                    <span className="text-[7px] font-bold">{t}</span>
-                  </div>
-                ))}
+        <div className="absolute top-10 md:top-20 right-0 z-30 transform translate-x-12 sm:translate-x-20 translate-y-8 sm:translate-y-10 group-hover:translate-x-8 sm:group-hover:translate-x-12 group-hover:translate-y-4 sm:group-hover:translate-y-5 transition-transform duration-700">
+          <div className="w-[180px] md:w-[240px] aspect-[9/19] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl border-[6px] border-gray-800 overflow-hidden relative">
+            <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col">
+              <div className="bg-blue-600 pt-6 pb-3 px-3 text-white text-center">
+                <div className="text-[10px] font-bold mb-3 uppercase tracking-wider">Explore</div>
+                <div className="flex justify-between items-center gap-1 px-1">
+                  {['25°', '20°', '23°', '26°', '19°'].map((t, idx) => (
+                    <div key={idx} className="flex flex-col items-center opacity-70">
+                      <Sun className="w-2 h-2 mb-0.5" />
+                      <span className="text-[7px] font-bold">{t}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="p-3 flex-1 space-y-3">
-              <div className="aspect-[16/10] bg-blue-100/50 rounded-xl"></div>
-              <div className="text-[9px] font-bold text-gray-800 leading-tight">親子課程 · 週四上午</div>
-              <div className="text-[8px] text-gray-500 font-medium">10:00 - 11:30 · $500</div>
+              <div className="p-3 flex-1 space-y-3">
+                <div className="aspect-[16/10] bg-blue-100/50 rounded-xl"></div>
+                <div className="text-[9px] font-bold text-gray-800 leading-tight">親子課程 · 週四上午</div>
+                <div className="text-[8px] text-gray-500 font-medium">10:00 - 11:30 · $500</div>
 
-              <div className="pt-2 border-t border-gray-100">
-                <div className="text-[7px] font-bold text-gray-400 mb-2 uppercase">附近景點</div>
-                <div className="space-y-1.5">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
-                      <span className="text-green-500">●</span> 林本源園邸
-                    </span>
-                    <span className="text-[7px] text-gray-400">0.2km</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
-                      <span className="text-blue-500">●</span> J 室冰鋪
-                    </span>
-                    <span className="text-[7px] text-gray-400">0.1km</span>
+                <div className="pt-2 border-t border-gray-100">
+                  <div className="text-[7px] font-bold text-gray-400 mb-2 uppercase">附近景點</div>
+                  <div className="space-y-1.5">
+                    {[
+                      { name: '林本源園邸', color: 'text-green-500' },
+                      { name: 'J 室冰鋪', color: 'text-blue-500' }
+                    ].map((loc, i) => (
+                      <div key={i} className="flex items-center justify-between">
+                        <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
+                          <span className={loc.color}>●</span> {loc.name}
+                        </span>
+                        <span className="text-[7px] text-gray-400">0.{i + 1}km</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
