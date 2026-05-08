@@ -237,6 +237,8 @@ const BenefitsSection = () => {
 };
 
 const FeatureArchitectureSection = () => {
+  const { i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
   const [activeTab, setActiveTab] = useState('A');
 
   const tabs = [
@@ -254,34 +256,25 @@ const FeatureArchitectureSection = () => {
         { title: 'Weather-aware planning', desc: 'Trip suggestions dynamically shift based on forecast — rainy days surface indoor options automatically.', icon: Activity },
       ],
       visual: (
-        <div className="bg-[#11253E] rounded-3xl p-6 border border-white/5 h-full">
-          <div className="text-[10px] text-gray-400 font-bold mb-4 uppercase tracking-wider">Trip Planner — Participant View</div>
-          <div className="bg-[#0A1A2F] rounded-xl p-4 aspect-[16/10] relative mb-4 border border-white/5 overflow-hidden">
-            <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-            <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-blue-500 rounded-full shadow-[0_0:10px_rgba(59,130,246,0.5)]"></div>
-            <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-emerald-500 rounded-full shadow-[0_0:10px_rgba(16,185,129,0.5)]"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-rose-500 rounded-full shadow-[0_0:10px_rgba(244,63,94,0.5)]"></div>
-            <div className="absolute bottom-4 right-4 bg-white/90 px-3 py-1 rounded text-[10px] border border-white/10 text-gray-900 font-bold">搜尋此區域</div>
+        <div className="relative h-full w-full min-h-[600px] flex items-center justify-center p-4 bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10" id="feature-trip-planner">
+          {/* Background Decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-[80px] -mr-32 -mt-32"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full filter blur-[80px] -ml-32 -mb-32"></div>
+
+          {/* Title Overlay */}
+          <div className="absolute top-4 left-8 right-8 z-20 md:max-w-[300px]">
+            <h3 className="text-xl md:text-2xl font-bold mb-1 leading-tight text-white">{isEn ? 'Smart Trip Discovery' : '智慧行程探索'}</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-emerald-400">{isEn ? 'Plan with Weather' : '天氣即時導覽'}</h3>
           </div>
-          <div className="text-[10px] text-gray-400 font-bold uppercase mb-3">附近景點</div>
-          <div className="space-y-2">
-            {[
-              { icon: '🍧', name: 'J 室冰鋪', type: 'IceShop · 0.1 km', badge: 'Indoor' },
-              { icon: '🌳', name: '林本源園邸', type: 'Outdoor · 0.2 km', badge: 'Outdoor', badgeColor: 'bg-amber-400/20 text-amber-400' },
-              { icon: '🏛️', name: '板橋慈惠宮', type: 'Indoor · 0.3 km', badge: 'Indoor' },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center justify-between bg-[#0A1A2F] p-3 rounded-xl border border-white/5">
-                <div className="flex items-center gap-3">
-                  <div className="text-lg">{item.icon}</div>
-                  <div>
-                    <div className="text-xs font-bold text-white">{item.name}</div>
-                    <div className="text-[9px] text-gray-500">{item.type}</div>
-                  </div>
-                </div>
-                <div className={`text-[9px] font-bold px-2 py-0.5 rounded ${item.badgeColor || 'bg-emerald-400/20 text-emerald-400'}`}>{item.badge}</div>
-              </div>
-            ))}
+
+          {/* Central Phone Mockup */}
+          <div className="relative z-10 w-[220px] h-[450px] hidden md:block lg:block md:w-[260px] md:h-[530px] bg-gray-900 rounded-[2.5rem] p-2 border-[6px] border-gray-800 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.5)] transform translate-y-8 md:translate-y-12">
+            <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col relative">
+              <img src={isEn ? "/img/trip-planner/attraction_list_en.PNG" : "/img/trip-planner/attraction_list_zh.PNG"} className="w-full h-full object-cover" alt="Attraction List" />
+            </div>
           </div>
+
+
         </div>
       )
     },
@@ -293,28 +286,57 @@ const FeatureArchitectureSection = () => {
         { title: 'Publish & share', desc: 'One-click publish puts your event live on the Explore feed, map, and a shareable link.', icon: Upload },
       ],
       visual: (
-        <div className="bg-[#11253E] rounded-3xl p-6 border border-white/5 h-full text-white">
-          <div className="text-[10px] text-gray-400 font-bold mb-6 uppercase tracking-wider">Organizer dashboard — event list</div>
-          <div className="bg-[#0A1A2F] rounded-2xl border border-white/5 overflow-hidden">
-            <div className="flex items-center justify-between p-4 border-b border-white/5 bg-white/5">
-              <div className="text-xs font-bold">Hosted Events</div>
-              <div className="bg-blue-600 text-[10px] font-bold px-3 py-1.5 rounded-md">+ Add Event</div>
+        <div className="relative h-full w-full min-h-[600px] flex items-center justify-center p-4 bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10" id="feature-management">
+          {/* Background Decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full filter blur-[80px] -mr-32 -mt-32"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/10 rounded-full filter blur-[80px] -ml-32 -mb-32"></div>
+
+          {/* Title Overlay */}
+          <div className="absolute top-4 left-8 right-8 z-20 md:max-w-[300px]">
+            <h3 className="text-xl md:text-2xl font-bold mb-1 leading-tight text-white">{isEn ? 'Event Management' : '活動主辦管理'}</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-blue-400">{isEn ? 'Organizer Portal' : '主辦者專業後台'}</h3>
+          </div>
+
+          {/* Central Phone Mockup */}
+          <div className="relative z-10 w-[220px] h-[450px] hidden md:block lg:block md:w-[260px] md:h-[530px] bg-gray-900 rounded-[2.5rem] p-2 border-[6px] border-gray-800 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.5)] transform translate-y-8 md:translate-y-12">
+            <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col relative">
+              <img src={isEn ? "/img/trip-planner/dashboard_en.png" : "/img/trip-planner/dashboard_zh.png"} className="w-full h-full object-cover" alt="Dashboard" />
             </div>
-            <div className="divide-y divide-white/5">
+          </div>
+
+          {/* Floating Cards */}
+          <div className="absolute top-[25%] left-[5%] z-20 w-44 md:w-52 bg-white rounded-2xl shadow-2xl p-3 border border-gray-100 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
+            <div className="text-[9px] font-bold text-gray-400 mb-3 uppercase tracking-tight">{isEn ? 'Event Status' : '活動發布狀態'}</div>
+            <div className="space-y-2">
               {[
-                { name: '親子瑜珈體驗班', date: '04/19/2026 · 10:00 AM', status: 'Published', pub: true },
-                { name: '追火車馬拉松', date: '04/26/2026 · 06:00 AM', status: 'Draft' },
-                { name: '銀髮社區健康講座', date: '05/03/2026 · 09:30 AM', status: 'Published', pub: true },
-                { name: '週六親子繪本課', date: '05/10/2026 · 10:00 AM', status: 'Draft', active: true },
-              ].map((event, i) => (
-                <div key={i} className={`p-4 flex items-center justify-between ${event.active ? 'bg-white/10' : ''}`}>
-                  <div>
-                    <div className="text-xs font-bold mb-1">{event.name}</div>
-                    <div className="text-[9px] text-gray-500">📅 {event.date}</div>
-                  </div>
-                  <div className={`text-[8px] font-bold px-2 py-0.5 rounded-full ${event.pub ? 'bg-emerald-400/20 text-emerald-400' : 'bg-amber-400/20 text-amber-400'}`}>{event.status}</div>
+                { name: '親子瑜珈體驗班', status: 'Published', color: 'bg-emerald-400' },
+                { name: '追火車馬拉松', status: 'Draft', color: 'bg-amber-400' }
+              ].map((ev, i) => (
+                <div key={i} className="flex items-center justify-between bg-gray-50 p-2 rounded-lg">
+                  <div className="text-[8px] font-bold text-gray-800 truncate pr-2">{ev.name}</div>
+                  <div className={`text-[6px] px-1 py-0.5 rounded text-white font-bold ${ev.color}`}>{ev.status}</div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="absolute bottom-[20%] left-[5%] z-20 w-40 md:w-48 bg-blue-600 rounded-2xl shadow-2xl p-4 text-white rotate-[1deg] hover:rotate-0 transition-all duration-500">
+            <div className="flex items-center justify-between mb-3">
+              <Users className="w-4 h-4 text-white/80" />
+              <div className="text-[8px] font-bold text-white/60">ANALYTICS</div>
+            </div>
+            <div className="text-xl font-bold mb-0.5">1,284</div>
+            <div className="text-[7px] text-white/60 font-bold">{isEn ? 'Total Participants' : '累積參加人數'}</div>
+            <div className="mt-3 pt-3 border-t border-white/10 flex justify-between items-center">
+              <div className="text-[8px] font-bold">+12% vs last month</div>
+              <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+            </div>
+          </div>
+
+          <div className="absolute top-[30%] right-[5%] z-20 w-40 md:w-44 bg-white rounded-2xl shadow-2xl p-3 border border-gray-100 rotate-[3deg] hover:rotate-0 transition-all duration-500">
+            <div className="bg-blue-600 text-white rounded-xl p-3 flex flex-col items-center text-center shadow-lg">
+              <Plus className="w-5 h-5 mb-1" />
+              <div className="text-[9px] font-bold">{isEn ? 'Create New Event' : '新增活動'}</div>
             </div>
           </div>
         </div>
