@@ -469,145 +469,57 @@ const FeatureArchitectureSection = () => {
   );
 };
 
-const OrganizerDashboardSection = () => (
-  <section id="organizer" className="py-24 scroll-mt-20" style={{ backgroundColor: colors.white }}>
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="mb-16">
-        <span className="font-bold tracking-widest text-xs uppercase mb-4 block" style={{ color: colors.primary }}>Organizer tools</span>
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight" style={{ color: colors.text }}>Powerful Organizer Dashboard</h2>
-        <p className="text-xl max-w-3xl leading-relaxed" style={{ color: colors.textSecondary }}>Manage events, organization profiles, and participant engagement from one central portal.</p>
-      </div>
+const OrganizerDashboardSection = () => {
+  const { i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
 
-      <div className="rounded-[2.5rem] p-4 md:p-8 border shadow-2xl mb-16 overflow-hidden" style={{ backgroundColor: colors.background, borderColor: colors.borderLight }}>
-        {/* Mockup Header */}
-        <div className="border-b p-4 md:px-6 md:py-3 flex items-center justify-between rounded-t-2xl shadow-sm bg-white" style={{ borderColor: colors.borderLight }}>
-          <div className="flex items-center gap-8">
-            <div className="font-black text-sm tracking-tight" style={{ color: colors.primary }}>WeatherGoPlan</div>
-            <div className="hidden md:flex items-center gap-1 bg-gray-50 px-3 py-1 rounded text-[10px] text-gray-400 font-bold border border-gray-100">
-              Dashboard <span className="text-gray-300">›</span> Organizer
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold" style={{ backgroundColor: `${colors.primary}15`, color: colors.primary }}>週</div>
-            <div className="hidden sm:block text-xs font-bold" style={{ color: colors.text }}>週六跑跑團 <span className="ml-1 font-normal" style={{ color: colors.textSecondary }}>Organizer</span></div>
-          </div>
+  return (
+    <section id="organizer" className="py-24 scroll-mt-20" style={{ backgroundColor: colors.white }}>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-16">
+          <span className="font-bold tracking-widest text-xs uppercase mb-4 block" style={{ color: colors.primary }}>Organizer tools</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight" style={{ color: colors.text }}>Powerful Organizer Dashboard</h2>
+          <p className="text-xl max-w-3xl leading-relaxed" style={{ color: colors.textSecondary }}>Manage events, organization profiles, and participant engagement from one central portal.</p>
         </div>
-        {/* Mockup Body */}
-        <div className="flex min-h-[500px] bg-white rounded-b-2xl border-x border-b overflow-hidden" style={{ borderColor: colors.borderLight }}>
-          {/* Sidebar */}
-          <div className="w-48 border-r hidden md:block py-6" style={{ backgroundColor: `${colors.background}80`, borderColor: colors.borderLight }}>
-            <div className="space-y-1 px-3">
-              {[
-                { label: 'Dashboard', icon: LayoutDashboard },
-                { label: 'Merchants', icon: Home },
-                { label: 'Organizers', icon: User, active: true },
-              ].map((item, i) => (
-                <div key={i} className={`flex items-center gap-3 px-4 py-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${item.active ? 'text-white' : ''}`} style={{ backgroundColor: item.active ? colors.primary : 'transparent', color: item.active ? 'white' : colors.textSecondary }}>
-                  <item.icon className="w-4 h-4" /> {item.label}
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Main Content */}
-          <div className="flex-1 p-6 md:p-8 overflow-x-auto bg-white">
-            <div className="text-[10px] font-bold mb-6 uppercase tracking-wider" style={{ color: colors.textSecondary }}>Dashboard › Organizer › 週六跑跑團</div>
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-              <h3 className="text-2xl font-extrabold" style={{ color: colors.text }}>週六跑跑團</h3>
-              <div className="flex items-center gap-2 whitespace-nowrap">
-                <button className="border px-4 py-2 rounded-xl text-xs font-bold transition-all hover:bg-gray-50" style={{ backgroundColor: colors.background, borderColor: colors.border, color: colors.text }}>+ Add Event</button>
-                <button className="px-4 py-2 rounded-xl text-xs font-bold text-white shadow-lg flex items-center gap-2 hover:opacity-90" style={{ backgroundColor: colors.primary, boxShadow: `0 10px 15px -3px ${colors.primary}33` }}><Edit2 className="w-3.5 h-3.5" /> Edit Organizer</button>
+
+        <div className="rounded-[2.5rem] p-8 md:p-12 border shadow-2xl mb-16 overflow-hidden bg-gray-50 flex justify-center" style={{ borderColor: colors.borderLight }} id="feature-management-dashboard">
+          <img
+            src={isEn ? "/img/trip-planner/dashboard_en.PNG" : "/img/trip-planner/dashboard_zh.PNG"}
+            alt="Dashboard View"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {[
+            {
+              title: 'Complete control',
+              desc: 'From initial setup to final publishing, you have full control over every detail of your events and organization profile.',
+              icon: LayoutDashboard,
+            },
+            {
+              title: 'Real-time updates',
+              desc: 'Any changes you make are instantly reflected across the platform, ensuring your participants always have the latest info.',
+              icon: Activity,
+            },
+            {
+              title: 'Data-driven insights',
+              desc: 'Track participation and engagement to better understand your audience and improve future events.',
+              icon: Users,
+            },
+          ].map((feature, i) => (
+            <div key={i} className="space-y-4">
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{ backgroundColor: `${colors.primary}15`, color: colors.primary }}>
+                <feature.icon className="w-6 h-6" />
               </div>
+              <h3 className="text-xl font-bold" style={{ color: colors.text }}>{feature.title}</h3>
+              <p className="leading-relaxed text-sm" style={{ color: colors.textSecondary }}>{feature.desc}</p>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-              {[
-                { val: '4', label: 'Total events', color: colors.primary },
-                { val: '3', label: 'Published', color: '#10B981' },
-                { val: '1', label: 'Draft', color: colors.accent },
-              ].map((stat, i) => (
-                <div key={i} className="border p-6 rounded-2xl" style={{ backgroundColor: `${colors.background}50`, borderColor: colors.borderLight }}>
-                  <div className={`text-3xl md:text-4xl font-black mb-1`} style={{ color: stat.color }}>{stat.val}</div>
-                  <div className="text-[10px] font-bold uppercase tracking-widest" style={{ color: colors.textSecondary }}>{stat.label}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="border rounded-2xl overflow-hidden" style={{ borderColor: colors.borderLight }}>
-              <table className="w-full text-left border-collapse">
-                <thead className="text-[10px] uppercase font-bold border-b" style={{ backgroundColor: `${colors.background}80`, color: colors.textSecondary, borderColor: colors.borderLight }}>
-                  <tr>
-                    <th className="px-6 py-4">Event name</th>
-                    <th className="px-6 py-4">Date</th>
-                    <th className="px-6 py-4">Status</th>
-                    <th className="px-6 py-4">Category</th>
-                    <th className="px-6 py-4 text-right">Action</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y text-xs" style={{ borderColor: colors.borderLight }}>
-                  {[
-                    { name: '親子瑜珈體驗班', date: '04/19/2026 · 10:00 AM', status: 'Published', pub: true, cat: '親子' },
-                    { name: '追火車馬拉松', date: '04/26/2026 · 06:00 AM', status: 'Draft', cat: 'Festival' },
-                    { name: '銀髮社區健康講座', date: '05/03/2026 · 09:30 AM', status: 'Published', pub: true, cat: '銀髮' },
-                  ].map((row, i) => (
-                    <tr key={i} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-5 font-bold" style={{ color: colors.text }}>{row.name}</td>
-                      <td className="px-6 py-5" style={{ color: colors.textSecondary }}>{row.date}</td>
-                      <td className="px-6 py-5">
-                        <span className={`px-2 py-0.5 rounded-full font-bold text-[10px]`} style={{ backgroundColor: row.pub ? '#10B98120' : `${colors.accent}20`, color: row.pub ? '#10B981' : '#B45309' }}>{row.status}</span>
-                      </td>
-                      <td className="px-6 py-5" style={{ color: colors.textSecondary }}>{row.cat}</td>
-                      <td className="px-6 py-5 text-right"><span className="font-bold cursor-pointer flex items-center justify-end gap-1" style={{ color: colors.primary }}>View <Edit2 className="w-3 h-3" /></span></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[
-          {
-            title: 'Event creation & publishing',
-            desc: 'Build event pages with all the details participants need — and publish to the live app in one click.',
-            items: ['Add title, date, time, duration', 'Set price and audience age group', 'Attach location & category', 'Draft → Publish with one click']
-          },
-          {
-            title: 'Organization profile management',
-            desc: 'Your public-facing organizer page — manage branding, contact info, and event listings all in one place.',
-            items: ['Set unique organizer ID & logo', 'Person or Organization type', 'Contact email and phone', 'All hosted events visible on profile']
-          },
-          {
-            title: 'Participant sharing & reach',
-            desc: 'Every event page is shareable — to LINE groups, Instagram, or a direct link for your newsletter.',
-            items: ['Unique shareable event URL', 'Book Now CTA on every page', 'Participants invite friends via app', 'Organizer profile link shareable']
-          },
-          {
-            title: 'Schedule & series management',
-            desc: 'Run weekly classes or multi-session programs? Manage them as a series without recreating from scratch.',
-            items: ['Multi-date event series support', 'Session duration & timing control', 'Event status tracking', 'Edit events at any time']
-          },
-        ].map((card, idx) => (
-          <div key={idx} className="p-8 rounded-3xl border shadow-sm hover:shadow-xl transition-all duration-300 bg-white" style={{ borderColor: colors.borderLight }}>
-            <h4 className="text-xl font-bold mb-4 leading-tight" style={{ color: colors.text }}>{card.title}</h4>
-            <p className="text-sm mb-8 leading-relaxed" style={{ color: colors.textSecondary }}>{card.desc}</p>
-            <ul className="space-y-4">
-              {card.items.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <div className="mt-1 w-4 h-4 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: '#10B98115', color: '#10B981' }}>
-                    <CheckCircle className="w-3 h-3" />
-                  </div>
-                  <span className="text-xs font-semibold" style={{ color: colors.text }}>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+    </section >
+  )
+};
 
 const SocialSharingSection = () => (
   <section id="sharing" className="py-24 scroll-mt-20" style={{ backgroundColor: colors.background }}>
