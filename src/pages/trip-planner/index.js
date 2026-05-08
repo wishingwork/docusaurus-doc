@@ -7,7 +7,7 @@ import {
   Search, Home, Plus, User, Link as LinkIcon, Clock, Upload, Trash2, Edit2, ExternalLink
 } from 'lucide-react';
 import '../../css/custom.css';
-import Footer from '../../components/Layout/Footer';
+
 import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
@@ -869,6 +869,87 @@ const CTASection = () => (
     </div>
   </section>
 );
+
+const Footer = () => {
+  const { i18n } = useTranslation();
+  
+  return (
+    <footer className="bg-[#1A1A1A] text-white pt-24 pb-12 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+          <div className="lg:col-span-5 space-y-8">
+            <div className="text-white font-bold text-2xl tracking-tight">
+              WeatherGoPlan
+            </div>
+            <p className="text-gray-400 text-lg max-w-sm leading-relaxed font-medium">
+              Event and trip engagement platform for organizers and participants. Discover, plan, and share experiences — weather-aware and location-smart.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button className="bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10">
+                <Smartphone className="w-5 h-5 opacity-70" /> App Store
+              </button>
+              <button className="bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10">
+                <Play className="w-5 h-5 fill-white" /> Google Play
+              </button>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-12">
+            <div className="space-y-6">
+              <h4 className="font-bold text-white text-lg">For Organizers</h4>
+              <ul className="space-y-4 text-gray-400 font-medium list-none p-0 m-0">
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Become an Organizer</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Organizer Dashboard</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Create Event</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Manage Organization</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Pricing</a></li>
+              </ul>
+            </div>
+            <div className="space-y-6">
+              <h4 className="font-bold text-white text-lg">For Participants</h4>
+              <ul className="space-y-4 text-gray-400 font-medium list-none p-0 m-0">
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Download App</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Explore Events</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Trip Planner</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Nearby Attractions</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Coupons</a></li>
+              </ul>
+            </div>
+            <div className="space-y-6">
+              <h4 className="font-bold text-white text-lg">Company</h4>
+              <ul className="space-y-4 text-gray-400 font-medium list-none p-0 m-0">
+                <li><a href="#" className="hover:text-white transition-colors no-underline">About</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Contact</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors no-underline">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-8">
+          <p className="text-gray-500 font-medium text-sm mb-0">
+            © 2026 WeatherGoPlan · MeteoSync. All rights reserved.
+          </p>
+          <div className="flex items-center gap-3">
+             <button 
+               onClick={() => i18n.changeLanguage('zh-Hant')}
+               className={`px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 transition-all ${i18n.language === 'zh-Hant' ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-500 hover:text-white hover:bg-white/10'}`}
+             >
+                <Globe className="w-4 h-4" /> 繁體中文
+             </button>
+             <button 
+               onClick={() => i18n.changeLanguage('en')}
+               className={`px-4 py-2 rounded-xl text-sm font-bold transition-all ${i18n.language === 'en' ? 'bg-white/10 text-white' : 'bg-white/5 text-gray-500 hover:text-white hover:bg-white/10'}`}
+             >
+                English
+             </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default function TripPlannerWebsite() {
   return (
