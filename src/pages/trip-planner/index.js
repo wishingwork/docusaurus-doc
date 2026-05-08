@@ -61,8 +61,7 @@ const Navbar = () => {
               <option value="zh-Hant">繁中</option>
             </select>
           </div>
-          <a href="#" className="font-medium transition-colors hidden lg:block no-underline" style={{ color: colors.text }}>Sign In</a>
-          <a href="#" className="text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full font-bold shadow-md transition-all flex items-center gap-1 no-underline whitespace-nowrap text-xs md:text-base" style={{ backgroundColor: colors.primary }}>
+          <a href="https://weathergo.meteosync.com/login" className="text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full font-bold shadow-md transition-all flex items-center gap-1 no-underline whitespace-nowrap text-xs md:text-base" style={{ backgroundColor: colors.primary }}>
             Become <span className="hidden sm:inline">an Organizer</span> <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </a>
         </div>
@@ -96,23 +95,16 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <button className="text-white px-8 py-4 rounded-xl font-bold shadow-xl transition-all flex items-center justify-center gap-2 group hover:opacity-90" style={{ backgroundColor: colors.primary, boxShadow: `0 20px 25px -5px ${colors.primary}33` }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
+            <a href="https://weathergo.meteosync.com/login" className="text-white px-8 py-4 rounded-xl font-bold shadow-xl transition-all flex items-center justify-center gap-2 group hover:opacity-90 no-underline" style={{ backgroundColor: colors.primary, boxShadow: `0 20px 25px -5px ${colors.primary}33` }}>
+              <Plus className="w-4 h-4" />
               Become an Organizer
-            </button>
-            <button className="bg-white border hover:border-gray-300 px-8 py-4 rounded-xl font-bold shadow-sm transition-all flex items-center justify-center gap-2" style={{ borderColor: colors.border, color: colors.text }}>
-              <span className="text-sm">▶</span> Watch Demo
-            </button>
+            </a>
           </div>
 
           <div className="flex flex-wrap items-center gap-8 md:gap-12 border-t pt-10" style={{ borderColor: colors.borderLight }}>
             <div>
-              <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>10K+</div>
-              <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>App users</div>
-            </div>
-            <div>
-              <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>500+</div>
-              <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>Events published</div>
+              <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>5000+</div>
+              <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>Attractions</div>
             </div>
             <div>
               <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>Free</div>
@@ -694,21 +686,18 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col gap-4 max-w-md">
-            <button className="w-full px-8 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98]" style={{ backgroundColor: colors.white, color: colors.secondary }}>
+            <a href="https://weathergo.meteosync.com/login" className="w-full px-8 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] no-underline" style={{ backgroundColor: colors.white, color: colors.secondary }}>
               <User className="w-5 h-5" /> Become an Organizer — it's free
-            </button>
+            </a>
 
-            <button className="w-full bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-3 hover:bg-white/10">
-              <Play className="w-5 h-5" /> Watch demo
-            </button>
 
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
+              <a href="https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10 no-underline">
                 <Smartphone className="w-4 h-4" /> App Store
-              </button>
-              <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.wishingwork.weatherplanb" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10 no-underline">
                 <Play className="w-4 h-4" /> Google Play
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -762,12 +751,12 @@ const Footer = () => {
               Event and trip engagement platform for organizers and participants. Discover, plan, and share experiences — weather-aware and location-smart.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10">
+              <a href="https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10 no-underline">
                 <Smartphone className="w-5 h-5 opacity-70" /> App Store
-              </button>
-              <button className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.wishingwork.weatherplanb" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10 no-underline">
                 <Play className="w-5 h-5 fill-white" /> Google Play
-              </button>
+              </a>
             </div>
           </div>
 
@@ -775,7 +764,7 @@ const Footer = () => {
             <div className="space-y-6">
               <h4 className="font-bold text-white text-lg">For Organizers</h4>
               <ul className="space-y-4 font-medium list-none p-0 m-0" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Become an Organizer</a></li>
+                <li><a href="https://weathergo.meteosync.com/login" className="hover:text-white transition-colors no-underline text-inherit">Become an Organizer</a></li>
                 <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Organizer Dashboard</a></li>
                 <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Create Event</a></li>
                 <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Manage Organization</a></li>
