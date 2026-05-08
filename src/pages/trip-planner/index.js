@@ -328,13 +328,13 @@ const FeatureArchitectureSection = () => {
         { title: 'Multi-platform sharing', desc: 'LINE, Instagram, Facebook, and direct link — every share channel covered out of the box.', icon: Share2 },
       ],
       visual: (
-        <div className="relative h-full w-full min-h-[600px] flex items-center justify-center p-6 bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10" id="feature-sharing-flow">
+        <div className="relative h-full w-full min-h-[600px] flex items-center justify-center p-4 bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10" id="feature-sharing-flow">
           {/* Background Decoration */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-[80px] -mr-32 -mt-32"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full filter blur-[80px] -ml-32 -mb-32"></div>
 
           {/* Main Title Overlay (Mobile/Tablet Friendly) */}
-          <div className="absolute top-8 left-8 right-8 z-20 md:max-w-[300px]">
+          <div className="absolute top-4 left-8 right-8 z-20 md:max-w-[300px]">
             <h3 className="text-xl md:text-2xl font-bold mb-1 leading-tight text-white">分享活動・景點・主辦單位</h3>
             <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-blue-400">讓更多人發現你的精彩！</h3>
             <p className="text-[10px] text-gray-400 leading-relaxed hidden sm:block">活動主辦必備的推廣利器，一次掌握，輕鬆分享，擴大影響力</p>
@@ -364,7 +364,7 @@ const FeatureArchitectureSection = () => {
               <span className="text-[9px] font-bold text-gray-800">分享活動</span>
             </div>
             <div className="rounded-xl overflow-hidden mb-2 aspect-video relative" id="event-image">
-              <img src="/img/trip-planner/event_detail_share.PNG" className="w-full h-full object-cover" alt="Event" />
+              <img src="/img/trip-planner/event_detail_share.PNG" className="w-full h-full object-cover object-top" alt="Event" />
               <div className="absolute top-1.5 left-1.5 bg-blue-600 text-[6px] text-white px-1.5 py-0.5 rounded font-bold uppercase">Class</div>
             </div>
             <div className="text-[9px] font-bold text-gray-900 leading-tight mb-1 truncate">【台北】幼兒發展 | 高階-繽紛色彩世界</div>
@@ -403,9 +403,8 @@ const FeatureArchitectureSection = () => {
           <div className="absolute top-[25%] right-[5%] md:right-[5%] lg:right-[5%] z-20 w-44 md:w-48 bg-white rounded-2xl shadow-2xl p-2.5 border border-gray-100 rotate-[4deg] hover:rotate-0 transition-all duration-500">
             <div className="text-[9px] font-bold text-gray-400 mb-2 uppercase tracking-tight">精選空間預覽</div>
             <div className="rounded-xl overflow-hidden mb-2 bg-gray-100 aspect-[4/3]" id="space-image">
-              <img src="/img/trip-planner/organizer_detail_share.PNG" className="w-full h-full object-cover" alt="Space" />
+              <img src="/img/trip-planner/organizer_detail_share.PNG" className="w-full h-full object-cover object-top" alt="Space" />
             </div>
-            <div className="text-[9px] font-bold text-gray-900 mb-1 leading-tight">我好，你好！親子共好空間</div>
             <div className="flex items-center gap-1 text-[7px] text-gray-400">
               <MapPin className="w-2.5 h-2.5" /> 台北市中山區民東路二段...
             </div>
