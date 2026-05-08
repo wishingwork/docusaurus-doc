@@ -36,11 +36,13 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#e0e0e0] px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-bold text-xl no-underline transition-colors" style={{ color: colors.secondary }}>
-          <div className="p-1.5 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary }}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>
-          </div>
-          WeatherGoPlan
+        <a href="/" className="flex items-center gap-3 font-bold text-xl no-underline transition-all hover:opacity-90" style={{ color: colors.secondary }}>
+          <img
+            src={require('../../assets/images/TripPlanner/logo.png').default}
+            alt="WeatherGoPlan Logo"
+            className="w-10 h-10 object-contain"
+          />
+          <span className="tracking-tight">WeatherGoPlan</span>
         </a>
         <ul className="hidden md:flex items-center gap-8 font-medium list-none mb-0" style={{ color: colors.text }}>
           <li><a href="#features" className="hover:opacity-80 transition-colors no-underline text-inherit">Features</a></li>
@@ -689,12 +691,20 @@ const CTASection = () => {
             </a>
 
 
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <a href="https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10 no-underline">
-                <Smartphone className="w-4 h-4" /> App Store
+            <div className="flex flex-wrap gap-4">
+              <a href="https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511" target="_blank" rel="noopener noreferrer" className="transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <img
+                  src="/img/app_store_badge.svg"
+                  alt="Download on App Store"
+                  className="h-12 w-auto"
+                />
               </a>
-              <a href="https://play.google.com/store/apps/details?id=com.wishingwork.weatherplanb" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10 no-underline">
-                <Play className="w-4 h-4" /> Google Play
+              <a href="https://play.google.com/store/apps/details?id=com.wishingwork.weatherplanb" target="_blank" rel="noopener noreferrer" className="transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <img
+                  src={require('../../assets/images/TripPlanner/google_play_badge.png').default}
+                  alt="Get it on Google Play"
+                  className="h-12 w-auto"
+                />
               </a>
             </div>
           </div>
@@ -717,7 +727,7 @@ const CTASection = () => {
           </div>
 
           {/* Phone Frame */}
-          <div className="absolute top-[-35%] md:top-0 right-[20%] md:right-20 z-30 transform translate-x-12 sm:translate-x-20 translate-y-8 sm:translate-y-10 group-hover:translate-x-8 sm:group-hover:translate-x-12 group-hover:translate-y-4 sm:group-hover:translate-y-5 transition-transform duration-700">
+          <div className="absolute top-[-35%] md:top-[-10%] right-[20%] md:right-20 z-30 transform translate-x-12 sm:translate-x-20 translate-y-8 sm:translate-y-10 group-hover:translate-x-8 sm:group-hover:translate-x-12 group-hover:translate-y-4 sm:group-hover:translate-y-5 transition-transform duration-700">
             <div className="w-[160px] md:w-[220px] aspect-[9/19] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl border-[6px] border-gray-800 overflow-hidden relative">
               <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col">
                 <img
@@ -749,11 +759,19 @@ const Footer = () => {
               Event and trip engagement platform for organizers and participants. Discover, plan, and share experiences — weather-aware and location-smart.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10 no-underline">
-                <Smartphone className="w-5 h-5 opacity-70" /> App Store
+              <a href="https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511" target="_blank" rel="noopener noreferrer" className="transition-all hover:opacity-80">
+                <img
+                  src="/img/app_store_badge.svg"
+                  alt="App Store"
+                  className="h-10 w-auto"
+                />
               </a>
-              <a href="https://play.google.com/store/apps/details?id=com.wishingwork.weatherplanb" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-3 transition-all border border-white/10 no-underline">
-                <Play className="w-5 h-5 fill-white" /> Google Play
+              <a href="https://play.google.com/store/apps/details?id=com.wishingwork.weatherplanb" target="_blank" rel="noopener noreferrer" className="transition-all hover:opacity-80">
+                <img
+                  src={require('../../assets/images/TripPlanner/google_play_badge.png').default}
+                  alt="Google Play"
+                  className="h-10 w-auto"
+                />
               </a>
             </div>
           </div>
