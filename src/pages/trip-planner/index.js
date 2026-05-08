@@ -778,40 +778,91 @@ const HowItWorksSection = () => {
 };
 
 const CTASection = () => (
-  <section className="py-24 bg-blue-600 text-white overflow-hidden relative">
-    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
-    <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
-      <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">Ready to Transform Your Events?</h2>
-      <p className="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto font-light">
-        Join the platform that combines smart trip planning with powerful event management.
-      </p>
-      <div className="flex flex-col sm:flex-row justify-center gap-6">
-        <button className="bg-white hover:bg-gray-50 text-blue-600 font-bold py-4 px-10 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 text-lg flex items-center justify-center">
-          Become an Organizer <ArrowRight className="ml-3 w-6 h-6" />
-        </button>
-        <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-10 rounded-full shadow-lg border border-blue-500 hover:border-blue-400 transition-all text-lg flex items-center justify-center">
-          <Download className="mr-3 w-6 h-6" /> Download App & Demo
-        </button>
-      </div>
+  <section className="py-24 bg-[#05192D] text-white overflow-hidden relative">
+    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10">
+        <h2 className="text-5xl font-extrabold mb-8 leading-tight tracking-tight">Ready to run better <br className="hidden sm:block" /> events?</h2>
+        <p className="text-xl text-gray-400 mb-12 max-w-xl leading-relaxed font-medium">
+          Join organizers across Taiwan using WeatherGoPlan to create events, engage participants, and grow their communities — for free.
+        </p>
 
-      <div className="mt-20 flex justify-center items-end gap-8 opacity-90 relative">
-        <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-blue-600 to-transparent z-20"></div>
-        <div className="bg-blue-800/60 p-6 rounded-t-2xl border border-blue-400/40 border-b-0 w-[400px] h-[250px] hidden md:flex flex-col backdrop-blur-md shadow-2xl relative z-10 transform translate-x-12 translate-y-4">
-          <div className="flex gap-2 mb-4">
-            <div className="w-3 h-3 rounded-full bg-blue-400/50"></div>
-            <div className="w-3 h-3 rounded-full bg-blue-400/50"></div>
-          </div>
-          <div className="w-full flex-1 border border-blue-400/30 rounded-lg bg-blue-900/60 flex flex-col items-center justify-center text-blue-300">
-            <LayoutDashboard className="w-16 h-16 mb-4 opacity-50" />
-            <span className="font-semibold text-lg">Dashboard</span>
+        <div className="flex flex-col gap-4 max-w-md">
+          <button className="w-full bg-white text-gray-900 px-8 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98]">
+            <User className="w-5 h-5" /> Become an Organizer — it's free
+          </button>
+          
+          <button className="w-full bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-3 hover:bg-white/10">
+            <Play className="w-5 h-5" /> Watch demo
+          </button>
+
+          <div className="grid grid-cols-2 gap-4 pt-4">
+            <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
+              <Navigation className="w-4 h-4" /> App Store
+            </button>
+            <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
+              <Play className="w-4 h-4" /> Google Play
+            </button>
           </div>
         </div>
-        <div className="bg-blue-800/80 p-5 rounded-t-3xl border border-blue-400/50 border-b-0 w-[220px] h-[350px] flex flex-col backdrop-blur-md shadow-2xl relative z-30">
-          <div className="w-16 h-1.5 bg-blue-400/40 rounded-full mx-auto mb-6"></div>
-          <div className="w-full flex-1 border border-blue-400/30 rounded-2xl bg-blue-900/80 flex flex-col items-center justify-center text-blue-300 overflow-hidden relative">
-            <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_bottom,transparent,rgba(255,255,255,0.1))]"></div>
-            <Smartphone className="w-16 h-16 mb-4 opacity-50" />
-            <span className="font-semibold text-lg">Mobile App</span>
+      </div>
+
+      <div className="relative flex justify-center lg:justify-end lg:pr-12 group">
+        {/* Browser Mockup */}
+        <div className="bg-[#FAF9F6] rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-[320px] sm:w-[420px] aspect-[4/3] border border-white/5 relative transform rotate-2 group-hover:rotate-0 transition-transform duration-700">
+           <div className="flex gap-1.5 mb-6 opacity-40">
+              <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+              <div className="w-2 h-2 rounded-full bg-amber-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+           </div>
+           <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="h-4 bg-gray-200/80 rounded-full w-4/5"></div>
+                <div className="h-4 bg-gray-900/80 rounded-full w-full"></div>
+              </div>
+              <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
+              <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
+              <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
+              <div className="w-1/2 h-10 bg-blue-600 rounded-xl mt-6"></div>
+           </div>
+        </div>
+
+        {/* Phone Frame */}
+        <div className="absolute -right-4 sm:-right-8 top-1/2 -translate-y-1/2 w-[170px] sm:w-[200px] h-[340px] sm:h-[420px] bg-gray-900 rounded-[2.5rem] p-2.5 shadow-2xl border-[6px] border-gray-800 z-10 transform -rotate-2 group-hover:rotate-0 transition-transform duration-700 overflow-hidden">
+          <div className="w-full h-full bg-white rounded-[1.8rem] overflow-hidden flex flex-col">
+            <div className="bg-blue-600 pt-6 pb-3 px-3 text-white text-center">
+              <div className="text-[10px] font-bold mb-3 uppercase tracking-wider">Explore</div>
+              <div className="flex justify-between items-center gap-1 px-1">
+                {['25°', '20°', '23°', '26°', '19°'].map((t, idx) => (
+                  <div key={idx} className="flex flex-col items-center opacity-70">
+                    <Sun className="w-2 h-2 mb-0.5" />
+                    <span className="text-[7px] font-bold">{t}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="p-3 flex-1 space-y-3">
+               <div className="aspect-[16/10] bg-blue-100/50 rounded-xl"></div>
+               <div className="text-[9px] font-bold text-gray-800 leading-tight">親子課程 · 週四上午</div>
+               <div className="text-[8px] text-gray-500 font-medium">10:00 - 11:30 · $500</div>
+               
+               <div className="pt-2 border-t border-gray-100">
+                 <div className="text-[7px] font-bold text-gray-400 mb-2 uppercase">附近景點</div>
+                 <div className="space-y-1.5">
+                   <div className="flex items-center justify-between">
+                     <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
+                       <span className="text-green-500">●</span> 林本源園邸
+                     </span>
+                     <span className="text-[7px] text-gray-400">0.2km</span>
+                   </div>
+                   <div className="flex items-center justify-between">
+                     <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
+                       <span className="text-blue-500">●</span> J 室冰鋪
+                     </span>
+                     <span className="text-[7px] text-gray-400">0.1km</span>
+                   </div>
+                 </div>
+               </div>
+            </div>
           </div>
         </div>
       </div>
