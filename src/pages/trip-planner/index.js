@@ -530,8 +530,7 @@ const SocialSharingSection = () => (
             icon: '🎟️',
             title: 'Every event is shareable',
             desc: 'Each event has a clean, mobile-optimized page with details, pricing, and a Book Now button — ready to share via LINE, Instagram, or any messaging app.',
-            link: 'wgp.app/event/baby-yoga-taichung',
-            active: true
+            link: 'wgp.app/event/baby-yoga-taichung'
           },
           {
             icon: '🏢',
@@ -581,8 +580,7 @@ const WhoIsThisForSection = () => (
           {
             emoji: '🏫',
             title: 'School Program',
-            desc: 'Parent-child classes, early childhood programs, school excursions',
-            active: true
+            desc: 'Parent-child classes, early childhood programs, school excursions'
           },
           {
             emoji: '🗺️',
@@ -765,16 +763,14 @@ const Footer = () => {
               <h4 className="font-bold text-white text-lg">For Organizers</h4>
               <ul className="space-y-4 font-medium list-none p-0 m-0" style={{ color: 'rgba(255,255,255,0.6)' }}>
                 <li><a href="https://weathergo.meteosync.com/login" className="hover:text-white transition-colors no-underline text-inherit">Become an Organizer</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Organizer Dashboard</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Create Event</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Manage Organization</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Pricing</a></li>
+                <li><a href="https://weathergo.meteosync.com/login" className="hover:text-white transition-colors no-underline text-inherit">Organizer Dashboard</a></li>
+                <li><a href="https://weathergo.meteosync.com/login" className="hover:text-white transition-colors no-underline text-inherit">Create Event</a></li>
+                <li><a href="https://weathergo.meteosync.com/login" className="hover:text-white transition-colors no-underline text-inherit">Manage Organization</a></li>
               </ul>
             </div>
             <div className="space-y-6">
               <h4 className="font-bold text-white text-lg">For Participants</h4>
               <ul className="space-y-4 font-medium list-none p-0 m-0" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Download App</a></li>
                 <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Explore Events</a></li>
                 <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Trip Planner</a></li>
                 <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Nearby Attractions</a></li>
@@ -784,10 +780,9 @@ const Footer = () => {
             <div className="space-y-6">
               <h4 className="font-bold text-white text-lg">Company</h4>
               <ul className="space-y-4 font-medium list-none p-0 m-0" style={{ color: 'rgba(255,255,255,0.6)' }}>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Contact</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors no-underline text-inherit">Terms of Service</a></li>
+                <li><a href="https://www.meteosync.com/" className="hover:text-white transition-colors no-underline text-inherit">About</a></li>
+                <li><a href="mailto:info@meteosync.com" className="hover:text-white transition-colors no-underline text-inherit">Contact</a></li>
+                <li><a href={`https://www.meteosync.com/trip-planner/${i18n.language === 'en' ? 'en' : 'zh'}/privacypolicies/`} className="hover:text-white transition-colors no-underline text-inherit">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
