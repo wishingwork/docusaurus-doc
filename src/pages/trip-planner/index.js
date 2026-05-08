@@ -149,7 +149,7 @@ const HeroSection = () => {
               <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#E1306C] flex items-center justify-center text-white text-[9px] md:text-[10px] font-bold italic">ig</div>
               <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#1877F2] flex items-center justify-center text-white text-[10px] md:text-xs font-bold">f</div>
             </div>
-            <div className="text-[8px] md:text-[10px] text-gray-400 font-medium truncate">wgp.app/event/yoga-kids</div>
+            <div className="text-[8px] md:text-[10px] text-gray-400 font-medium truncate"><a href="https://www.meteosync.com/event/a4f43af1-106e-4d86-b1c0-90c0f10b417a">Share</a></div>
           </div>
         </div>
       </div>
@@ -532,19 +532,22 @@ const SocialSharingSection = () => (
             icon: '🎟️',
             title: 'Every event is shareable',
             desc: 'Each event has a clean, mobile-optimized page with details, pricing, and a Book Now button — ready to share via LINE, Instagram, or any messaging app.',
-            link: 'wgp.app/event/baby-yoga-taichung'
+            link: 'https://www.meteosync.com/event/a4f43af1-106e-4d86-b1c0-90c0f10b417a',
+            link_text: 'Share: Event Detail - 【台北】幼兒發展｜高階-繽紛色彩世界(5-6月週三下午)'
           },
           {
             icon: '🏢',
             title: 'Organizations get a profile link',
             desc: 'Your branded organizer page lists all your events in one place — perfect for bios, newsletters, and word-of-mouth referrals.',
-            link: 'wgp.app/org/我好你好親子空間'
+            link: 'https://www.meteosync.com/organizer/31577e14-5240-434e-9c8e-fa92c6a99b25',
+            link_text: 'Share: Organizer Detail - 我好，你好！親子共好空間'
           },
           {
             icon: '📍',
             title: 'Attractions are also shareable',
             desc: 'Participants discovering a great café or park can share it directly with friends — keeping your event top-of-mind even after it ends.',
-            link: 'wgp.app/place/lin-ben-yuan-garden'
+            link: 'https://www.meteosync.com/attraction/attr_01KFFT0DFFVNWGMFAPV9CQYKGW',
+            link_text: 'Share: Attraction Detail - 國定古蹟林本源園邸'
           },
         ].map((card, idx) => (
           <div key={idx} className={`p-8 rounded-[2rem] border transition-all duration-300 hover:shadow-xl bg-white`} style={{ borderColor: card.active ? `${colors.primary}50` : colors.borderLight, boxShadow: card.active ? `0 0 0 4px ${colors.primary}10` : 'none' }}>
@@ -552,7 +555,7 @@ const SocialSharingSection = () => (
             <h3 className="text-xl font-bold mb-4" style={{ color: colors.text }}>{card.title}</h3>
             <p className="text-sm mb-10 leading-relaxed h-24 overflow-hidden" style={{ color: colors.textSecondary }}>{card.desc}</p>
             <div className="p-3 rounded-xl border text-[10px] font-bold truncate" style={{ backgroundColor: `${colors.primary}05`, borderColor: `${colors.primary}15`, color: colors.primary }}>
-              {card.link}
+              <a href={card.link} target="_blank" rel="noopener noreferrer">{card.link_text}</a>
             </div>
           </div>
         ))}
@@ -689,24 +692,6 @@ const CTASection = () => {
             <a href="https://weathergo.meteosync.com/login" className="w-full px-8 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] no-underline" style={{ backgroundColor: colors.white, color: colors.secondary }}>
               <User className="w-5 h-5" /> Become an Organizer — it's free
             </a>
-
-
-            <div className="flex flex-wrap gap-4">
-              <a href="https://apps.apple.com/us/app/weathergo%E9%A5%97%E6%A8%82/id6753878511" target="_blank" rel="noopener noreferrer" className="transition-all hover:scale-[1.02] active:scale-[0.98]">
-                <img
-                  src="/img/app_store_badge.svg"
-                  alt="Download on App Store"
-                  className="h-12 w-auto"
-                />
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.wishingwork.weatherplanb" target="_blank" rel="noopener noreferrer" className="transition-all hover:scale-[1.02] active:scale-[0.98]">
-                <img
-                  src={require('../../assets/images/TripPlanner/google_play_badge.png').default}
-                  alt="Get it on Google Play"
-                  className="h-12 w-auto"
-                />
-              </a>
-            </div>
           </div>
         </div>
 
@@ -727,7 +712,7 @@ const CTASection = () => {
           </div>
 
           {/* Phone Frame */}
-          <div className="absolute top-[-35%] md:top-[-10%] right-[20%] md:right-20 z-30 transform translate-x-12 sm:translate-x-20 translate-y-8 sm:translate-y-10 group-hover:translate-x-8 sm:group-hover:translate-x-12 group-hover:translate-y-4 sm:group-hover:translate-y-5 transition-transform duration-700">
+          <div className="absolute top-[-35%] md:top-[-30%] right-[20%] md:right-20 z-30 transform translate-x-12 sm:translate-x-20 translate-y-8 sm:translate-y-10 group-hover:translate-x-8 sm:group-hover:translate-x-12 group-hover:translate-y-4 sm:group-hover:translate-y-5 transition-transform duration-700">
             <div className="w-[160px] md:w-[220px] aspect-[9/19] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl border-[6px] border-gray-800 overflow-hidden relative">
               <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col">
                 <img
