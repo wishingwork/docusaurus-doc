@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import {
   Calendar, MapPin, Users, Share2, Sun,
   CheckCircle, Globe, Navigation, ArrowRight, AppWindow,
-  Briefcase, School, Play, Download, LayoutDashboard, CloudSun, Smartphone, Languages
+  Briefcase, School, Play, Download, LayoutDashboard, CloudSun, Smartphone, Languages, Activity
 } from 'lucide-react';
 import '../../css/custom.css';
 import Footer from '../../components/Layout/Footer';
@@ -11,6 +11,13 @@ import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const { i18n } = useTranslation();
+
+  useEffect(() => {
+    // Set default language to Traditional Chinese if not already set
+    if (i18n.language !== 'zh-Hant') {
+      i18n.changeLanguage('zh-Hant');
+    }
+  }, [i18n]);
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4">
@@ -194,28 +201,68 @@ const HeroSection = () => (
 
 const BenefitsSection = () => {
   const benefits = [
-    { title: 'Increase Participant Engagement', desc: 'Participants can easily explore attractions and event information seamlessly.', icon: Users, color: 'text-blue-600', bg: 'bg-blue-100' },
-    { title: 'Simplify Event Coordination', desc: 'Centralize event details, destinations, and updates in one unified space.', icon: Calendar, color: 'text-indigo-600', bg: 'bg-indigo-100' },
-    { title: 'Promote Your Organization', desc: 'Share branded event and organization pages with a single custom link.', icon: Globe, color: 'text-teal-600', bg: 'bg-teal-100' },
-    { title: 'Encourage Social Sharing', desc: 'Participants naturally share events and curated attractions with others.', icon: Share2, color: 'text-purple-600', bg: 'bg-purple-100' },
-    { title: 'Weather-Aware Experiences', desc: 'Help participants adapt plans safely with smart, real-time attraction recommendations.', icon: CloudSun, color: 'text-amber-600', bg: 'bg-amber-100' },
+    {
+      title: 'Increase Participant Engagement',
+      desc: 'Participants can easily explore attractions, event details, and nearby destinations — all within one app experience.',
+      icon: Users,
+      bg: 'bg-blue-50',
+      color: 'text-blue-600',
+    },
+    {
+      title: 'Simplify Event Coordination',
+      desc: 'Centralize event details, destinations, schedules, and real-time updates in one place your whole team can manage.',
+      icon: Calendar,
+      bg: 'bg-emerald-50',
+      color: 'text-emerald-600',
+    },
+    {
+      title: 'Promote Your Organization',
+      desc: 'Share a branded organization profile and event pages with a single link — perfect for social media bios and messaging apps.',
+      icon: Users,
+      bg: 'bg-indigo-50',
+      color: 'text-indigo-600',
+    },
+    {
+      title: 'Encourage Social Sharing',
+      desc: 'Participants naturally share events, attractions, and experiences — turning every attendee into an ambassador for your brand.',
+      icon: Share2,
+      bg: 'bg-orange-50',
+      color: 'text-orange-600',
+    },
+    {
+      title: 'Weather-Aware Experiences',
+      desc: 'Help participants adapt plans with smart, weather-sensitive attraction recommendations. Indoor options on rainy days, outdoor exploration when skies clear — the platform thinks ahead so your participants stay engaged.',
+      icon: Activity,
+      bg: 'bg-teal-50',
+      color: 'text-teal-600',
+      isWide: true,
+    },
   ];
 
   return (
-    <section id="features" className="py-24 bg-gray-50 scroll-mt-20">
+    <section id="features" className="py-24 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Why Organizers Love Us</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to deliver an unforgettable, stress-free event experience.</p>
+        <div className="mb-16">
+          <span className="text-blue-600 font-bold tracking-widest text-xs uppercase mb-4 block">Why Organizers Love It</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            Built for organizers.<br />
+            Loved by participants.
+          </h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-              <div className={`w-14 h-14 ${benefit.bg} ${benefit.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                <benefit.icon className="w-7 h-7" />
+            <div
+              key={idx}
+              className={`bg-white p-8 rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md ${benefit.isWide ? 'lg:col-span-2' : ''}`}
+            >
+              <div className={`w-12 h-12 ${benefit.bg} ${benefit.color} rounded-xl flex items-center justify-center mb-8`}>
+                <benefit.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">{benefit.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{benefit.desc}</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">{benefit.title}</h3>
+              <p className="text-gray-500 leading-relaxed text-sm md:text-base">
+                {benefit.desc}
+              </p>
             </div>
           ))}
         </div>
