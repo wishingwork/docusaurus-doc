@@ -77,88 +77,88 @@ const HeroSection = () => {
 
   return (
     <section className="relative pt-20 pb-32 px-6 overflow-hidden bg-white">
-    <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
-      style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-    <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-blue-50 rounded-full filter blur-[100px] opacity-40 z-0 animate-pulse"></div>
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-blue-50 rounded-full filter blur-[100px] opacity-40 z-0 animate-pulse"></div>
 
-    <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
-      <div className="hero-content">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full font-semibold text-sm mb-8" style={{ backgroundColor: '#EBF5FF', border: '1px solid #DBEAFE', color: colors.primary }}>
-          <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: colors.primary }}></div>
-          Event & Trip Engagement Platform
-        </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight" style={{ color: colors.text }}>
-          Organize Better Events with <br />
-          <span className="italic" style={{ color: colors.primary }}>Smart Trip Planning</span>
-        </h1>
-        <p className="text-xl mb-10 max-w-xl leading-relaxed" style={{ color: colors.textSecondary }}>
-          Create events, guide participants, discover attractions, and stay weather-ready with your branded event experience.
-        </p>
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        <div className="hero-content">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full font-semibold text-sm mb-8" style={{ backgroundColor: '#EBF5FF', border: '1px solid #DBEAFE', color: colors.primary }}>
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: colors.primary }}></div>
+            Event & Trip Engagement Platform
+          </div>
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight" style={{ color: colors.text }}>
+            Organize Better Events with <br />
+            <span className="italic" style={{ color: colors.primary }}>Smart Trip Planning</span>
+          </h1>
+          <p className="text-xl mb-10 max-w-xl leading-relaxed" style={{ color: colors.textSecondary }}>
+            Create events, guide participants, discover attractions, and stay weather-ready with your branded event experience.
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <button className="text-white px-8 py-4 rounded-xl font-bold shadow-xl transition-all flex items-center justify-center gap-2 group hover:opacity-90" style={{ backgroundColor: colors.primary, boxShadow: `0 20px 25px -5px ${colors.primary}33` }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
-            Become an Organizer
-          </button>
-          <button className="bg-white border hover:border-gray-300 px-8 py-4 rounded-xl font-bold shadow-sm transition-all flex items-center justify-center gap-2" style={{ borderColor: colors.border, color: colors.text }}>
-            <span className="text-sm">▶</span> Watch Demo
-          </button>
-        </div>
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <button className="text-white px-8 py-4 rounded-xl font-bold shadow-xl transition-all flex items-center justify-center gap-2 group hover:opacity-90" style={{ backgroundColor: colors.primary, boxShadow: `0 20px 25px -5px ${colors.primary}33` }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
+              Become an Organizer
+            </button>
+            <button className="bg-white border hover:border-gray-300 px-8 py-4 rounded-xl font-bold shadow-sm transition-all flex items-center justify-center gap-2" style={{ borderColor: colors.border, color: colors.text }}>
+              <span className="text-sm">▶</span> Watch Demo
+            </button>
+          </div>
 
-        <div className="flex flex-wrap items-center gap-8 md:gap-12 border-t pt-10" style={{ borderColor: colors.borderLight }}>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>10K+</div>
-            <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>App users</div>
-          </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>500+</div>
-            <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>Events published</div>
-          </div>
-          <div>
-            <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>Free</div>
-            <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>To start</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="relative flex justify-center lg:justify-end lg:pr-20 mt-16 lg:mt-0">
-        <div className="absolute top-10 -left-4 md:-left-20 z-20 bg-white rounded-2xl shadow-2xl p-4 md:p-5 border border-gray-100 w-48 md:w-64 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-          <div className="flex items-center gap-2 text-[10px] md:text-sm font-bold text-gray-800 mb-3 md:mb-4 pb-2 border-b border-gray-50">
-            <span>📅</span> Hosted Events
-          </div>
-          <div className="space-y-2 md:space-y-3">
-            <div className="flex items-center justify-between gap-3 text-[10px]">
-              <span className="font-semibold text-gray-700 truncate">親子瑜珈體驗班</span>
-              <span className="px-2 py-0.5 rounded-full bg-green-50 text-green-600 font-bold shrink-0">Published</span>
+          <div className="flex flex-wrap items-center gap-8 md:gap-12 border-t pt-10" style={{ borderColor: colors.borderLight }}>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>10K+</div>
+              <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>App users</div>
             </div>
-            <div className="flex items-center justify-between gap-3 text-[10px]">
-              <span className="font-semibold text-gray-700 truncate">追火車馬拉松</span>
-              <span className="px-2 py-0.5 rounded-full bg-amber-50 text-amber-600 font-bold shrink-0">Draft</span>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>500+</div>
+              <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>Events published</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-3xl font-bold" style={{ color: colors.text }}>Free</div>
+              <div className="text-xs md:text-sm font-medium" style={{ color: colors.textSecondary }}>To start</div>
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 w-[240px] md:w-[300px] h-[480px] md:h-[600px] bg-gray-900 rounded-[2.5rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl border-[6px] md:border-[8px] border-gray-800 overflow-hidden" id="hero-mobile">
+        <div className="relative flex justify-center lg:justify-end lg:pr-20 mt-16 lg:mt-0">
+          <div className="absolute top-10 -left-4 md:-left-20 z-20 bg-white rounded-2xl shadow-2xl p-4 md:p-5 border border-gray-100 w-48 md:w-64 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="flex items-center gap-2 text-[10px] md:text-sm font-bold text-gray-800 mb-3 md:mb-4 pb-2 border-b border-gray-50">
+              <span>📅</span> Hosted Events
+            </div>
+            <div className="space-y-2 md:space-y-3">
+              <div className="flex items-center justify-between gap-3 text-[10px]">
+                <span className="font-semibold text-gray-700 truncate">親子瑜珈體驗班</span>
+                <span className="px-2 py-0.5 rounded-full bg-green-50 text-green-600 font-bold shrink-0">Published</span>
+              </div>
+              <div className="flex items-center justify-between gap-3 text-[10px]">
+                <span className="font-semibold text-gray-700 truncate">追火車馬拉松</span>
+                <span className="px-2 py-0.5 rounded-full bg-amber-50 text-amber-600 font-bold shrink-0">Draft</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative z-10 w-[240px] md:w-[300px] h-[480px] md:h-[600px] bg-gray-900 rounded-[2.5rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl border-[6px] md:border-[8px] border-gray-800 overflow-hidden" id="hero-mobile">
             <img
               src={isEn ? "/img/trip-planner/explore_en.PNG" : "/img/trip-planner/explore_zh.PNG"}
               alt="App Mobile Screen"
               className="w-full h-full object-cover rounded-[2rem] md:rounded-[2.2rem]"
             />
-        </div>
+          </div>
 
-        <div className="absolute bottom-10 -right-4 md:-right-20 z-20 bg-white rounded-2xl shadow-2xl p-4 md:p-5 border border-gray-100 w-44 md:w-56 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-          <div className="text-[10px] md:text-sm font-bold text-gray-800 mb-3 md:mb-4 pb-2 border-b border-gray-50">
-            🔗 Share Event
+          <div className="absolute bottom-10 -right-4 md:-right-20 z-20 bg-white rounded-2xl shadow-2xl p-4 md:p-5 border border-gray-100 w-44 md:w-56 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="text-[10px] md:text-sm font-bold text-gray-800 mb-3 md:mb-4 pb-2 border-b border-gray-50">
+              🔗 Share Event
+            </div>
+            <div className="flex gap-1.5 md:gap-2 mb-3 md:mb-4">
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#06C755] flex items-center justify-center text-white text-[10px] md:text-xs font-bold">L</div>
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#E1306C] flex items-center justify-center text-white text-[9px] md:text-[10px] font-bold italic">ig</div>
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#1877F2] flex items-center justify-center text-white text-[10px] md:text-xs font-bold">f</div>
+            </div>
+            <div className="text-[8px] md:text-[10px] text-gray-400 font-medium truncate">wgp.app/event/yoga-kids</div>
           </div>
-          <div className="flex gap-1.5 md:gap-2 mb-3 md:mb-4">
-            <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#06C755] flex items-center justify-center text-white text-[10px] md:text-xs font-bold">L</div>
-            <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#E1306C] flex items-center justify-center text-white text-[9px] md:text-[10px] font-bold italic">ig</div>
-            <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#1877F2] flex items-center justify-center text-white text-[10px] md:text-xs font-bold">f</div>
-          </div>
-          <div className="text-[8px] md:text-[10px] text-gray-400 font-medium truncate">wgp.app/event/yoga-kids</div>
         </div>
       </div>
-    </div>
     </section>
   );
 };
@@ -242,8 +242,7 @@ const FeatureArchitectureSection = () => {
   const tabs = [
     { id: 'A', label: 'A. Smart Trip Planning' },
     { id: 'B', label: 'B. Event Management' },
-    { id: 'C', label: 'C. Share Anywhere' },
-    { id: 'D', label: 'D. Weather Intelligence' },
+    { id: 'C', label: 'C. Share Anywhere' }
   ];
 
   const content = {
@@ -329,71 +328,105 @@ const FeatureArchitectureSection = () => {
         { title: 'Multi-platform sharing', desc: 'LINE, Instagram, Facebook, and direct link — every share channel covered out of the box.', icon: Share2 },
       ],
       visual: (
-        <div className="bg-[#11253E] rounded-3xl p-8 border border-white/5 h-full text-white">
-          <div className="text-[10px] text-gray-400 font-bold mb-8 uppercase tracking-wider">Sharing flows</div>
-          <div className="space-y-4">
-            {[
-              { name: 'Share via LINE', desc: 'Send event to contacts & groups', icon: 'L', color: 'bg-[#06C755]' },
-              { name: 'Post to Instagram', desc: 'Story or feed with event card', icon: <Sun className="w-3.5 h-3.5" />, color: 'bg-[#E1306C]' },
-              { name: 'Copy event link', desc: 'wgp.app/event/yoga-kids-taipei', icon: <LinkIcon className="w-3.5 h-3.5" />, color: 'bg-white/15' },
-              { name: 'Organizer profile link', desc: 'wgp.app/org/我好你好空間', icon: <User className="w-3.5 h-3.5" />, color: 'bg-white/15' },
-            ].map((flow, i) => (
-              <div key={i} className="flex items-center gap-4 bg-[#0A1A2F] p-4 rounded-2xl border border-white/5">
-                <div className={`w-10 h-10 rounded-xl ${flow.color} flex items-center justify-center font-bold text-sm`}>{flow.icon}</div>
-                <div className="flex-1">
-                  <div className="text-xs font-bold">{flow.name}</div>
-                  <div className="text-[10px] text-gray-500">{flow.desc}</div>
-                </div>
-                <div className="text-gray-500 font-serif">›</div>
-              </div>
-            ))}
+        <div className="relative h-full w-full min-h-[600px] flex items-center justify-center p-6 bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10" id="feature-sharing-flow">
+          {/* Background Decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-[80px] -mr-32 -mt-32"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full filter blur-[80px] -ml-32 -mb-32"></div>
+
+          {/* Main Title Overlay (Mobile/Tablet Friendly) */}
+          <div className="absolute top-8 left-8 right-8 z-20 md:max-w-[300px]">
+            <h3 className="text-xl md:text-2xl font-bold mb-1 leading-tight text-white">分享活動・景點・主辦單位</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-blue-400">讓更多人發現你的精彩！</h3>
+            <p className="text-[10px] text-gray-400 leading-relaxed hidden sm:block">活動主辦必備的推廣利器，一次掌握，輕鬆分享，擴大影響力</p>
           </div>
-        </div>
-      )
-    },
-    D: {
-      features: [
-        { title: 'Live weather on every screen', desc: 'Current conditions and 5-day forecast shown on the Explore feed, event details, and trip planner.', icon: CloudSun },
-        { title: 'Smart indoor/outdoor routing', desc: 'Rainy forecast? The app prioritizes indoor venues. Sunny? Outdoor parks and trails rise to the top.', icon: Home },
-        { title: 'Event-day weather context', desc: 'Participants see what to expect on your event day — temperature, conditions, and what to bring.', icon: Activity },
-        { title: 'Forecast-driven planning', desc: 'Organizers and participants can plan ahead with a week-ahead view integrated into every event and trip card.', icon: Clock },
-      ],
-      visual: (
-        <div className="bg-[#11253E] rounded-3xl p-6 border border-white/5 h-full text-white">
-          <div className="text-[10px] text-gray-400 font-bold mb-6 uppercase tracking-wider">Weather-smart recommendations</div>
-          <div className="grid grid-cols-5 gap-2 mb-6">
-            {[
-              { d: 'Mon', i: '☀️', t: '25°' },
-              { d: 'Tue', i: '🌧️', t: '20°', rec: true },
-              { d: 'Wed', i: '⛅', t: '23°' },
-              { d: 'Thu', i: '☀️', t: '26°' },
-              { d: 'Fri', i: '🌧️', t: '19°' },
-            ].map((day, i) => (
-              <div key={i} className={`py-3 rounded-xl flex flex-col items-center border ${day.rec ? 'bg-emerald-400/20 border-emerald-400/30' : 'bg-[#0A1A2F] border-white/5'}`}>
-                <div className="text-[9px] text-gray-400 mb-2">{day.d}</div>
-                <div className="text-sm mb-1">{day.i}</div>
-                <div className="text-[10px] font-bold">{day.t}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-[10px] text-emerald-400 font-bold mb-4">Tuesday (rainy): Indoor recommendations</div>
-          <div className="space-y-3">
-            {[
-              { icon: '🏛️', name: '板橋慈惠宮', type: 'Indoor · 0.3 km' },
-              { icon: '🍧', name: 'J 室冰鋪', type: 'IceShop · 0.1 km' },
-              { icon: '🦋', name: '兜長的鍬大 昆蟲館', type: 'Indoor · 0.2 km' },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center justify-between bg-[#0A1A2F] p-3 rounded-xl border border-white/5">
-                <div className="flex items-center gap-3">
-                  <div className="text-base">{item.icon}</div>
-                  <div>
-                    <div className="text-xs font-bold">{item.name}</div>
-                    <div className="text-[9px] text-gray-500">{item.type}</div>
-                  </div>
+
+          {/* Central Phone Mockup */}
+          <div className="relative z-10 w-[220px] h-[450px] hidden md:block lg:block md:w-[260px] md:h-[530px] bg-gray-900 rounded-[2.5rem] p-2 border-[6px] border-gray-800 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.5)] transform translate-y-8 md:translate-y-12">
+            <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col relative">
+              <img src="/img/trip-planner/attraction_map_zh.PNG" className="w-full h-full object-cover" alt="Map View" />
+              {/* Overlay Marker Detail */}
+              <div className="absolute bottom-4 left-4 right-4 bg-white rounded-xl p-3 shadow-lg border border-gray-100">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="text-xs font-bold text-gray-800">國定古蹟林本源園邸</div>
+                  <CheckCircle className="w-3 h-3 text-emerald-500" />
                 </div>
-                <div className="text-[8px] font-bold text-emerald-400 px-2 py-0.5 rounded border border-emerald-400/30">Recommended</div>
+                <div className="text-[8px] text-gray-400">現存超過百年的林本源園邸...</div>
               </div>
-            ))}
+            </div>
+          </div>
+
+          {/* Floating Cards - Hidden on very small screens, responsive positions */}
+
+          {/* Top Left: Event Preview Card */}
+          <div className="absolute top-[25%] left-[5%] md:left-[5%] lg:left-[5%] z-20 w-44 md:w-52 bg-white rounded-2xl shadow-2xl p-2.5 border border-gray-100 rotate-[-3deg] hover:rotate-0 transition-all duration-500 group">
+            <div className="flex items-center gap-2 mb-2">
+              <Calendar className="w-3.5 h-3.5 text-amber-500" />
+              <span className="text-[9px] font-bold text-gray-800">分享活動</span>
+            </div>
+            <div className="rounded-xl overflow-hidden mb-2 aspect-video relative" id="event-image">
+              <img src="/img/trip-planner/event_detail_share.PNG" className="w-full h-full object-cover" alt="Event" />
+              <div className="absolute top-1.5 left-1.5 bg-blue-600 text-[6px] text-white px-1.5 py-0.5 rounded font-bold uppercase">Class</div>
+            </div>
+            <div className="text-[9px] font-bold text-gray-900 leading-tight mb-1 truncate">【台北】幼兒發展 | 高階-繽紛色彩世界</div>
+            <div className="flex items-center gap-1 text-[7px] text-gray-400 mb-2">
+              <Clock className="w-2.5 h-2.5" /> 2026/06/13 2:00 PM
+            </div>
+            <div className="flex gap-1 justify-end pt-1 border-t border-gray-50">
+              {['bg-[#06C755]', 'bg-[#1877F2]', 'bg-[#E1306C]', 'bg-gray-200'].map((c, i) => (
+                <div key={i} className={`w-4 h-4 rounded-full ${c} flex items-center justify-center text-[6px] text-white font-bold`}>{i === 3 ? '🔗' : ''}</div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Left: Organizer Profile Card */}
+          <div className="absolute bottom-[15%] left-[5%] md:left-[5%] lg:left-[5%] z-20 w-40 md:w-48 bg-white rounded-2xl shadow-2xl p-3 border border-gray-100 rotate-[2deg] hover:rotate-0 transition-all duration-500">
+            <div className="flex items-center gap-2 mb-3">
+              <Users className="w-3.5 h-3.5 text-blue-500" />
+              <span className="text-[9px] font-bold text-gray-800 uppercase tracking-wider">分享主辦者</span>
+            </div>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white shadow-sm">
+                <Home className="w-4 h-4" />
+              </div>
+              <div className="flex-1 overflow-hidden">
+                <div className="text-[9px] font-bold text-gray-900 truncate">我好你好親子共好空間</div>
+                <div className="text-[7px] text-gray-400 truncate tracking-tight">heart@cwlf.org.tw</div>
+              </div>
+            </div>
+            <div className="flex gap-1 justify-center pt-2 border-t border-gray-50">
+              <div className="bg-[#06C755]/10 text-[#06C755] text-[6px] px-1.5 py-0.5 rounded font-bold">LINE 分享</div>
+              <div className="bg-blue-600/10 text-blue-600 text-[6px] px-1.5 py-0.5 rounded font-bold">FB 粉絲專頁</div>
+            </div>
+          </div>
+
+          {/* Top Right: Space Preview Card */}
+          <div className="absolute top-[25%] right-[5%] md:right-[5%] lg:right-[5%] z-20 w-44 md:w-48 bg-white rounded-2xl shadow-2xl p-2.5 border border-gray-100 rotate-[4deg] hover:rotate-0 transition-all duration-500">
+            <div className="text-[9px] font-bold text-gray-400 mb-2 uppercase tracking-tight">精選空間預覽</div>
+            <div className="rounded-xl overflow-hidden mb-2 bg-gray-100 aspect-[4/3]" id="space-image">
+              <img src="/img/trip-planner/organizer_detail_share.PNG" className="w-full h-full object-cover" alt="Space" />
+            </div>
+            <div className="text-[9px] font-bold text-gray-900 mb-1 leading-tight">我好，你好！親子共好空間</div>
+            <div className="flex items-center gap-1 text-[7px] text-gray-400">
+              <MapPin className="w-2.5 h-2.5" /> 台北市中山區民東路二段...
+            </div>
+          </div>
+
+          {/* Bottom Right: Attraction Share Card */}
+          <div className="absolute bottom-[20%] right-[5%] md:right-[5%] lg:right-[5%] z-20 w-44 md:w-52 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
+            <div className="flex items-center gap-2 mb-2">
+              <MapPin className="w-3.5 h-3.5 text-rose-500" />
+              <span className="text-[9px] font-bold text-gray-800 uppercase">分享景點</span>
+            </div>
+            <p className="text-[8px] text-gray-500 leading-normal mb-3">現存超過百年的林本源園邸，為高晴明精景展...</p>
+            <div className="bg-gray-50 rounded-xl p-2.5 border border-gray-100 flex items-center justify-between">
+              <div>
+                <div className="text-[8px] font-bold text-gray-800">林本源園邸</div>
+                <div className="text-[6px] text-gray-400 tracking-tighter uppercase">National Historic Site</div>
+              </div>
+              <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-sm">
+                <Share2 className="w-2 h-2 text-blue-500" />
+              </div>
+            </div>
           </div>
         </div>
       )
