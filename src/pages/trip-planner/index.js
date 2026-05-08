@@ -680,99 +680,72 @@ const HowItWorksSection = () => {
   );
 };
 
-const CTASection = () => (
-  <section className="py-24 text-white overflow-hidden relative" style={{ backgroundColor: colors.secondary }}>
-    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-      <div className="relative z-10">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight">Ready to run better <br className="hidden sm:block" /> events?</h2>
-        <p className="text-lg md:text-xl mb-12 max-w-xl leading-relaxed font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
-          Join organizers across Taiwan using WeatherGoPlan to create events, engage participants, and grow their communities — for free.
-        </p>
+const CTASection = () => {
+  const { i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
 
-        <div className="flex flex-col gap-4 max-w-md">
-          <button className="w-full px-8 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98]" style={{ backgroundColor: colors.white, color: colors.secondary }}>
-            <User className="w-5 h-5" /> Become an Organizer — it's free
-          </button>
+  return (
+    <section className="py-24 text-white overflow-hidden relative" style={{ backgroundColor: colors.secondary }}>
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight tracking-tight">Ready to run better <br className="hidden sm:block" /> events?</h2>
+          <p className="text-lg md:text-xl mb-12 max-w-xl leading-relaxed font-medium" style={{ color: 'rgba(255,255,255,0.7)' }}>
+            Join organizers across Taiwan using WeatherGoPlan to create events, engage participants, and grow their communities — for free.
+          </p>
 
-          <button className="w-full bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-3 hover:bg-white/10">
-            <Play className="w-5 h-5" /> Watch demo
-          </button>
-
-          <div className="grid grid-cols-2 gap-4 pt-4">
-            <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
-              <Smartphone className="w-4 h-4" /> App Store
+          <div className="flex flex-col gap-4 max-w-md">
+            <button className="w-full px-8 py-5 rounded-2xl font-bold shadow-2xl transition-all flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98]" style={{ backgroundColor: colors.white, color: colors.secondary }}>
+              <User className="w-5 h-5" /> Become an Organizer — it's free
             </button>
-            <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
-              <Play className="w-4 h-4" /> Google Play
-            </button>
-          </div>
-        </div>
-      </div>
 
-      <div className="relative flex justify-center lg:justify-end lg:pr-12 group mt-20 lg:mt-0 px-4 sm:px-0">
-        {/* Browser Mockup */}
-        <div className="bg-[#FAF9F6] rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-[280px] sm:w-[420px] aspect-[4/3] border border-white/5 relative transform rotate-2 group-hover:rotate-0 transition-transform duration-700">
-          <div className="flex gap-1.5 mb-6 opacity-40">
-            <div className="w-2 h-2 rounded-full bg-rose-400"></div>
-            <div className="w-2 h-2 rounded-full bg-amber-400"></div>
-            <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-          </div>
-          <div className="space-y-3">
-            <div className="grid grid-cols-2 gap-3">
-              <div className="h-4 bg-gray-200/80 rounded-full w-4/5"></div>
-              <div className="h-4 bg-gray-900/80 rounded-full w-full"></div>
+            <button className="w-full bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-3 hover:bg-white/10">
+              <Play className="w-5 h-5" /> Watch demo
+            </button>
+
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
+                <Smartphone className="w-4 h-4" /> App Store
+              </button>
+              <button className="bg-white/5 border border-white/10 text-white px-6 py-3 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-3 hover:bg-white/10">
+                <Play className="w-4 h-4" /> Google Play
+              </button>
             </div>
-            <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
-            <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
-            <div className="w-full h-8 bg-gray-200/50 rounded-lg"></div>
-            <div className="w-1/2 h-10 bg-blue-600 rounded-xl mt-6"></div>
           </div>
         </div>
 
-        {/* Phone Frame */}
-        <div className="absolute top-10 md:top-20 right-0 z-30 transform translate-x-12 sm:translate-x-20 translate-y-8 sm:translate-y-10 group-hover:translate-x-8 sm:group-hover:translate-x-12 group-hover:translate-y-4 sm:group-hover:translate-y-5 transition-transform duration-700">
-          <div className="w-[180px] md:w-[240px] aspect-[9/19] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl border-[6px] border-gray-800 overflow-hidden relative">
-            <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col">
-              <div className="bg-blue-600 pt-6 pb-3 px-3 text-white text-center">
-                <div className="text-[10px] font-bold mb-3 uppercase tracking-wider">Explore</div>
-                <div className="flex justify-between items-center gap-1 px-1">
-                  {['25°', '20°', '23°', '26°', '19°'].map((t, idx) => (
-                    <div key={idx} className="flex flex-col items-center opacity-70">
-                      <Sun className="w-2 h-2 mb-0.5" />
-                      <span className="text-[7px] font-bold">{t}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="p-3 flex-1 space-y-3">
-                <div className="aspect-[16/10] bg-blue-100/50 rounded-xl"></div>
-                <div className="text-[9px] font-bold text-gray-800 leading-tight">親子課程 · 週四上午</div>
-                <div className="text-[8px] text-gray-500 font-medium">10:00 - 11:30 · $500</div>
+        <div className="relative flex justify-center lg:justify-end lg:pr-12 group mt-20 lg:mt-0 px-4 sm:px-0">
+          {/* Browser Mockup */}
+          <div className="bg-[#FAF9F6] rounded-3xl p-3 shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-[320px] sm:w-[480px] aspect-[16/10] border border-white/5 relative transform rotate-2 group-hover:rotate-0 transition-transform duration-700 overflow-hidden">
+            <div className="flex gap-1.5 mb-3 opacity-40 px-2">
+              <div className="w-2 h-2 rounded-full bg-rose-400"></div>
+              <div className="w-2 h-2 rounded-full bg-amber-400"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+            </div>
+            <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-inner">
+              <img
+                src={isEn ? "/img/trip-planner/dashboard_en.png" : "/img/trip-planner/dashboard_zh.png"}
+                alt="Dashboard"
+              />
+            </div>
+          </div>
 
-                <div className="pt-2 border-t border-gray-100">
-                  <div className="text-[7px] font-bold text-gray-400 mb-2 uppercase">附近景點</div>
-                  <div className="space-y-1.5">
-                    {[
-                      { name: '林本源園邸', color: 'text-green-500' },
-                      { name: 'J 室冰鋪', color: 'text-blue-500' }
-                    ].map((loc, i) => (
-                      <div key={i} className="flex items-center justify-between">
-                        <span className="text-[8px] font-bold text-gray-800 flex items-center gap-1.5">
-                          <span className={loc.color}>●</span> {loc.name}
-                        </span>
-                        <span className="text-[7px] text-gray-400">0.{i + 1}km</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+          {/* Phone Frame */}
+          <div className="absolute top-[-35%] md:top-0 right-[20%] md:right-20 z-30 transform translate-x-12 sm:translate-x-20 translate-y-8 sm:translate-y-10 group-hover:translate-x-8 sm:group-hover:translate-x-12 group-hover:translate-y-4 sm:group-hover:translate-y-5 transition-transform duration-700">
+            <div className="w-[160px] md:w-[220px] aspect-[9/19] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl border-[6px] border-gray-800 overflow-hidden relative">
+              <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col">
+                <img
+                  src={isEn ? "/img/trip-planner/attraction_map_en.PNG" : "/img/trip-planner/attraction_map_zh.PNG"}
+                  className="w-full h-full object-cover"
+                  alt="App Map"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const Footer = () => {
   const { i18n } = useTranslation();
