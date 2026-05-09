@@ -163,5 +163,219 @@
       "desc": "See your events in calendar or timeline view with weather-coded colors. Make informed decisions about your activities."
     }
   },
-  "deleteAccount": "Request for Deleting My WeatherCalendar Account"
+  "deleteAccount": "Request for Deleting My WeatherCalendar Account",
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "organizers": "For Organizers",
+      "sharing": "Social Growth",
+      "how": "How It Works",
+      "becomeOrganizer": "Become an Organizer"
+    },
+    "hero": {
+      "tag": "Event & Trip Engagement Platform",
+      "title_part1": "Organize Better Events with",
+      "title_part2": "Smart Trip Planning",
+      "desc": "Create events, guide participants, discover attractions, and stay weather-ready with your branded event experience.",
+      "becomeOrganizer": "Become an Organizer",
+      "stats": {
+        "attractions": "Attractions",
+        "start": "To start"
+      },
+      "cards": {
+        "hosted": "Hosted Events",
+        "published": "Published",
+        "draft": "Draft",
+        "share": "Share Event"
+      }
+    },
+    "benefits": {
+      "tag": "Why Organizers Love It",
+      "title_part1": "Built for organizers.",
+      "title_part2": "Loved by participants.",
+      "items": [
+        {
+          "title": "Increase Participant Engagement",
+          "desc": "Participants can easily explore attractions, event details, and nearby destinations — all within one app experience."
+        },
+        {
+          "title": "Simplify Event Coordination",
+          "desc": "Centralize event details, destinations, schedules, and real-time updates in one place your whole team can manage."
+        },
+        {
+          "title": "Promote Your Organization",
+          "desc": "Share a branded organization profile and event pages with a single link — perfect for social media bios and messaging apps."
+        },
+        {
+          "title": "Encourage Social Sharing",
+          "desc": "Participants naturally share events, attractions, and experiences — turning every attendee into an ambassador for your brand."
+        },
+        {
+          "title": "Weather-Aware Experiences",
+          "desc": "Help participants adapt plans with smart, weather-sensitive attraction recommendations. Indoor options on rainy days, outdoor exploration when skies clear — the platform thinks ahead so your participants stay engaged."
+        }
+      ]
+    },
+    "featureArch": {
+      "tag": "Feature architecture",
+      "title": "Everything your event needs",
+      "desc": "Four interconnected systems — trip planning, event management, social sharing, and weather intelligence — working together seamlessly.",
+      "tabs": {
+        "A": "A. Smart Trip Planning",
+        "B": "B. Event Management",
+        "C": "C. Share Anywhere"
+      },
+      "visual": {
+        "A": {
+          "title": "Smart Trip Discovery",
+          "subtitle": "Plan with Weather",
+          "features": {
+            "search": { "title": "Destination search", "desc": "Search any area by region, district, or name to surface nearby attractions and businesses." },
+            "rec": { "title": "Attraction recommendations", "desc": "Curated locations — parks, museums, cafés, cultural sites — shown with distance and category tags." },
+            "indoor": { "title": "Indoor / outdoor suggestions", "desc": "Clearly labeled indoor and outdoor options so participants can plan around any weather condition." },
+            "weather": { "title": "Weather-aware planning", "desc": "Trip suggestions dynamically shift based on forecast — rainy days surface indoor options automatically." }
+          }
+        },
+        "B": {
+          "title": "Event Management",
+          "subtitle": "Organizer Portal",
+          "features": {
+            "create": { "title": "Create events", "desc": "Add title, date, time, location, description, pricing, age group, and category." },
+            "schedule": { "title": "Manage schedules", "desc": "Control event series, recurring dates, and session-based programs — all from one dashboard." },
+            "profile": { "title": "Manage organization profile", "desc": "Set name, logo, contact info, and unique ID — your branded organizer page, public and shareable." },
+            "publish": { "title": "Publish & share", "desc": "One-click publish puts your event live on the Explore feed, map, and a shareable link." }
+          }
+        },
+        "C": {
+          "title": "Share Events, Attractions, & Organizations",
+          "subtitle": "Let more people discover your excellence!",
+          "desc": "Essential promotion tools for event organizers. Master everything at once, share easily, and expand your impact.",
+          "features": {
+            "event": "Share Event",
+            "event_desc": "【Taipei】Early Childhood Development | Advanced - Colorful World",
+            "profile": "Share Organizer",
+            "profile_desc": "I'm Fine, You're Fine! Family Co-creation Space",
+            "attraction": "Share Attraction",
+            "attraction_desc": "Centuries-old Lin Family Mansion and Garden, exquisite landscape exhibition...",
+            "attraction_name": "Lin Family Mansion and Garden",
+            "space": "Featured Space Preview"
+          }
+        }
+      }
+    },
+    "organizer": {
+      "tag": "Organizer tools",
+      "title": "Powerful Organizer Dashboard",
+      "desc": "Manage events, organization profiles, and participant engagement from one central portal.",
+      "features": [
+        {
+          "title": "Complete control",
+          "desc": "From initial setup to final publishing, you have full control over every detail of your events and organization profile."
+        },
+        {
+          "title": "Real-time updates",
+          "desc": "Any changes you make are instantly reflected across the platform, ensuring your participants always have the latest info."
+        },
+        {
+          "title": "Data-driven insights",
+          "desc": "Track participation and engagement to better understand your audience and improve future events."
+        }
+      ]
+    },
+    "social": {
+      "tag": "Viral growth, built in",
+      "title": "Built for Social Sharing",
+      "desc": "Every attraction, event, and organization page has a shareable link — turning every participant into a natural promoter.",
+      "cards": {
+        "event": {
+          "title": "Every event is shareable",
+          "desc": "Each event has a clean, mobile-optimized page with details, pricing, and a Book Now button — ready to share via LINE, Instagram, or any messaging app.",
+          "link_text": "Share: Event Detail - 【Taipei】Early Childhood Development | Advanced - Colorful World"
+        },
+        "profile": {
+          "title": "Organizations get a profile link",
+          "desc": "Your branded organizer page lists all your events in one place — perfect for bios, newsletters, and word-of-mouth referrals.",
+          "link_text": "Share: Organizer Detail - I'm Fine, You're Fine! Family Co-creation Space"
+        },
+        "attraction": {
+          "title": "Attractions are also shareable",
+          "desc": "Participants discovering a great café or park can share it directly with friends — keeping your event top-of-mind even after it ends.",
+          "link_text": "Share: Attraction Detail - Lin Family Mansion and Garden"
+        }
+      }
+    },
+    "who": {
+      "tag": "WHO IT'S FOR",
+      "title_part1": "Made for every kind",
+      "title_part2": "of event organizer",
+      "desc": "Whether you run a weekly class, a school program, or a community workshop — WeatherGoPlan was built for you.",
+      "cards": [
+        {
+          "title": "Event Organizer",
+          "desc": "Fitness events, marathons, community activities, adult classes"
+        },
+        {
+          "title": "School Program",
+          "desc": "Parent-child classes, early childhood programs, school excursions"
+        },
+        {
+          "title": "Tour Host",
+          "desc": "Cultural tours, walking groups, guided experiences, travel itineraries"
+        },
+        {
+          "title": "Communities & Workshops",
+          "desc": "Senior groups, craft meetups, hobbyist clubs, neighborhood programs"
+        }
+      ]
+    },
+    "how": {
+      "tag": "HOW IT WORKS",
+      "title": "From signup to participants exploring",
+      "desc": "Four simple steps to take your event from idea to engaged community.",
+      "steps": [
+        {
+          "title": "Create organization",
+          "desc": "Set up your organizer profile with name, logo, type, and contact info. Your public page is ready instantly."
+        },
+        {
+          "title": "Publish your event",
+          "desc": "Fill in event details — date, location, price, audience — and hit publish. It appears on the map and Explore feed."
+        },
+        {
+          "title": "Share with participants",
+          "desc": "Share your event page link via LINE, IG, or any channel. Participants tap through to book instantly."
+        },
+        {
+          "title": "Participants explore",
+          "desc": "Attendees open the app, discover your event in context with nearby attractions and weather-smart suggestions."
+        }
+      ]
+    },
+    "cta": {
+      "title_part1": "Ready to run better",
+      "title_part2": "events?",
+      "desc": "Join organizers across Taiwan using WeatherGoPlan to create events, engage participants, and grow their communities — for free.",
+      "button": "Become an Organizer — it's free"
+    },
+    "footer": {
+      "desc": "Event and trip engagement platform for organizers and participants. Discover, plan, and share experiences — weather-aware and location-smart.",
+      "org": "For Organizers",
+      "part": "For Participants",
+      "comp": "Company",
+      "links": {
+        "become": "Become an Organizer",
+        "dash": "Organizer Dashboard",
+        "create": "Create Event",
+        "manage": "Manage Organization",
+        "explore": "Explore Events",
+        "planner": "Trip Planner",
+        "nearby": "Nearby Attractions",
+        "coupons": "Coupons",
+        "about": "About",
+        "contact": "Contact",
+        "privacy": "Privacy Policy"
+      },
+      "copyright": "© 2026 WeatherGoPlan · MeteoSync. All rights reserved."
+    }
+  }
 }
