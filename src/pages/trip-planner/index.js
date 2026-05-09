@@ -280,19 +280,19 @@ const FeatureArchitectureSection = () => {
             ))}
           </div>
           <div className="lg:col-span-7">
-            <div className="relative h-full w-full min-h-[600px] flex items-center justify-center p-4 bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10">
+            <div className="relative h-full w-full min-h-[750px] flex items-center justify-center p-4 bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10">
               {activeTab === 'A' && (
                 <div className="relative w-full h-full flex flex-col">
                   {/* Background Decoration */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-[80px] -mr-32 -mt-32"></div>
                   <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full filter blur-[80px] -ml-32 -mb-32"></div>
 
-                  <div className="absolute top-4 left-8 right-8 z-20 md:max-w-[300px]">
+                  <div className="absolute top-8 left-8 right-8 z-20 md:max-w-[350px]">
                     <h3 className="text-xl md:text-2xl font-bold mb-1 leading-tight text-white">{current.title}</h3>
                     <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-emerald-400">{current.subtitle}</h3>
                   </div>
 
-                  <div className="relative z-10 w-[220px] h-[450px] hidden md:block lg:block mx-auto md:w-[260px] md:h-[530px] bg-gray-900 rounded-[2.5rem] p-2 border-[6px] border-gray-800 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.5)] transform translate-y-12">
+                  <div className="absolute top-[20%] left-1/2 -translate-x-1/2 z-10 w-[220px] h-[450px] hidden md:block lg:block mx-auto md:w-[260px] md:h-[530px] bg-gray-900 rounded-[2.5rem] p-2 border-[6px] border-gray-800 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.5)] transform translate-y-12">
                     <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col relative">
                       <img src={isEn ? "/img/trip-planner/attraction_list_en.PNG" : "/img/trip-planner/attraction_list_zh.PNG"} className="w-full h-full object-cover" alt="Attraction List" />
                     </div>
@@ -305,12 +305,12 @@ const FeatureArchitectureSection = () => {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full filter blur-[80px] -mr-32 -mt-32"></div>
                   <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/10 rounded-full filter blur-[80px] -ml-32 -mb-32"></div>
 
-                  <div className="absolute top-4 left-8 right-8 z-20 md:max-w-[300px]">
+                  <div className="absolute top-8 left-8 right-8 z-20 md:max-w-[350px]">
                     <h3 className="text-xl md:text-2xl font-bold mb-1 leading-tight text-white">{current.title}</h3>
                     <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-blue-400">{current.subtitle}</h3>
                   </div>
 
-                  <div className="relative z-10 w-[85%] max-w-[550px] mx-auto bg-gray-800 rounded-xl p-1.5 md:p-2 border-[4px] md:border-[6px] border-gray-700 shadow-2xl transform translate-y-8">
+                  <div className="absolute top-[35%] left-1/2 -translate-x-1/2 z-10 w-[85%] max-w-[550px] mx-auto bg-gray-800 rounded-xl p-1.5 md:p-2 border-[4px] md:border-[6px] border-gray-700 shadow-2xl transform translate-y-8">
                     <div className="w-full h-full bg-white rounded-lg overflow-hidden relative border border-gray-600">
                       <img src={isEn ? "/img/trip-planner/dashboard_en.png" : "/img/trip-planner/dashboard_zh.png"} className="w-full h-full" alt="Dashboard" />
                     </div>
@@ -325,13 +325,13 @@ const FeatureArchitectureSection = () => {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-[80px] -mr-32 -mt-32"></div>
                   <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full filter blur-[80px] -ml-32 -mb-32"></div>
 
-                  <div className="absolute top-4 left-8 right-8 z-20 md:max-w-[300px]">
+                  <div className="absolute top-8 left-8 right-8 z-20 md:max-w-[500px]">
                     <h3 className="text-xl md:text-2xl font-bold mb-1 leading-tight text-white">{current.title}</h3>
                     <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-blue-400">{current.subtitle}</h3>
                     <p className="text-[10px] text-gray-400 leading-relaxed hidden sm:block">{current.desc}</p>
                   </div>
 
-                  <div className="relative z-10 w-[220px] h-[450px] hidden md:block lg:block mx-auto md:w-[260px] md:h-[530px] bg-gray-900 rounded-[2.5rem] p-2 border-[6px] border-gray-800 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.5)] transform translate-y-12">
+                  <div className="absolute top-[20%] left-1/2 -translate-x-1/2 z-10 w-[220px] h-[450px] hidden md:block lg:block mx-auto md:w-[260px] md:h-[530px] bg-gray-900 rounded-[2.5rem] p-2 border-[6px] border-gray-800 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.5)] transform translate-y-12">
                     <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col relative">
                       <img src={isEn ? "/img/trip-planner/attraction_map_en.PNG" : "/img/trip-planner/attraction_map_zh.PNG"} className="w-full h-full object-cover" alt="Map View" />
                       <div className="absolute bottom-4 left-4 right-4 bg-white rounded-xl p-3 shadow-lg border border-gray-100">
@@ -344,7 +344,7 @@ const FeatureArchitectureSection = () => {
                     </div>
                   </div>
 
-                  <div className="absolute top-[25%] left-[5%] z-20 w-44 bg-white rounded-2xl shadow-2xl p-2.5 border border-gray-100 rotate-[-3deg] hover:rotate-0 transition-all duration-500">
+                  <div className="absolute top-[35%] left-[5%] z-20 w-44 bg-white rounded-2xl shadow-2xl p-2.5 border border-gray-100 rotate-[-3deg] hover:rotate-0 transition-all duration-500">
                     <div className="flex items-center gap-2 mb-2">
                       <Calendar className="w-3.5 h-3.5 text-amber-500" />
                       <span className="text-[9px] font-bold text-gray-800">{t('landing.featureArch.visual.C.features.event')}</span>
@@ -361,7 +361,7 @@ const FeatureArchitectureSection = () => {
                   </div>
 
                   {/* Bottom Left: Organizer Profile Card */}
-                  <div className="absolute bottom-[15%] left-[5%] z-20 w-40 md:w-48 bg-white rounded-2xl shadow-2xl p-3 border border-gray-100 rotate-[2deg] hover:rotate-0 transition-all duration-500">
+                  <div className="absolute bottom-[5%] left-[5%] z-20 w-40 md:w-48 bg-white rounded-2xl shadow-2xl p-3 border border-gray-100 rotate-[2deg] hover:rotate-0 transition-all duration-500">
                     <div className="flex items-center gap-2 mb-3">
                       <Users className="w-3.5 h-3.5 text-blue-500" />
                       <span className="text-[9px] font-bold text-gray-800 uppercase tracking-wider">{t('landing.featureArch.visual.C.features.profile')}</span>
@@ -382,7 +382,7 @@ const FeatureArchitectureSection = () => {
                   </div>
 
                   {/* Top Right: Space Preview Card */}
-                  <div className="absolute top-[25%] right-[5%] z-20 w-44 md:w-48 bg-white rounded-2xl shadow-2xl p-2.5 border border-gray-100 rotate-[4deg] hover:rotate-0 transition-all duration-500">
+                  <div className="absolute top-[35%] right-[5%] z-20 w-44 md:w-48 bg-white rounded-2xl shadow-2xl p-2.5 border border-gray-100 rotate-[4deg] hover:rotate-0 transition-all duration-500">
                     <div className="text-[9px] font-bold text-gray-400 mb-2 uppercase tracking-tight">{t('landing.featureArch.visual.C.features.space')}</div>
                     <div className="rounded-xl overflow-hidden mb-2 bg-gray-100 aspect-[4/3]" id="space-image">
                       <img src="/img/trip-planner/organizer_detail_share.PNG" className="w-full h-full object-cover object-top" alt="Space" />
@@ -392,7 +392,7 @@ const FeatureArchitectureSection = () => {
                     </div>
                   </div>
 
-                  <div className="absolute bottom-[20%] right-[5%] z-20 w-44 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
+                  <div className="absolute bottom-[10%] right-[5%] z-20 w-44 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100 rotate-[-2deg] hover:rotate-0 transition-all duration-500">
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin className="w-3.5 h-3.5 text-rose-500" />
                       <span className="text-[9px] font-bold text-gray-800 uppercase">{t('landing.featureArch.visual.C.features.attraction')}</span>
