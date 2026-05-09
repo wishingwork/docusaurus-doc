@@ -1,4 +1,7 @@
 {
+  "app": {
+    "name": "WeatherGo饗樂"
+  },
   "welcome": "歡迎來到首頁！",
   "description": "這是繁體中文版本。",
   "calendarView": {

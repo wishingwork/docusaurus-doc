@@ -42,7 +42,7 @@ const Navbar = () => {
             alt="WeatherGoPlan Logo"
             className="w-10 h-10 object-contain"
           />
-          <span className="tracking-tight">WeatherGoPlan</span>
+          <span className="tracking-tight">{t('app.name')}</span>
         </a>
         <ul className="hidden md:flex items-center gap-8 font-medium list-none mb-0" style={{ color: colors.text }}>
           <li><a href="#features" className="hover:opacity-80 transition-colors no-underline text-inherit">{t('landing.nav.features')}</a></li>

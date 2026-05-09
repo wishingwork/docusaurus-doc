@@ -1,4 +1,7 @@
 {
+  "app": {
+    "name": "WeatherGo Plan"
+  },
   "welcome": "Welcome to the homepage!",
   "description": "This is the English version.",
   "calendarView": {
@@ -230,20 +233,44 @@
           "title": "Smart Trip Discovery",
           "subtitle": "Plan with Weather",
           "features": {
-            "search": { "title": "Destination search", "desc": "Search any area by region, district, or name to surface nearby attractions and businesses." },
-            "rec": { "title": "Attraction recommendations", "desc": "Curated locations — parks, museums, cafés, cultural sites — shown with distance and category tags." },
-            "indoor": { "title": "Indoor / outdoor suggestions", "desc": "Clearly labeled indoor and outdoor options so participants can plan around any weather condition." },
-            "weather": { "title": "Weather-aware planning", "desc": "Trip suggestions dynamically shift based on forecast — rainy days surface indoor options automatically." }
+            "search": {
+              "title": "Destination search",
+              "desc": "Search any area by region, district, or name to surface nearby attractions and businesses."
+            },
+            "rec": {
+              "title": "Attraction recommendations",
+              "desc": "Curated locations — parks, museums, cafés, cultural sites — shown with distance and category tags."
+            },
+            "indoor": {
+              "title": "Indoor / outdoor suggestions",
+              "desc": "Clearly labeled indoor and outdoor options so participants can plan around any weather condition."
+            },
+            "weather": {
+              "title": "Weather-aware planning",
+              "desc": "Trip suggestions dynamically shift based on forecast — rainy days surface indoor options automatically."
+            }
           }
         },
         "B": {
           "title": "Event Management",
           "subtitle": "Organizer Portal",
           "features": {
-            "create": { "title": "Create events", "desc": "Add title, date, time, location, description, pricing, age group, and category." },
-            "schedule": { "title": "Manage schedules", "desc": "Control event series, recurring dates, and session-based programs — all from one dashboard." },
-            "profile": { "title": "Manage organization profile", "desc": "Set name, logo, contact info, and unique ID — your branded organizer page, public and shareable." },
-            "publish": { "title": "Publish & share", "desc": "One-click publish puts your event live on the Explore feed, map, and a shareable link." }
+            "create": {
+              "title": "Create events",
+              "desc": "Add title, date, time, location, description, pricing, age group, and category."
+            },
+            "schedule": {
+              "title": "Manage schedules",
+              "desc": "Control event series, recurring dates, and session-based programs — all from one dashboard."
+            },
+            "profile": {
+              "title": "Manage organization profile",
+              "desc": "Set name, logo, contact info, and unique ID — your branded organizer page, public and shareable."
+            },
+            "publish": {
+              "title": "Publish & share",
+              "desc": "One-click publish puts your event live on the Explore feed, map, and a shareable link."
+            }
           }
         },
         "C": {
