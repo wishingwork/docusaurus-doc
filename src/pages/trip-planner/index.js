@@ -437,7 +437,7 @@ const OrganizerDashboardSection = () => {
 
         <div className="rounded-[2.5rem] p-8 md:p-12 border shadow-2xl mb-16 overflow-hidden bg-gray-50 flex justify-center" style={{ borderColor: colors.borderLight }} id="feature-management-dashboard">
           <img
-            src={isEn ? "/img/trip-planner/dashboard_en.PNG" : "/img/trip-planner/dashboard_zh.PNG"}
+            src={isEn ? "/img/trip-planner/dashboard_en.png" : "/img/trip-planner/dashboard_zh.png"}
             alt="Dashboard View"
           />
         </div>
