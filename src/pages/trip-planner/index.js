@@ -232,9 +232,9 @@ const FeatureArchitectureSection = () => {
       subtitle: t('landing.featureArch.visual.C.subtitle'),
       desc: t('landing.featureArch.visual.C.desc'),
       features: [
-        { icon: <Calendar className="w-4 h-4" />, title: t('landing.featureArch.visual.C.features.event'), desc: t('landing.featureArch.visual.C.features.event_desc') },
-        { icon: <Users className="w-4 h-4" />, title: t('landing.featureArch.visual.C.features.profile'), desc: t('landing.featureArch.visual.C.features.profile_desc') },
-        { icon: <MapPin className="w-4 h-4" />, title: t('landing.featureArch.visual.C.features.attraction'), desc: t('landing.featureArch.visual.C.features.attraction_desc') },
+        { icon: <Calendar className="w-4 h-4" />, title: t('landing.featureArch.visual.C.features.event'), desc: <a href="https://www.meteosync.com/event/a4f43af1-106e-4d86-b1c0-90c0f10b417a" class="text-white underline">{t('landing.featureArch.visual.C.features.event_desc')}</a> },
+        { icon: <Users className="w-4 h-4" />, title: t('landing.featureArch.visual.C.features.profile'), desc: <a href="https://www.meteosync.com/organizer/31577e14-5240-434e-9c8e-fa92c6a99b25" class="text-white underline">{t('landing.featureArch.visual.C.features.profile_desc')}</a> },
+        { icon: <MapPin className="w-4 h-4" />, title: t('landing.featureArch.visual.C.features.attraction'), desc: <a href="https://www.meteosync.com/attraction/attr_01KFFT0DFFVNWGMFAPV9CQYKGW" class="text-white underline">{t('landing.featureArch.visual.C.features.attraction_desc')}</a> }
       ]
     }
   };
@@ -257,7 +257,7 @@ const FeatureArchitectureSection = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all ${activeTab === tab
+              className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all cursor-pointer ${activeTab === tab
                 ? 'bg-white text-[#005FA0] shadow-xl'
                 : 'text-white/50 hover:text-white hover:bg-white/5'
                 }`}
@@ -276,7 +276,7 @@ const FeatureArchitectureSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{feature.desc}</p>
+                  <p className="text-sm text-white-400 leading-relaxed">{feature.desc}</p>
                 </div>
               </div>
             ))}
