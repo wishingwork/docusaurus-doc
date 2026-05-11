@@ -500,7 +500,7 @@ const SocialSharingSection = () => {
                 <div className="text-3xl mb-10">{icons[idx]}</div>
                 <h3 className="text-xl font-bold mb-4" style={{ color: colors.text }}>{card.title}</h3>
                 <p className="text-sm mb-10 leading-relaxed h-24 overflow-hidden" style={{ color: colors.textSecondary }}>{card.desc}</p>
-                <div className="p-3 rounded-xl border text-[10px] font-bold truncate" style={{ backgroundColor: `${colors.primary}05`, borderColor: `${colors.primary}15`, color: colors.primary }}>
+                <div className="p-3 rounded-xl border text-[10px] font-bold" style={{ backgroundColor: `${colors.primary}05`, borderColor: `${colors.primary}15`, color: colors.primary }}>
                   <a href={links[idx]} target="_blank" rel="noopener noreferrer">{card.link_text}</a>
                 </div>
               </div>
@@ -628,7 +628,7 @@ const CTASection = () => {
 
           {/* Phone Frame */}
           <div className="absolute top-[-35%] md:top-[-30%] right-[20%] md:right-20 z-30 transform translate-x-12 sm:translate-x-20 translate-y-8 sm:translate-y-10 group-hover:translate-x-8 sm:group-hover:translate-x-12 group-hover:translate-y-4 sm:group-hover:translate-y-5 transition-transform duration-700">
-            <div className="w-[160px] md:w-[220px] aspect-[9/19] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl border-[6px] border-gray-800 overflow-hidden relative">
+            <div className="w-[160px] md:w-[220px] aspect-[9/19] bg-gray-900 rounded-[2.5rem] p-1 shadow-2xl border-[6px] border-gray-800 overflow-hidden relative">
               <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col">
                 <img
                   src={isEn ? "/img/trip-planner/attraction_map_en.PNG" : "/img/trip-planner/attraction_map_zh.PNG"}
