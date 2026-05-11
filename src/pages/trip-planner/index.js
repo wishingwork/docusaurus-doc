@@ -4,7 +4,8 @@ import {
   Calendar, MapPin, Users, Share2, Sun,
   CheckCircle, Globe, Navigation, ArrowRight, AppWindow,
   Briefcase, School, Play, Download, LayoutDashboard, CloudSun, Smartphone, Languages, Activity,
-  Search, Home, Plus, User, Link as LinkIcon, Clock, Upload, Trash2, Edit2, ExternalLink
+  Search, Home, Plus, User, Link as LinkIcon, Clock, Upload, Trash2, Edit2, ExternalLink,
+  Instagram, Facebook, MessageCircle
 } from 'lucide-react';
 import '../../css/custom.css';
 
@@ -147,9 +148,17 @@ const HeroSection = () => {
               🔗 {t('landing.hero.cards.share')}
             </div>
             <div className="flex gap-1.5 md:gap-2 mb-3 md:mb-4">
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#06C755] flex items-center justify-center text-white text-[10px] md:text-xs font-bold">L</div>
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#E1306C] flex items-center justify-center text-white text-[9px] md:text-[10px] font-bold italic">ig</div>
-              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#1877F2] flex items-center justify-center text-white text-[10px] md:text-xs font-bold">f</div>
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#06C755] flex items-center justify-center text-white shadow-sm">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 md:w-5 md:h-5">
+                  <path d="M24 10.304c0-5.23-5.383-9.486-12-9.486-6.617 0-12 4.256-12 9.486 0 4.69 4.283 8.623 10.075 9.358.392.085.926.258 1.06.593.121.302.08.775.04 1.078l-.173 1.04c-.053.303-.255 1.184 1.1 0 1.355-1.184 7.31-4.303 9.97-7.362 1.288-1.547 1.928-3.155 1.928-4.707z" />
+                </svg>
+              </div>
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#E1306C] flex items-center justify-center text-white shadow-sm">
+                <Instagram className="w-4 h-4 md:w-5 md:h-5" />
+              </div>
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-[#1877F2] flex items-center justify-center text-white shadow-sm">
+                <Facebook className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" />
+              </div>
             </div>
             <div className="text-[8px] md:text-[10px] text-gray-400 font-medium truncate"><a href="https://www.meteosync.com/event/a4f43af1-106e-4d86-b1c0-90c0f10b417a">Share</a></div>
           </div>
@@ -356,9 +365,10 @@ const FeatureArchitectureSection = () => {
                     </div>
                     <div className="text-[9px] font-bold text-gray-900 leading-tight mb-1 truncate">{t('landing.featureArch.visual.C.features.event_desc')}</div>
                     <div className="flex gap-1 justify-end pt-1 border-t border-gray-50">
-                      {['bg-[#06C755]', 'bg-[#1877F2]', 'bg-[#E1306C]', 'bg-gray-200'].map((c, i) => (
-                        <div key={i} className={`w-4 h-4 rounded-full ${c} flex items-center justify-center text-[6px] text-white font-bold`}>{i === 3 ? '🔗' : ''}</div>
-                      ))}
+                      <div className="w-4 h-4 rounded-full bg-[#06C755] flex items-center justify-center text-[6px] text-white font-bold"><MessageCircle className="w-3 h-3" /></div>
+                      <div className="w-4 h-4 rounded-full bg-[#1877F2] flex items-center justify-center text-[6px] text-white font-bold"><Facebook className="w-3 h-3" /></div>
+                      <div className="w-4 h-4 rounded-full bg-[#E1306C] flex items-center justify-center text-[6px] text-white font-bold"><Instagram className="w-3 h-3" /></div>
+                      <div className="w-4 h-4 rounded-full bg-gray-200 flex items-center justify-center text-[6px] text-white font-bold"><LinkIcon className="w-3 h-3" /></div>
                     </div>
                   </div>
 
