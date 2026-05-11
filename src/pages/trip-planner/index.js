@@ -610,7 +610,7 @@ const CTASection = () => {
             </div>
             <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-inner">
               <img
-                src={isEn ? "/img/trip-planner/dashboard_en.PNG" : "/img/trip-planner/dashboard_zh.PNG"}
+                src={isEn ? "/img/trip-planner/dashboard_en.png" : "/img/trip-planner/dashboard_zh.png"}
                 alt="Dashboard"
               />
             </div>
