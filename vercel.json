@@ -7,6 +7,10 @@
     {
       "source": "/plan-b-api/(.*)",
       "destination": "https://plan-b-api-664674930671.asia-east1.run.app/$1"
+    },
+    {
+      "source": "/image-storage/(.*)",
+      "destination": "https://xjftfkimdvazeeocrwut.storage.supabase.co/storage/v1/object/public/poster-images/$1"
     }
   ],
   "redirects": [
