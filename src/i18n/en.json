@@ -219,6 +219,66 @@
         }
       ]
     },
+    "aiPoster": {
+      "tag": "AI POWERED",
+      "title": "AI Event Poster & Details in One Sentence",
+      "desc": "Describe your event in a single sentence, and our AI instantly drafts a compelling title, rich description, ideal timing, and generates high-converting posters in various art styles. Save hours of brainstorming and design work!",
+      "inputTabAI": "✨ AI Smart Generate",
+      "inputTabManual": "Manual Input",
+      "inputLabel": "Describe Event Content",
+      "inputPlaceholder": "Enter a single sentence, e.g., Writing club, laptop or handwriting are all welcome, starts with 5 people.",
+      "styleLabel": "Poster Art Style",
+      "stylePreviewLabel": "Style Effect Preview",
+      "textOverlayToggle": "Include Promo Text Overlay",
+      "textOverlayToggleDesc": "Enable to overlay the title and description on the poster. Disable to get a clean background illustration.",
+      "badgeAI": "AI Generated Target Style",
+      "previewTitle": "Event Page Live Preview",
+      "downloadBtn": "📥 Download Poster Image",
+      "generating": "AI is crafting your poster & event details...",
+      "presetPrompts": {
+        "title": "Try these popular themes:",
+        "writing": "Writing club, laptop or handwriting welcome, 5-person class",
+        "yoga": "Outdoor parent-child yoga class, feel your breath on the grass",
+        "camping": "Starry sky music camping festival, enjoy nature and acoustic songs"
+      },
+      "styles": {
+        "pencil": "Colored Pencil",
+        "watercolor": "Watercolor Hand-drawn",
+        "anime": "Japanese Anime"
+      },
+      "generatedContent": {
+        "writing": {
+          "title": "Writing Club: The Journey of Words",
+          "category": "events.categories.meetup",
+          "time": "2026/04/28 2:00 PM",
+          "duration": "60 Minutes",
+          "host": "Tech Meetup Group",
+          "posterTitle": "Writing Club",
+          "posterSubtitle": "Write Together, Grow Together.",
+          "posterDesc": "Welcome everyone interested in writing! Whether handwriting or using a laptop, let's document life, share ideas, and let inspiration soar. Join us today!"
+        },
+        "yoga": {
+          "title": "Green Meadow Outdoor Parent-Child Yoga",
+          "category": "events.categories.sports",
+          "time": "2026/05/10 9:30 AM",
+          "duration": "90 Minutes",
+          "host": "Green Life Studio",
+          "posterTitle": "Family Yoga Class",
+          "posterSubtitle": "Breath & Bond under the Sun.",
+          "posterDesc": "Stretch your body with your kids in nature under the warm sun. Combine breathing with easy movements to create the sweet parent-child bonding moments."
+        },
+        "camping": {
+          "title": "Starry Night Camping & Music Festival",
+          "category": "events.categories.entertainment",
+          "time": "2026/06/18 5:00 PM",
+          "duration": "300 Minutes",
+          "host": "Wilderness Adventure Club",
+          "posterTitle": "Starry Camping Fest",
+          "posterSubtitle": "Stars, Music & Camping Vibes.",
+          "posterDesc": "Escape the city buzz. Pitch tents under a gorgeous starry sky, listen to acoustic live music, sit around the campfire, and create unforgettable memories."
+        }
+      }
+    },
     "featureArch": {
       "tag": "Feature architecture",
       "title": "Everything your event needs",

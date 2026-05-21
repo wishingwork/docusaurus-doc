@@ -219,6 +219,66 @@
         }
       ]
     },
+    "aiPoster": {
+      "tag": "AI 智慧賦能",
+      "title": "一鍵 AI 智慧生成活動海報與詳情",
+      "desc": "輸入一句活動描述，AI 立即為您生成吸睛的活動標題、豐富的介紹、合適的時間與時長，並配合多種藝術風格，瞬間創作出專屬的海報圖片！省去繁複的策劃與設計時間，讓活動籌備更專注！",
+      "inputTabAI": "✨ AI 智慧生成",
+      "inputTabManual": "手動輸入",
+      "inputLabel": "描述活動內容",
+      "inputPlaceholder": "輸入一句活動內容，例如：寫作俱樂部，無論是筆電或是手寫，都歡迎加入我們，5人開班",
+      "styleLabel": "海報藝術風格",
+      "stylePreviewLabel": "風格效果預覽",
+      "textOverlayToggle": "包含海報宣傳文字",
+      "textOverlayToggleDesc": "開啟以在生成的圖片上疊加活動介紹文字，關閉則僅保留精美的藝術背景圖。",
+      "badgeAI": "AI 生成目標風格",
+      "previewTitle": "前台活動頁面預覽",
+      "downloadBtn": "📥 下載海報圖片",
+      "generating": "AI 智慧分析與海報生成中...",
+      "presetPrompts": {
+        "title": "試試這些熱門主題：",
+        "writing": "寫作俱樂部，筆電手寫皆可，5人開班",
+        "yoga": "戶外親子瑜伽體驗課，在草地上感受呼吸",
+        "camping": "星空音樂露營祭，享受大自然與木吉他彈唱"
+      },
+      "styles": {
+        "pencil": "色鉛筆插畫",
+        "watercolor": "水彩手繪風",
+        "anime": "日系動漫風"
+      },
+      "generatedContent": {
+        "writing": {
+          "title": "寫作俱樂部：文字的奇幻旅程",
+          "category": "events.categories.meetup",
+          "time": "2026/04/28 2:00 PM",
+          "duration": "60 分鐘",
+          "host": "Tech Meetup Group",
+          "posterTitle": "寫作俱樂部",
+          "posterSubtitle": "Write Together, Grow Together.",
+          "posterDesc": "歡迎所有對寫作有興趣的人加入！不論是手寫或是用筆電，一起記錄生活中的點點滴滴，分享想法，讓靈感在文字間飛舞。熱烈招生中！"
+        },
+        "yoga": {
+          "title": "綠茵草地・戶外親子瑜伽體驗",
+          "category": "events.categories.sports",
+          "time": "2026/05/10 9:30 AM",
+          "duration": "90 分鐘",
+          "host": "Green Life Studio",
+          "posterTitle": "親子瑜伽班",
+          "posterSubtitle": "Breath & Bond under the Sun.",
+          "posterDesc": "在溫暖的陽光下，與孩子一同在大自然中舒展身體。結合呼吸與簡單的伸展動作，創造最溫馨的親子互動時光，為週末注入滿滿活力。"
+        },
+        "camping": {
+          "title": "星空與微風・戶外音樂露營祭",
+          "category": "events.categories.entertainment",
+          "time": "2026/06/18 5:00 PM",
+          "duration": "300 分鐘",
+          "host": "Wilderness Adventure Club",
+          "posterTitle": "星空露營音樂祭",
+          "posterSubtitle": "Stars, Music & Camping Vibes.",
+          "posterDesc": "遠離都市喧囂，走入大自然。在璀璨星空下搭起帳篷，聽著現場木吉他歌手的溫柔彈唱，與夥伴們圍繞營火談天，度過愜意難忘的一夜。"
+        }
+      }
+    },
     "featureArch": {
       "tag": "產品架構",
       "title": "滿足您活動的一切需求",

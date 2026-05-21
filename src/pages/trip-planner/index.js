@@ -5,7 +5,7 @@ import {
   CheckCircle, Globe, Navigation, ArrowRight, AppWindow,
   Briefcase, School, Play, Download, LayoutDashboard, CloudSun, Smartphone, Languages, Activity,
   Search, Home, Plus, User, Link as LinkIcon, Clock, Upload, Trash2, Edit2, ExternalLink,
-  Instagram, Facebook, MessageCircle
+  Instagram, Facebook, MessageCircle, Sparkles
 } from 'lucide-react';
 import '../../css/custom.css';
 
@@ -730,12 +730,340 @@ const Footer = () => {
   );
 };
 
+const AIPosterShowcaseSection = () => {
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
+
+  const [activeInputTab, setActiveInputTab] = useState('AI');
+  const [selectedPromptKey, setSelectedPromptKey] = useState('writing');
+  const [selectedStyle, setSelectedStyle] = useState('pencil');
+  const [hasText, setHasText] = useState(true);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [customText, setCustomText] = useState('');
+
+  const [toastMessage, setToastMessage] = useState('');
+  const [showToast, setShowToast] = useState(false);
+
+  const triggerToast = (msg) => {
+    setToastMessage(msg);
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
+  };
+
+  const presetPrompts = {
+    writing: isEn
+      ? 'Writing club, laptop welcome, 5-person class'
+      : '寫作俱樂部，無論是筆電或是手寫，都歡迎加入我們，5人開班',
+    yoga: isEn
+      ? 'Outdoor parent-child yoga class, feel your breath on the grass'
+      : '戶外親子瑜伽體驗課，在草地上感受呼吸',
+    camping: isEn
+      ? 'Starry sky music camping festival, enjoy nature and acoustic songs'
+      : '星空音樂露營祭，享受大自然與木吉他彈唱'
+  };
+
+  const currentInputValue = activeInputTab === 'AI'
+    ? (customText || presetPrompts[selectedPromptKey])
+    : (isEn ? 'Manual event creation mode' : '手動輸入活動內容');
+
+  const handlePresetSelect = (key) => {
+    setIsGenerating(true);
+    setTimeout(() => {
+      setSelectedPromptKey(key);
+      setCustomText('');
+      setIsGenerating(false);
+      triggerToast(isEn ? 'AI generated details & poster!' : 'AI 已生成活動詳情與海報！');
+    }, 1000);
+  };
+
+  const handleStyleChange = (style) => {
+    setIsGenerating(true);
+    setTimeout(() => {
+      setSelectedStyle(style);
+      setIsGenerating(false);
+    }, 800);
+  };
+
+  const handleToggleText = () => {
+    setIsGenerating(true);
+    setTimeout(() => {
+      setHasText(!hasText);
+      setIsGenerating(false);
+    }, 500);
+  };
+
+  const handleDownload = () => {
+    triggerToast(isEn ? '💾 Poster image downloaded!' : '💾 海報圖片已成功保存！');
+  };
+
+  const generatedData = {
+    writing: {
+      title: t('landing.aiPoster.generatedContent.writing.title'),
+      category: t('landing.aiPoster.generatedContent.writing.category'),
+      time: t('landing.aiPoster.generatedContent.writing.time'),
+      duration: t('landing.aiPoster.generatedContent.writing.duration'),
+      host: t('landing.aiPoster.generatedContent.writing.host'),
+      posterTitle: t('landing.aiPoster.generatedContent.writing.posterTitle'),
+      posterSubtitle: t('landing.aiPoster.generatedContent.writing.posterSubtitle'),
+      posterDesc: t('landing.aiPoster.generatedContent.writing.posterDesc')
+    },
+    yoga: {
+      title: t('landing.aiPoster.generatedContent.yoga.title'),
+      category: t('landing.aiPoster.generatedContent.yoga.category'),
+      time: t('landing.aiPoster.generatedContent.yoga.time'),
+      duration: t('landing.aiPoster.generatedContent.yoga.duration'),
+      host: t('landing.aiPoster.generatedContent.yoga.host'),
+      posterTitle: t('landing.aiPoster.generatedContent.yoga.posterTitle'),
+      posterSubtitle: t('landing.aiPoster.generatedContent.yoga.posterSubtitle'),
+      posterDesc: t('landing.aiPoster.generatedContent.yoga.posterDesc')
+    },
+    camping: {
+      title: t('landing.aiPoster.generatedContent.camping.title'),
+      category: t('landing.aiPoster.generatedContent.camping.category'),
+      time: t('landing.aiPoster.generatedContent.camping.time'),
+      duration: t('landing.aiPoster.generatedContent.camping.duration'),
+      host: t('landing.aiPoster.generatedContent.camping.host'),
+      posterTitle: t('landing.aiPoster.generatedContent.camping.posterTitle'),
+      posterSubtitle: t('landing.aiPoster.generatedContent.camping.posterSubtitle'),
+      posterDesc: t('landing.aiPoster.generatedContent.camping.posterDesc')
+    }
+  };
+
+  const activeData = generatedData[selectedPromptKey] || generatedData['writing'];
+
+  const styleImages = {
+    pencil: '/img/trip-planner/ai_pencil_clean.png',
+    watercolor: '/img/trip-planner/ai_watercolor_clean.png',
+    anime: '/img/trip-planner/ai_anime_clean.png'
+  };
+
+  const styleClasses = {
+    pencil: 'font-serif tracking-wide',
+    watercolor: 'font-sans italic',
+    anime: 'font-sans font-black tracking-tight uppercase'
+  };
+
+  return (
+    <section id="ai-poster" className="py-24 bg-slate-50 scroll-mt-20 relative overflow-hidden">
+      {showToast && (
+        <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 bg-slate-900/95 backdrop-blur-md text-white px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-white/10 animate-bounce">
+          <CheckCircle className="w-5 h-5 text-emerald-400" />
+          <span className="text-xs sm:text-sm font-bold">{toastMessage}</span>
+        </div>
+      )}
+
+      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-400/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-bold text-xs uppercase mb-4 shadow-sm border" style={{ backgroundColor: '#EBF5FF', borderColor: '#DBEAFE', color: colors.primary }}>
+            <Sparkles className="w-3.5 h-3.5 text-blue-600 animate-spin" style={{ animationDuration: '4s' }} />
+            {t('landing.aiPoster.tag')}
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight tracking-tight text-slate-900">
+            {t('landing.aiPoster.title')}
+          </h2>
+          <p className="text-sm md:text-lg leading-relaxed text-slate-500 font-medium">
+            {t('landing.aiPoster.desc')}
+          </p>
+        </div>
+
+        <div className="mb-10 max-w-4xl mx-auto">
+          <div className="text-xs font-bold text-slate-400 uppercase mb-3 text-center md:text-left">{t('landing.aiPoster.presetPrompts.title')}</div>
+          <div className="flex flex-wrap gap-2.5 justify-center md:justify-start">
+            {['writing', 'yoga', 'camping'].map((key) => (
+              <button
+                key={key}
+                disabled={isGenerating}
+                onClick={() => handlePresetSelect(key)}
+                className={`px-4 py-2.5 rounded-full text-xs font-black transition-all border shadow-sm cursor-pointer ${selectedPromptKey === key && activeInputTab === 'AI'
+                  ? 'bg-blue-600 border-blue-600 text-white shadow-blue-200'
+                  : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
+                  }`}
+              >
+                {key === 'writing' && '🖋️ ' + t('landing.aiPoster.presetPrompts.writing')}
+                {key === 'yoga' && '🧘 ' + t('landing.aiPoster.presetPrompts.yoga')}
+                {key === 'camping' && '🏕️ ' + t('landing.aiPoster.presetPrompts.camping')}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+
+          <div className="lg:col-span-8 bg-white rounded-[2rem] border border-slate-100 shadow-xl p-6 md:p-8 flex flex-col justify-between gap-6 relative">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-black text-slate-900 border-b border-slate-100 pb-4 flex items-center gap-3">
+                🛠️ {isEn ? 'Event Creation' : '建立活動'}
+              </h3>
+
+              <div className="flex bg-slate-100 p-1.5 rounded-2xl border border-slate-200/50">
+                <button
+                  onClick={() => setActiveInputTab('AI')}
+                  className={`flex-1 py-3 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-2 ${activeInputTab === 'AI' ? 'bg-white text-blue-600 shadow-md' : 'text-slate-500 hover:text-slate-800'}`}
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                  {t('landing.aiPoster.inputTabAI')}
+                </button>
+                <button
+                  onClick={() => setActiveInputTab('manual')}
+                  className={`flex-1 py-3 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center justify-center gap-2 ${activeInputTab === 'manual' ? 'bg-white text-slate-800 shadow-md' : 'text-slate-500 hover:text-slate-800'}`}
+                >
+                  {t('landing.aiPoster.inputTabManual')}
+                </button>
+              </div>
+
+              {activeInputTab === 'AI' ? (
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-slate-700 flex justify-between items-center">
+                      <span>{t('landing.aiPoster.inputLabel')}</span>
+                    </label>
+                    <textarea
+                      rows={4}
+                      value={customText !== '' ? customText : presetPrompts[selectedPromptKey]}
+                      onChange={(e) => setCustomText(e.target.value)}
+                      placeholder={t('landing.aiPoster.inputPlaceholder')}
+                      className="w-full rounded-2xl border border-slate-200 p-4 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all bg-slate-50/50 shadow-inner"
+                    />
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="text-xs font-bold text-slate-700">{t('landing.aiPoster.styleLabel')}</label>
+                    <div className="grid grid-cols-3 gap-2.5">
+                      {['pencil', 'watercolor', 'anime'].map((style) => (
+                        <button
+                          key={style}
+                          disabled={isGenerating}
+                          onClick={() => handleStyleChange(style)}
+                          className={`p-2.5 rounded-2xl border flex flex-col items-center gap-2 text-center transition-all cursor-pointer group ${selectedStyle === style
+                            ? 'border-blue-500 bg-blue-50/30 ring-1 ring-blue-500 shadow-sm'
+                            : 'border-slate-200 hover:border-slate-300 bg-white'}`}
+                        >
+                          <div className="w-10 h-10 rounded-full overflow-hidden border border-slate-200 bg-slate-100 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <img src={styleImages[style]} alt={style} className="w-full h-full object-cover" />
+                          </div>
+                          <span className="text-[10px] font-black text-slate-700">{t(`landing.aiPoster.styles.${style}`)}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 flex items-start gap-4 shadow-sm">
+                    <input
+                      type="checkbox"
+                      id="toggleText"
+                      checked={hasText}
+                      disabled={isGenerating}
+                      onChange={handleToggleText}
+                      className="w-5 h-5 mt-1 rounded text-blue-600 border-slate-300 focus:ring-blue-500 cursor-pointer"
+                    />
+                    <div className="flex-1">
+                      <label htmlFor="toggleText" className="text-xs font-bold text-slate-800 cursor-pointer block">{t('landing.aiPoster.textOverlayToggle')}</label>
+                      <p className="text-[10px] text-slate-400 mt-1 leading-normal font-medium">{t('landing.aiPoster.textOverlayToggleDesc')}</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="py-16 text-center border-2 border-dashed border-slate-200 rounded-3xl bg-slate-50 w-full">
+                  <p className="text-slate-400 font-bold text-sm">手動輸入模式已啟用</p>
+                  <p className="text-slate-400 text-xs mt-1">此演示專注於 AI 智慧海報生成，請切回 AI 智慧生成體驗。</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="lg:col-span-4 grid sm:grid-cols-1 gap-6 items-stretch">
+
+
+            <div className="flex flex-col bg-white rounded-[2rem] border border-slate-100 shadow-xl overflow-hidden relative min-h-[460px]">
+
+              {isGenerating && (
+                <div className="absolute inset-0 z-40 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center">
+                  <div className="relative w-10 h-10 mb-2 animate-spin">
+                    <div className="absolute inset-0 rounded-full border-2 border-slate-100"></div>
+                    <div className="absolute inset-0 rounded-full border-2 border-t-blue-600"></div>
+                  </div>
+                  <p className="text-[10px] font-bold text-slate-400">{isEn ? 'Syncing...' : '活動詳情同步中...'}</p>
+                </div>
+              )}
+
+              <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t('landing.aiPoster.previewTitle')}</span>
+                <button
+                  onClick={handleDownload}
+                  className="bg-blue-600 hover:bg-blue-700 text-white text-[9px] font-black px-2.5 py-1.5 rounded-lg transition-colors flex items-center gap-1 cursor-pointer shadow-sm shadow-blue-100"
+                >
+                  <Download className="w-2.5 h-2.5" />
+                  <span>{t('landing.aiPoster.downloadBtn').replace('📥 ', '')}</span>
+                </button>
+              </div>
+
+              <div className="flex-1 flex flex-col bg-slate-50 overflow-y-auto">
+
+                <div className="h-36 w-full bg-slate-200 relative overflow-hidden shrink-0">
+                  <img
+                    src={styleImages[selectedStyle]}
+                    alt="Event Cover"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
+                  <div className="absolute bottom-3 left-4">
+                    <span className="px-2 py-0.5 rounded-full bg-blue-600 text-white text-[8px] font-black uppercase tracking-wider">
+                      {activeData.category}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-4 flex-1 space-y-4 bg-white">
+
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-extrabold text-slate-900 leading-snug">
+                      {activeData.title}
+                    </h4>
+                  </div>
+
+                  <div className="space-y-2.5 pt-2.5 border-t border-slate-100 text-[10px] font-bold text-slate-600">
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span>{activeData.time}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Activity className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span>{activeData.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <User className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span className="text-slate-800 font-extrabold">{activeData.host}</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2.5 border-t border-slate-100 space-y-1">
+                    <h5 className="text-[8px] font-extrabold text-slate-400 uppercase tracking-wider">{isEn ? 'Event Introduction' : '活動介紹'}</h5>
+                    <p className="text-[10px] font-medium text-slate-500 leading-relaxed">
+                      {activeData.posterDesc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function TripPlannerWebsite() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <BenefitsSection />
+      <AIPosterShowcaseSection />
       <FeatureArchitectureSection />
       <OrganizerDashboardSection />
       <SocialSharingSection />
