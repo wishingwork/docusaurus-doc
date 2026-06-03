@@ -115,13 +115,22 @@ export default function AnnaTechEnglish() {
                     <h2 className="anna-section-title">課程精彩回顧</h2>
                     <div className="anna-gallery-grid">
                         <div className="anna-gallery-item">
-                            <img src={useBaseUrl('/img/anna-tech-english/class-1.jpg')} alt="Class Moment 2" className="anna-gallery-img" />
+                            <img src={useBaseUrl('/img/anna-tech-english/class-1.jpg')} alt="Class Moment 1" className="anna-gallery-img" />
                         </div>
                         <div className="anna-gallery-item">
-                            <img src={useBaseUrl('/img/anna-tech-english/class-4.jpg')} alt="Class Moment 4" className="anna-gallery-img" />
+                            <img src={useBaseUrl('/img/anna-tech-english/class-4.jpg')} alt="Class Moment 2" className="anna-gallery-img" />
                         </div>
                         <div className="anna-gallery-item">
-                            <img src={useBaseUrl('/img/anna-tech-english/class-5.jpg')} alt="Class Moment 5" className="anna-gallery-img" />
+                            <img src={useBaseUrl('/img/anna-tech-english/class-5.jpg')} alt="Class Moment 3" className="anna-gallery-img" />
+                        </div>
+                        <div className="anna-gallery-item">
+                            <img src={useBaseUrl('/img/anna-tech-english/20260531-photo1.JPG')} alt="Class Moment 4" className="anna-gallery-img" />
+                        </div>
+                        <div className="anna-gallery-item">
+                            <img src={useBaseUrl('/img/anna-tech-english/20260531-photo2.JPG')} alt="Class Moment 5" className="anna-gallery-img" />
+                        </div>
+                        <div className="anna-gallery-item">
+                            <img src={useBaseUrl('/img/anna-tech-english/20260531-photo3.JPG')} alt="Class Moment 6" className="anna-gallery-img" />
                         </div>
                     </div>
                 </section>
