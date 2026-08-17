@@ -178,6 +178,26 @@ export default function AnnaTechEnglish() {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Course 3 */}
+                        <div className="anna-course-card">
+                            <div
+                                className="anna-course-img"
+                                style={{ backgroundImage: `url(${useBaseUrl('/img/anna-tech-english/ai-era-research-communication.jpeg')})` }}
+                            ></div>
+                            <div className="anna-course-content">
+                                <span className="anna-tag anna-tag-purple">9月13日 (14:00-17:00)</span>
+                                <h3 className="text-2xl font-bold mb-4 text-purple-900">Precision Research & Multi-Modal Communications in the AI Era</h3>
+                                <p className="text-gray-600 mb-6 font-semibold">
+                                    掌握 AI 時代的精準研究與多模態溝通技巧，利用 Gemini Notebook 進行深度分析與自動化代理實戰。
+                                </p>
+                                <div className="space-y-4 text-sm text-gray-500">
+                                    <p>🔹 <strong>Gemini Notebook 核心功能：</strong>掌握 Grounded sources、深度研究與分析、切換來源、建立資料表與心智圖。</p>
+                                    <p>🔹 <strong>多模態溝通與自訂報告：</strong>產生自訂報告、語音總覽 (Audio Overviews)、吸睛資訊圖表、互動式閃卡與學習指南。</p>
+                                    <p>🔹 <strong>AI 學習與電子郵件/行銷代理：</strong>將 Notebook 作為學習工具，建立對接電子郵件與行銷名單的 AI 代理人，並進行實務應用演練。</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 

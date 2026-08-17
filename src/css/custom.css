@@ -529,6 +529,12 @@ a:hover {
   color: #2f855a;
 }
 
+.anna-tag-purple {
+  background: #faf5ff;
+  color: #6b46c1;
+}
+
+
 /* Responsive */
 @media (max-width: 968px) {
   .anna-course-grid {
