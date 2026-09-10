@@ -11,6 +11,10 @@
     {
       "source": "/image-storage/(.*)",
       "destination": "https://xjftfkimdvazeeocrwut.storage.supabase.co/storage/v1/object/public/poster-images/$1"
+    },
+    {
+      "source": "/ai-resource-calculator/(.*)",
+      "destination": "https://ai-server-resource-calculator.vercel.app/$1"
     }
   ],
   "redirects": [
